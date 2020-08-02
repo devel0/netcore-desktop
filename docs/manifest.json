@@ -93,10 +93,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "4S1eFe+Gv4ugIYNuRhwdJQ=="
+          "hash": "bkCHapJIKG+DrU7LtdfNXw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -112,15 +112,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "6LOHwxDmxzcgz+UxaBjM1A=="
+          "hash": "U7VUI+NgP3AYN2p727MEBg=="
         }
       },
       "is_incremental": false,
@@ -147,7 +144,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "p+2zps9w/csDQd0H2ItZaA=="
+          "hash": "5lqaosGlOV4cLGTz2ncd/A=="
         }
       },
       "is_incremental": false,
@@ -179,7 +176,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 2
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
