@@ -65,8 +65,8 @@ dotnet new sln
 dotnet new classlib -n netcore-desktop
 
 cd netcore-desktop
-#dotnet add package Newtonsoft.Json --version 11.0.2
-#dotnet add package Microsoft.CSharp --version 4.5.0
+dotnet add package netcore-util --version 1.6.1
+dotnet add package Avalonia --version 0.10.0-preview2
 cd ..
 
 dotnet sln add netcore-desktop
