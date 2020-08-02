@@ -6,7 +6,7 @@
 
 <hr/>
 
-- [API Documentation](https://devel0.github.io/netcore-desktop)
+- [API Documentation](https://devel0.github.io/netcore-desktop/api/SearchAThing.html)
 - [Recent changes](#recent-changes)
 - [Quickstart](#quickstart)
 - [Examples](#examples)
