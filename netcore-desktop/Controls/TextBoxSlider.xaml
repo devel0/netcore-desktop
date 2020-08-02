@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="800" 
+d:DesignHeight="450" x:Class="SearchAThing.TextBoxSlider">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="/Dictionary1.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="grRoot">
+        <Border x:Name="brd" Background="{Binding SliderColor}" HorizontalAlignment="Left" BorderBrush="{Binding SliderColor, Converter={StaticResource SmartConverter}, ConverterParameter=?Darker 0.8}"/>
+        <TextBox x:Name="tbox" Background="Transparent" Text="{Binding Value, Mode=TwoWay}"/>
+        <Border x:Name="brdResizer" IsVisible="true" Cursor="SizeWestEast" Background="Transparent" Width="24" HorizontalAlignment="Left"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,6 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:SearchAThing" xmlns:desktop="clr-namespace:SearchAThing;assembly=netcore-desktop">
+    <desktop:SmartConverter x:Key="SmartConverter"/>
+    <DrawingImage x:Key="Unicons.ArrowsResizeH">
+        <GeometryDrawing Brush="#FF000000" Geometry="M10,6A1,1,0,0,0,9,7v4H5.41l.8-.79A1,1,0,0,0,4.79,8.79l-2.5,2.5a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l2.5,2.5a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L5.41,13H9v4a1,1,0,0,0,2,0V7A1,1,0,0,0,10,6Zm11.92,5.62a1,1,0,0,0-.21-.33l-2.5-2.5a1,1,0,0,0-1.42,1.42l.8.79H15V7a1,1,0,0,0-2,0V17a1,1,0,0,0,2,0V13h3.59l-.8.79a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l2.5-2.5a1,1,0,0,0,.21-.33A1,1,0,0,0,21.92,11.62Z"/>
+    </DrawingImage>
+</ResourceDictionary>
