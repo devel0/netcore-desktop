@@ -4,4 +4,4 @@ Choose an article from side menu.
 
 ## other resources
 
-- [API](/api/index.html)
+- [API](../api/index.html)
