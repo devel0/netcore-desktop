@@ -16,6 +16,8 @@
 
 ## Recent changes
 
+- **0.0.2** : netcore-util 1.6.2
+
 ## Quickstart
 
 - [nuget package](https://www.nuget.org/packages/netcore-desktop/)
