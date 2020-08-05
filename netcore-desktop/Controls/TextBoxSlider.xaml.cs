@@ -56,8 +56,7 @@ namespace SearchAThing
                     else
                     {
                         if (finalVal > max)
-                        {
-                            System.Console.WriteLine($"expand max from:{Maximum} to {finalVal}");
+                        {                            
                             Maximum = finalVal;
                         }
                     }
