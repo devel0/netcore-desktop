@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.GridSplitDirection.html",
-          "hash": "y6Wk68sp0DJr0knebdUh+A=="
+          "hash": "ZvOlvX1E6DS9/ZZsOOyuSg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.GridSplitterManager.FocusedControlConverter.html",
-          "hash": "0TSD1my8pzLgMfjEyA3Qug=="
+          "hash": "ZrnTpgStQ7tr86iodDohog=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.GridSplitterManager.html",
-          "hash": "kzcSV+5mnogLyxjjiuYvTQ=="
+          "hash": "Qh0A0B5A4SWuK/FKibJF7A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +45,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.ScrollableSlider.html",
-          "hash": "uWVUR0xmPJ7l6FOXTOlbDw=="
+          "hash": "Q3P9TtREqG+CmoBQV/RCaQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -57,10 +57,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.SmartConverter.html",
-          "hash": "Bo5iFmVBUcBM87uzs99e5A=="
+          "hash": "BbdO7dBhtYAOXlKI4s6XxA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,10 +69,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.TextBoxSlider.html",
-          "hash": "Jr60J8VtxP9U14a1Wz5KaA=="
+          "hash": "PQ3RWkRWw4LZRI3Rtppblg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -81,10 +81,10 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.html",
-          "hash": "tZWGB+tpwAoGQkrNIUVQWA=="
+          "hash": "bEcVu4KYw6w4LcavB/3kcw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "bkCHapJIKG+DrU7LtdfNXw=="
+          "hash": "1xaJSOdF1Cx3dXFRVycKSw=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "U7VUI+NgP3AYN2p727MEBg=="
+          "hash": "qX4AvafusQS9ffHl1W1sdQ=="
         }
       },
       "is_incremental": false,
@@ -144,7 +144,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "5lqaosGlOV4cLGTz2ncd/A=="
+          "hash": "pJZtCStAOCGITqCv/NxZ+A=="
         }
       },
       "is_incremental": false,
@@ -166,23 +166,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because docfx version changed from 2.55.0.0 to 2.56.2.0.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "DocfxVersionChanged"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 3,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 7,
-          "skipped_file_count": 7
+          "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

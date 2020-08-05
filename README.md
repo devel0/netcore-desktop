@@ -16,6 +16,7 @@
 
 ## Recent changes
 
+- **0.1.0** : TextBoxSlider AutoExpandMinimum/Maximum feature
 - **0.0.2** : netcore-util 1.6.2
 
 ## Quickstart

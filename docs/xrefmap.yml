@@ -347,6 +347,44 @@ references:
   isSpec: "True"
   fullName: SearchAThing.TextBoxSlider.TextBoxSlider
   nameWithType: TextBoxSlider.TextBoxSlider
+- uid: SearchAThing.TextBoxSlider.AutoExpandMaximum
+  name: AutoExpandMaximum
+  href: api/SearchAThing.TextBoxSlider.html#SearchAThing_TextBoxSlider_AutoExpandMaximum
+  commentId: P:SearchAThing.TextBoxSlider.AutoExpandMaximum
+  fullName: SearchAThing.TextBoxSlider.AutoExpandMaximum
+  nameWithType: TextBoxSlider.AutoExpandMaximum
+- uid: SearchAThing.TextBoxSlider.AutoExpandMaximum*
+  name: AutoExpandMaximum
+  href: api/SearchAThing.TextBoxSlider.html#SearchAThing_TextBoxSlider_AutoExpandMaximum_
+  commentId: Overload:SearchAThing.TextBoxSlider.AutoExpandMaximum
+  isSpec: "True"
+  fullName: SearchAThing.TextBoxSlider.AutoExpandMaximum
+  nameWithType: TextBoxSlider.AutoExpandMaximum
+- uid: SearchAThing.TextBoxSlider.AutoExpandMaximumProperty
+  name: AutoExpandMaximumProperty
+  href: api/SearchAThing.TextBoxSlider.html#SearchAThing_TextBoxSlider_AutoExpandMaximumProperty
+  commentId: F:SearchAThing.TextBoxSlider.AutoExpandMaximumProperty
+  fullName: SearchAThing.TextBoxSlider.AutoExpandMaximumProperty
+  nameWithType: TextBoxSlider.AutoExpandMaximumProperty
+- uid: SearchAThing.TextBoxSlider.AutoExpandMinimum
+  name: AutoExpandMinimum
+  href: api/SearchAThing.TextBoxSlider.html#SearchAThing_TextBoxSlider_AutoExpandMinimum
+  commentId: P:SearchAThing.TextBoxSlider.AutoExpandMinimum
+  fullName: SearchAThing.TextBoxSlider.AutoExpandMinimum
+  nameWithType: TextBoxSlider.AutoExpandMinimum
+- uid: SearchAThing.TextBoxSlider.AutoExpandMinimum*
+  name: AutoExpandMinimum
+  href: api/SearchAThing.TextBoxSlider.html#SearchAThing_TextBoxSlider_AutoExpandMinimum_
+  commentId: Overload:SearchAThing.TextBoxSlider.AutoExpandMinimum
+  isSpec: "True"
+  fullName: SearchAThing.TextBoxSlider.AutoExpandMinimum
+  nameWithType: TextBoxSlider.AutoExpandMinimum
+- uid: SearchAThing.TextBoxSlider.AutoExpandMinimumProperty
+  name: AutoExpandMinimumProperty
+  href: api/SearchAThing.TextBoxSlider.html#SearchAThing_TextBoxSlider_AutoExpandMinimumProperty
+  commentId: F:SearchAThing.TextBoxSlider.AutoExpandMinimumProperty
+  fullName: SearchAThing.TextBoxSlider.AutoExpandMinimumProperty
+  nameWithType: TextBoxSlider.AutoExpandMinimumProperty
 - uid: SearchAThing.TextBoxSlider.AutoRoundDigits
   name: AutoRoundDigits
   href: api/SearchAThing.TextBoxSlider.html#SearchAThing_TextBoxSlider_AutoRoundDigits
