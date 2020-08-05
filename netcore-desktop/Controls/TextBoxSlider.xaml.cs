@@ -31,6 +31,38 @@ namespace SearchAThing
             get => _Value;
             set
             {
+                if (value != null &&
+                    Convert.ToString(value).Trim().Eval(str => str != "-" && str.Length > 0) &&
+                    (AutoExpandMinimum || AutoExpandMaximum))
+                {
+                    var finalVal = Convert.ToDouble(value);
+
+                    var min = Convert.ToDouble(Minimum);
+                    var max = Convert.ToDouble(Maximum);
+
+                    if (!AutoExpandMinimum)
+                    {
+                        finalVal = Max(min, finalVal);
+                    }
+                    else
+                    {
+                        if (finalVal < min) Minimum = finalVal;
+                    }
+
+                    if (!AutoExpandMaximum)
+                    {
+                        finalVal = Min(max, finalVal);
+                    }
+                    else
+                    {
+                        if (finalVal > max)
+                        {
+                            System.Console.WriteLine($"expand max from:{Maximum} to {finalVal}");
+                            Maximum = finalVal;
+                        }
+                    }
+                }
+
                 SetAndRaise(ValueProperty, ref _Value, value);
                 InvalidateVisual();
             }
@@ -50,6 +82,22 @@ namespace SearchAThing
         }
         #endregion    
 
+        #region AutoExpandMinimum
+        private bool _AutoExpandMinimum = false;
+
+        public static readonly DirectProperty<TextBoxSlider, bool> AutoExpandMinimumProperty =
+            AvaloniaProperty.RegisterDirect<TextBoxSlider, bool>("AutoExpandMinimum", o => o.AutoExpandMinimum, (o, v) => o.AutoExpandMinimum = v);
+
+        /// <summary>
+        /// Allow to autoexpand minimum when Value changed from code ( not from gui )
+        /// </summary>
+        public bool AutoExpandMinimum
+        {
+            get => _AutoExpandMinimum;
+            set => SetAndRaise(AutoExpandMinimumProperty, ref _AutoExpandMinimum, value);
+        }
+        #endregion    
+
         #region Maximum
         private object _Maximum = null;
 
@@ -60,6 +108,22 @@ namespace SearchAThing
         {
             get => _Maximum;
             set => SetAndRaise(MaximumProperty, ref _Maximum, value);
+        }
+        #endregion    
+
+        #region AutoExpandMaximum
+        private bool _AutoExpandMaximum = false;
+
+        public static readonly DirectProperty<TextBoxSlider, bool> AutoExpandMaximumProperty =
+            AvaloniaProperty.RegisterDirect<TextBoxSlider, bool>("AutoExpandMaximum", o => o.AutoExpandMaximum, (o, v) => o.AutoExpandMaximum = v);
+
+        /// <summary>
+        /// Allow to autoexpand maximum when Value changed from code ( not from gui )
+        /// </summary>
+        public bool AutoExpandMaximum
+        {
+            get => _AutoExpandMaximum;
+            set => SetAndRaise(AutoExpandMaximumProperty, ref _AutoExpandMaximum, value);
         }
         #endregion    
 
@@ -296,7 +360,7 @@ namespace SearchAThing
                 var autoRoundDigits = Convert.ToInt32(AutoRoundDigits);
                 newVal = Round(newVal, autoRoundDigits);
             }
-            
+
             var finalVal = newVal.Clamp(min, max);
 
             Value = finalVal;
