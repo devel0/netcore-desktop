@@ -56,7 +56,7 @@ namespace SearchAThing
                     else
                     {
                         if (finalVal > max)
-                        {                            
+                        {
                             Maximum = finalVal;
                         }
                     }
@@ -333,6 +333,8 @@ namespace SearchAThing
                 ChangeVal(x => x.val + x.step * e.Delta.Y);
 
             EvalResizer(e.GetCurrentPoint(brd));
+
+            e.Handled = true;
         }
 
         void ChangeVal(Func<(double min, double max, double step, double val), double> fn)
