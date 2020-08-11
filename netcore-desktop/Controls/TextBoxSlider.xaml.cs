@@ -188,6 +188,9 @@ namespace SearchAThing
         public static readonly DirectProperty<TextBoxSlider, int?> AutoRoundDigitsProperty =
             AvaloniaProperty.RegisterDirect<TextBoxSlider, int?>("AutoRoundDigits", o => o.AutoRoundDigits, (o, v) => o.AutoRoundDigits = v);
 
+        /// <summary>
+        /// autoround digits when using gui slider ( not for direct property change )
+        /// </summary>
         public int? AutoRoundDigits
         {
             get => _AutoRoundDigits;
@@ -232,6 +235,17 @@ namespace SearchAThing
             }
         }
         #endregion
+
+        #region IsReadOnly        
+        public static readonly DirectProperty<TextBoxSlider, bool> IsReadOnlyProperty =
+            AvaloniaProperty.RegisterDirect<TextBoxSlider, bool>("IsReadOnly", o => o.IsReadOnly, (o, v) => o.IsReadOnly = v);
+
+        public bool IsReadOnly
+        {
+            get => tbox.IsReadOnly;
+            set => tbox.IsReadOnly = value;
+        }
+        #endregion    
 
         Grid grRoot;
         TextBox tbox;
