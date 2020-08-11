@@ -165,6 +165,22 @@ namespace SearchAThing
         }
         #endregion
 
+        #region DistributeSplitSize
+        private bool _DistributeSplitSize = true;
+
+        public static readonly DirectProperty<GridSplitterManager, bool> DistributeSplitSizeProperty =
+            AvaloniaProperty.RegisterDirect<GridSplitterManager, bool>("DistributeSplitSize", o => o.DistributeSplitSize, (o, v) => o.DistributeSplitSize = v);
+
+        /// <summary>
+        /// if false split will half its size; if true (default) it creates a def star so balanced between N axial parallel controls
+        /// </summary>        
+        public bool DistributeSplitSize
+        {
+            get => _DistributeSplitSize;
+            set => SetAndRaise(DistributeSplitSizeProperty, ref _DistributeSplitSize, value);
+        }
+        #endregion
+
         /// <summary>
         /// set to a valid text writer (eg.Console.Out) to debug structure processing;
         /// if null no debug output
@@ -532,8 +548,8 @@ namespace SearchAThing
                 var halfSize = GridGetDefSize(fGr, fDir, fBrdPos) / 2;
 
                 GridRemoveDef(fGr, fDir, fBrdPos);
-                InsertDef(fGr, fDir, fBrdPos, halfSize);
-                InsertDef(fGr, fDir, fBrdPos + 1, halfSize);
+                InsertDef(fGr, fDir, fBrdPos, DistributeSplitSize ? 1 : halfSize);
+                InsertDef(fGr, fDir, fBrdPos + 1, DistributeSplitSize ? 1 : halfSize);
                 foreach (var x in fGr.Children.Where(y => !(y is GridSplitter)).Cast<Control>())
                 {
                     var pos = GetPos(fDir, x);
