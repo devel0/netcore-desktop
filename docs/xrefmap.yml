@@ -76,6 +76,25 @@ references:
   isSpec: "True"
   fullName: SearchAThing.GridSplitterManager.DebugWriter
   nameWithType: GridSplitterManager.DebugWriter
+- uid: SearchAThing.GridSplitterManager.DistributeSplitSize
+  name: DistributeSplitSize
+  href: api/SearchAThing.GridSplitterManager.html#SearchAThing_GridSplitterManager_DistributeSplitSize
+  commentId: P:SearchAThing.GridSplitterManager.DistributeSplitSize
+  fullName: SearchAThing.GridSplitterManager.DistributeSplitSize
+  nameWithType: GridSplitterManager.DistributeSplitSize
+- uid: SearchAThing.GridSplitterManager.DistributeSplitSize*
+  name: DistributeSplitSize
+  href: api/SearchAThing.GridSplitterManager.html#SearchAThing_GridSplitterManager_DistributeSplitSize_
+  commentId: Overload:SearchAThing.GridSplitterManager.DistributeSplitSize
+  isSpec: "True"
+  fullName: SearchAThing.GridSplitterManager.DistributeSplitSize
+  nameWithType: GridSplitterManager.DistributeSplitSize
+- uid: SearchAThing.GridSplitterManager.DistributeSplitSizeProperty
+  name: DistributeSplitSizeProperty
+  href: api/SearchAThing.GridSplitterManager.html#SearchAThing_GridSplitterManager_DistributeSplitSizeProperty
+  commentId: F:SearchAThing.GridSplitterManager.DistributeSplitSizeProperty
+  fullName: SearchAThing.GridSplitterManager.DistributeSplitSizeProperty
+  nameWithType: GridSplitterManager.DistributeSplitSizeProperty
 - uid: SearchAThing.GridSplitterManager.FocusedControl
   name: FocusedControl
   href: api/SearchAThing.GridSplitterManager.html#SearchAThing_GridSplitterManager_FocusedControl
@@ -404,6 +423,25 @@ references:
   commentId: F:SearchAThing.TextBoxSlider.AutoRoundDigitsProperty
   fullName: SearchAThing.TextBoxSlider.AutoRoundDigitsProperty
   nameWithType: TextBoxSlider.AutoRoundDigitsProperty
+- uid: SearchAThing.TextBoxSlider.IsReadOnly
+  name: IsReadOnly
+  href: api/SearchAThing.TextBoxSlider.html#SearchAThing_TextBoxSlider_IsReadOnly
+  commentId: P:SearchAThing.TextBoxSlider.IsReadOnly
+  fullName: SearchAThing.TextBoxSlider.IsReadOnly
+  nameWithType: TextBoxSlider.IsReadOnly
+- uid: SearchAThing.TextBoxSlider.IsReadOnly*
+  name: IsReadOnly
+  href: api/SearchAThing.TextBoxSlider.html#SearchAThing_TextBoxSlider_IsReadOnly_
+  commentId: Overload:SearchAThing.TextBoxSlider.IsReadOnly
+  isSpec: "True"
+  fullName: SearchAThing.TextBoxSlider.IsReadOnly
+  nameWithType: TextBoxSlider.IsReadOnly
+- uid: SearchAThing.TextBoxSlider.IsReadOnlyProperty
+  name: IsReadOnlyProperty
+  href: api/SearchAThing.TextBoxSlider.html#SearchAThing_TextBoxSlider_IsReadOnlyProperty
+  commentId: F:SearchAThing.TextBoxSlider.IsReadOnlyProperty
+  fullName: SearchAThing.TextBoxSlider.IsReadOnlyProperty
+  nameWithType: TextBoxSlider.IsReadOnlyProperty
 - uid: SearchAThing.TextBoxSlider.Maximum
   name: Maximum
   href: api/SearchAThing.TextBoxSlider.html#SearchAThing_TextBoxSlider_Maximum

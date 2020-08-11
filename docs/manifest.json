@@ -12,7 +12,7 @@
           "hash": "ZvOlvX1E6DS9/ZZsOOyuSg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -24,7 +24,7 @@
           "hash": "ZrnTpgStQ7tr86iodDohog=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.GridSplitterManager.html",
-          "hash": "Qh0A0B5A4SWuK/FKibJF7A=="
+          "hash": "v6cMC4HkLjfAABfG40H+6Q=="
         }
       },
       "is_incremental": false,
@@ -48,7 +48,7 @@
           "hash": "Q3P9TtREqG+CmoBQV/RCaQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.SmartConverter.html",
-          "hash": "BbdO7dBhtYAOXlKI4s6XxA=="
+          "hash": "FQeicQw+FTM5dmexgSRmEg=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.TextBoxSlider.html",
-          "hash": "PQ3RWkRWw4LZRI3Rtppblg=="
+          "hash": "ocLFsKK/M0pm6/oQnCgmJw=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/SearchAThing.html",
-          "hash": "bEcVu4KYw6w4LcavB/3kcw=="
+          "hash": "Bu3Oe1yAUgbNUsPXRKWW1Q=="
         }
       },
       "is_incremental": false,
@@ -96,7 +96,7 @@
           "hash": "1xaJSOdF1Cx3dXFRVycKSw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -120,7 +120,7 @@
           "hash": "qX4AvafusQS9ffHl1W1sdQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -147,7 +147,7 @@
           "hash": "pJZtCStAOCGITqCv/NxZ+A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -166,25 +166,23 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because docfx version changed from 2.55.0.0 to 2.56.2.0.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "DocfxVersionChanged"
+        "skipped_file_count": 0
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 0
+          "skipped_file_count": 3
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 7,
-          "skipped_file_count": 0
+          "skipped_file_count": 4
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

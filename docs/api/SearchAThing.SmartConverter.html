@@ -73,7 +73,33 @@
   
   <h1 id="SearchAThing_SmartConverter" data-uid="SearchAThing.SmartConverter" class="text-break">Class SmartConverter
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>smart convert</p>
+<ul>
+<li>parameter function &quot;?FN targetValueIfMatch targetValueIfNOTMatch&quot;</li>
+<li>parameter equality &quot;valueToMatch targetValueIfMatch targetValueIfNOTMatch&quot;</li>
+</ul>
+<p>examples:</p>
+<ul>
+<li>valueType boolean with targetType IBrush with parameter=&quot;true Yellow Transparent&quot; makes Yellow if value is true or transparent if value if false</li>
+<li>valueType IBrush with targetType IBrush with parameter=&quot;?Darker 0.8&quot; makes value brush darker reducing to 80% its bridhtness</li>
+<li>valueType object with targetType double parameter=&quot;?IsNull 1.2 4.5&quot; makes 1.2 if value is null, 4.5 otherwise</li>
+</ul>
+<p>functions:</p>
+<ul>
+<li>?IsNull match notMatch</li>
+<li>?Lighter : double brighness</li>
+<li>?Lighter v : increase of v=0-1 brighness</li>
+<li>?Darker : half brighness</li>
+<li>?Darker v : decrease to v=0-1 brightness</li>
+</ul>
+<p>supported targetTypes:</p>
+<ul>
+<li>boolean ( target values : &quot;true&quot;, &quot;false&quot; )</li>
+<li>thickness ( target values : eg. &quot;20&quot; for Thickness(20) )</li>
+<li>brush ( target values : eg. &quot;Red&quot; or &quot;#ff0000&quot; )</li>
+<li>double ( target values : eg. &quot;1.2&quot; )</li>
+</ul>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -93,7 +119,7 @@
     <a href="https://github.com/devel0/netcore-desktop/new/master/apiSpec/new?filename=SearchAThing_SmartConverter_Convert_System_Object_Type_System_Object_CultureInfo_.md&amp;value=---%0Auid%3A%20SearchAThing.SmartConverter.Convert(System.Object%2CType%2CSystem.Object%2CCultureInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-desktop/blob/master/netcore-desktop/SmartConverter.cs/#L26">View Source</a>
+    <a href="https://github.com/devel0/netcore-desktop/blob/master/netcore-desktop/SmartConverter.cs/#L50">View Source</a>
   </span>
   <a id="SearchAThing_SmartConverter_Convert_" data-uid="SearchAThing.SmartConverter.Convert*"></a>
   <h4 id="SearchAThing_SmartConverter_Convert_System_Object_Type_System_Object_CultureInfo_" data-uid="SearchAThing.SmartConverter.Convert(System.Object,Type,System.Object,CultureInfo)">Convert(Object, Type, Object, CultureInfo)</h4>
@@ -155,7 +181,7 @@
     <a href="https://github.com/devel0/netcore-desktop/new/master/apiSpec/new?filename=SearchAThing_SmartConverter_ConvertBack_System_Object_Type_System_Object_CultureInfo_.md&amp;value=---%0Auid%3A%20SearchAThing.SmartConverter.ConvertBack(System.Object%2CType%2CSystem.Object%2CCultureInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/devel0/netcore-desktop/blob/master/netcore-desktop/SmartConverter.cs/#L124">View Source</a>
+    <a href="https://github.com/devel0/netcore-desktop/blob/master/netcore-desktop/SmartConverter.cs/#L148">View Source</a>
   </span>
   <a id="SearchAThing_SmartConverter_ConvertBack_" data-uid="SearchAThing.SmartConverter.ConvertBack*"></a>
   <h4 id="SearchAThing_SmartConverter_ConvertBack_System_Object_Type_System_Object_CultureInfo_" data-uid="SearchAThing.SmartConverter.ConvertBack(System.Object,Type,System.Object,CultureInfo)">ConvertBack(Object, Type, Object, CultureInfo)</h4>
@@ -223,7 +249,7 @@
                     <a href="https://github.com/devel0/netcore-desktop/new/master/apiSpec/new?filename=SearchAThing_SmartConverter.md&amp;value=---%0Auid%3A%20SearchAThing.SmartConverter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/devel0/netcore-desktop/blob/master/netcore-desktop/SmartConverter.cs/#L16" class="contribution-link">View Source</a>
+                    <a href="https://github.com/devel0/netcore-desktop/blob/master/netcore-desktop/SmartConverter.cs/#L40" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
