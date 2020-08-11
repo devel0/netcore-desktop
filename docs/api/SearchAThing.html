@@ -90,16 +90,18 @@ if object A and B equals then return FocusedControlBorderBrush otherwise Transpa
       <h4><a class="xref" href="SearchAThing.SmartConverter.html">SmartConverter</a></h4>
       <section><p>smart convert</p>
 <ul>
-<li>parameter function &quot;?FN targetValueIfMatch targetValueIfNOTMatch&quot;</li>
-<li>parameter equality &quot;valueToMatch targetValueIfMatch targetValueIfNOTMatch&quot;</li>
+<li><em>converter parameter</em></li>
+<li><code>?FN targetValueIfMatch targetValueIfNOTMatch</code></li>
+<li><code>valueToMatch targetValueIfMatch targetValueIfNOTMatch</code></li>
 </ul>
-<p>examples:</p>
+<p><strong>parameter examples</strong>:</p>
 <ul>
-<li>valueType boolean with targetType IBrush with parameter=&quot;true Yellow Transparent&quot; makes Yellow if value is true or transparent if value if false</li>
-<li>valueType IBrush with targetType IBrush with parameter=&quot;?Darker 0.8&quot; makes value brush darker reducing to 80% its bridhtness</li>
-<li>valueType object with targetType double parameter=&quot;?IsNull 1.2 4.5&quot; makes 1.2 if value is null, 4.5 otherwise</li>
+<li><code>true Yellow Transparent</code> ( valueType: boolean, targetType:IBrush ) makes Yellow if value is true or transparent if value if false</li>
+<li><code>?Darker 0.8</code> ( valueType: IBrush, targetType: IBrush ) makes value brush darker reducing to 80% its bridhtness</li>
+<li><code>?IsNull 1.2 4.5</code> ( valueType: object, targetType: double ) makes 1.2 if value is null, 4.5 otherwise</li>
+<li><code>true false true</code> ( valueType: bool, targetType: bool ) makes negate boolean value</li>
 </ul>
-<p>functions:</p>
+<p><strong>functions</strong>:</p>
 <ul>
 <li>?IsNull match notMatch</li>
 <li>?Lighter : double brighness</li>
@@ -107,12 +109,12 @@ if object A and B equals then return FocusedControlBorderBrush otherwise Transpa
 <li>?Darker : half brighness</li>
 <li>?Darker v : decrease to v=0-1 brightness</li>
 </ul>
-<p>supported targetTypes:</p>
+<p><strong>supported targetTypes</strong>:</p>
 <ul>
-<li>boolean ( target values : &quot;true&quot;, &quot;false&quot; )</li>
-<li>thickness ( target values : eg. &quot;20&quot; for Thickness(20) )</li>
-<li>brush ( target values : eg. &quot;Red&quot; or &quot;#ff0000&quot; )</li>
-<li>double ( target values : eg. &quot;1.2&quot; )</li>
+<li><em>boolean</em> ( target values : &quot;true&quot;, &quot;false&quot; )</li>
+<li><em>thickness</em> ( target values : eg. &quot;20&quot; for Thickness(20) )</li>
+<li><em>brush</em> ( target values : eg. &quot;Red&quot; or &quot;#ff0000&quot; )</li>
+<li><em>double</em> ( target values : eg. &quot;1.2&quot; )</li>
 </ul>
 </section>
       <h4><a class="xref" href="SearchAThing.TextBoxSlider.html">TextBoxSlider</a></h4>

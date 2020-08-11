@@ -16,26 +16,29 @@ namespace SearchAThing
 
     /// <summary>
     /// smart convert
-    /// - parameter function "?FN targetValueIfMatch targetValueIfNOTMatch"
-    /// - parameter equality "valueToMatch targetValueIfMatch targetValueIfNOTMatch"
+    ///     
+    /// - *converter parameter*
+    ///   - `?FN targetValueIfMatch targetValueIfNOTMatch`
+    ///   - `valueToMatch targetValueIfMatch targetValueIfNOTMatch`
     /// 
-    /// examples:
-    /// - valueType boolean with targetType IBrush with parameter="true Yellow Transparent" makes Yellow if value is true or transparent if value if false
-    /// - valueType IBrush with targetType IBrush with parameter="?Darker 0.8" makes value brush darker reducing to 80% its bridhtness
-    /// - valueType object with targetType double parameter="?IsNull 1.2 4.5" makes 1.2 if value is null, 4.5 otherwise
+    /// **parameter examples**:
+    /// - `true Yellow Transparent` ( valueType: boolean, targetType:IBrush ) makes Yellow if value is true or transparent if value if false
+    /// - `?Darker 0.8` ( valueType: IBrush, targetType: IBrush ) makes value brush darker reducing to 80% its bridhtness
+    /// - `?IsNull 1.2 4.5` ( valueType: object, targetType: double ) makes 1.2 if value is null, 4.5 otherwise
+    /// - `true false true` ( valueType: bool, targetType: bool ) makes negate boolean value
     /// 
-    /// functions:
+    /// **functions**:
     /// - ?IsNull match notMatch
     /// - ?Lighter : double brighness
     /// - ?Lighter v : increase of v=0-1 brighness
     /// - ?Darker : half brighness
     /// - ?Darker v : decrease to v=0-1 brightness
     /// 
-    /// supported targetTypes:
-    /// - boolean ( target values : "true", "false" )
-    /// - thickness ( target values : eg. "20" for Thickness(20) )
-    /// - brush ( target values : eg. "Red" or "#ff0000" )
-    /// - double ( target values : eg. "1.2" )
+    /// **supported targetTypes**:
+    /// - *boolean* ( target values : "true", "false" )
+    /// - *thickness* ( target values : eg. "20" for Thickness(20) )
+    /// - *brush* ( target values : eg. "Red" or "#ff0000" )
+    /// - *double* ( target values : eg. "1.2" )
     /// </summary>
     public class SmartConverter : IValueConverter
     {
