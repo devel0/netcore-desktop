@@ -16,9 +16,9 @@
 
 ## Recent changes
 
+- **0.1.3** : TextBoxSlider IsReadOnly property ; DistributeSplitSize property
 - **0.1.2** : fix wheel handler to Handle event in order to avoid panel scroll if mouse was over textbox
 - **0.1.0** : TextBoxSlider AutoExpandMinimum/Maximum feature
-- **0.0.2** : netcore-util 1.6.2
 
 ## Quickstart
 

@@ -60,7 +60,7 @@
           "hash": "h0hGQ20AbmTbXa5Bvt1o5A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -84,7 +84,7 @@
           "hash": "BVDCqf1bc+Cj4qE8J8xm2Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -182,7 +182,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 7,
-          "skipped_file_count": 6
+          "skipped_file_count": 7
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
