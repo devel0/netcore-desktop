@@ -4,10 +4,11 @@
 
 .NET core desktop
 
-<hr/>
-
 - [API Documentation](https://devel0.github.io/netcore-desktop/api/SearchAThing.html)
 - [Changelog](https://github.com/devel0/netcore-desktop/commits/master)
+
+<hr/>
+
 - [Quickstart](#quickstart)
 - [Examples](#examples)
 - [How this project was built](#how-this-project-was-built)
