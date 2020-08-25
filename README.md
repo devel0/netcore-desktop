@@ -7,18 +7,12 @@
 <hr/>
 
 - [API Documentation](https://devel0.github.io/netcore-desktop/api/SearchAThing.html)
-- [Recent changes](#recent-changes)
+- [Changelog](https://github.com/devel0/netcore-desktop/commits/master)
 - [Quickstart](#quickstart)
 - [Examples](#examples)
 - [How this project was built](#how-this-project-was-built)
 
 <hr/>
-
-## Recent changes
-
-- **0.1.3** : TextBoxSlider IsReadOnly property ; DistributeSplitSize property
-- **0.1.2** : fix wheel handler to Handle event in order to avoid panel scroll if mouse was over textbox
-- **0.1.0** : TextBoxSlider AutoExpandMinimum/Maximum feature
 
 ## Quickstart
 
