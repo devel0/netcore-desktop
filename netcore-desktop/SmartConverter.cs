@@ -70,7 +70,7 @@ namespace SearchAThing
                 else if (pstr == "?Darker" || pstr.StartsWith("?Darker "))
                 {
                     if (value == null) return null;
-                    
+
                     var brush = value as SolidColorBrush;
 
                     var col = brush.Color;
@@ -118,7 +118,11 @@ namespace SearchAThing
             {
                 str = (string)(value == null ? "" : value.ToString());
 
-                if (targetType == typeofBoolean || typeOfValue == typeofBoolean) str = str.ToLower();
+                if (targetType == typeofBoolean || typeOfValue == typeofBoolean)
+                {
+                    var tl = str.ToLower();
+                    if (tl == "true" || tl == "false") str = tl;
+                }
 
                 matches = str == ss[0];
                 if (!matches && ss.Length <= 2) return null;
