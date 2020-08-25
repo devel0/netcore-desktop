@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using static System.Math;
 using System.Numerics;
 using System.Reflection;
 using Avalonia;
@@ -33,6 +34,7 @@ namespace SearchAThing
     /// - ?Lighter v : increase of v=0-1 brighness
     /// - ?Darker : half brighness
     /// - ?Darker v : decrease to v=0-1 brightness
+    /// - ?Round dec : round value number to given decimals
     /// 
     /// **supported targetTypes**:
     /// - *boolean* ( target values : "true", "false" )
@@ -43,11 +45,13 @@ namespace SearchAThing
     public class SmartConverter : IValueConverter
     {
 
+        static readonly Type typeofDecimal = typeof(decimal);
+        static readonly Type typeofFloat = typeof(float);
+        static readonly Type typeofDouble = typeof(double);
         static readonly Type typeofBoolean = typeof(Boolean);
         static readonly Type typeofThickness = typeof(Thickness);
         static readonly Type typeofIBrush = typeof(IBrush);
-        //static readonly Type typeofVisibility = typeof(Visibility);
-        static readonly Type typeofDouble = typeof(double);
+        //static readonly Type typeofVisibility = typeof(Visibility);        
         static readonly Type typeofVector3 = typeof(Vector3);
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -110,6 +114,16 @@ namespace SearchAThing
                     res = new SolidColorBrush(newCol);
 
                     return res;
+                }
+                else if (pstr.StartsWith("?Round "))
+                {
+                    var dec = int.Parse(ss[1]);
+                    
+                    if (typeOfValue == typeofDecimal) res = Round((decimal)value, dec);
+                    else if (typeOfValue == typeofFloat) res = Round((float)value, dec);
+                    else if (typeOfValue == typeofDouble) res = Round((double)value, dec);
+
+                    return System.Convert.ChangeType(res, targetType);                    
                 }
                 else matchFn = false;
             }
