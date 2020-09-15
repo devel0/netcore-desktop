@@ -17,7 +17,8 @@
     <PackageReference Include="Avalonia" Version="0.10.0-preview3" />
     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview3" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview3" />
-    <PackageReference Include="netcore-util" Version="1.6.2" />
+    <!-- <PackageReference Include="netcore-util" Version="1.6.2" /> -->
+    
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
@@ -28,5 +29,8 @@
       <SubType>Designer</SubType>
     </AvaloniaResource>
     <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\netcore-util\netcore-util\netcore-util.csproj" />
   </ItemGroup>  
 </Project>
