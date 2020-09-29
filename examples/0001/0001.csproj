@@ -16,8 +16,8 @@
     <ProjectReference Include="..\..\netcore-desktop\netcore-desktop.csproj"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.0-preview3"/>
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview3"/>
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview3"/>
+    <PackageReference Include="Avalonia" Version="0.10.0-preview2"/>
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview2"/>
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview2"/>
   </ItemGroup>
 </Project>
