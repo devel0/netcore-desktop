@@ -2,6 +2,7 @@
 
 [![NuGet Badge](https://buildstats.info/nuget/netcore-desktop)](https://www.nuget.org/packages/netcore-desktop/)
 
+
 .NET core desktop
 
 - [API Documentation](https://devel0.github.io/netcore-desktop/api/SearchAThing.html)
