@@ -14,11 +14,7 @@
     <noWarn>1591</noWarn>
   </PropertyGroup>
   <ItemGroup>    
-    <PackageReference Include="Avalonia" Version="0.10.0-preview2" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview2" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview2" />
-    <!-- <PackageReference Include="netcore-util" Version="1.6.2" /> -->
-    
+    <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/>    
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />

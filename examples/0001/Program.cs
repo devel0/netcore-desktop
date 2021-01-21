@@ -1,7 +1,7 @@
 ﻿using System;
 using Avalonia;
 using Avalonia.Logging;
-using Avalonia.ReactiveUI;
+//using Avalonia.ReactiveUI;
 
 namespace SearchAThing.DesktopExamples
 {
@@ -17,7 +17,7 @@ namespace SearchAThing.DesktopExamples
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                .UseReactiveUI()
+                //.UseReactiveUI()
                 .LogToDebug();
     }
 }
