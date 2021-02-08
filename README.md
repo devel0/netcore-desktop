@@ -54,6 +54,83 @@ GridSplitterManager example
 
 ![](data/img/example-0002.gif)
 
+#### set resource dictionary
+
+- create an app `dotnet new avalonia.mvvm -na yournamespace -n fldname` ( see [avalonia dotnet template](https://github.com/AvaloniaUI/avalonia-dotnet-templates) )
+- add netcore-dekstop [nuget pkg](https://www.nuget.org/packages/netcore-desktop/)
+- create a `Dictionary1.axaml` into your `/Views` folder
+
+```xml
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:analysis2" xmlns:desktop="clr-namespace:SearchAThing;assembly=netcore-desktop">
+    <desktop:SmartConverter x:Key="SmartConverter"/>
+</ResourceDictionary>
+```
+
+- load dictionary resource from `/Views/MainWindow.axaml`
+
+```xml
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="/Views/Dictionary1.axaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+```
+
+- set some avprop in your `/ViewModels/MainWindowViewModel.cs`
+
+```csharp
+using ReactiveUI;
+
+namespace analysis2.ViewModels
+{
+    public class MainWindowViewModel : ViewModelBase
+    {
+        private bool initialized = false;    
+        public bool Initialized
+        {
+            get => initialized;
+            set => this.RaiseAndSetIfChanged(ref initialized, value);
+        }
+    }
+}
+```
+
+- usage example
+
+```xml
+<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" 
+    IsVisible="{Binding Initialized, Converter={StaticResource SmartConverter}, ConverterParameter=true false true}">
+    <TextBlock Text="Initialization in progress..."/>
+</StackPanel>
+```
+
+- enable prop change activity from `MainWindow.axaml.cs`
+
+```csharp
+
+        protected override void OnDataContextChanged(EventArgs e)
+        {
+            base.OnDataContextChanged(e);
+
+            if (DataContext != null)
+            {
+                var model = DataContext as MainWindowViewModel;
+                if (model != null && !model.Initialized)
+                {
+                    Task.Run(async () =>
+                    {
+                        await Task.Delay(2000);
+
+                        model.Initialized = true;
+                        System.Console.WriteLine($"INIT");
+                    });
+                }
+            }
+        }
+```
+
 ## How this project was built
 
 ```sh
