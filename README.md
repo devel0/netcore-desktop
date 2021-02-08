@@ -78,7 +78,7 @@ GridSplitterManager example
     </Window.Resources>
 ```
 
-- set some avprop in your `/ViewModels/MainWindowViewModel.cs`
+- set some avprop in your `/ViewModels/MainWindowViewModel.cs` ( see [snippets](https://github.com/devel0/knowledge/blob/f19c4268c3f64ed40ea2e6844f78ef158b723c06/doc/vscode-tips.md#snippets) )
 
 ```csharp
 using ReactiveUI;
