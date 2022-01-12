@@ -138,7 +138,7 @@ namespace SearchAThing
                     if (tl == "true" || tl == "false") str = tl;
                 }
 
-                matches = str == ss[0];
+                matches = str == ss[0].ToLower();
                 if (!matches && ss.Length <= 2) return null;
             }
 
