@@ -2,5 +2,6 @@
 <Project>
     <PropertyGroup>
         <AvaloniaVersion>0.10.6</AvaloniaVersion>
+        <NetcoreUtilVersion>1.20.0</NetcoreUtilVersion>
     </PropertyGroup>
 </Project>

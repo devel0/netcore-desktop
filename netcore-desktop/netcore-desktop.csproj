@@ -15,7 +15,7 @@
   </PropertyGroup>
   <ItemGroup>    
     <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />    
-    <PackageReference Include="netcore-util" Version="1.20.0" />    
+    <PackageReference Include="netcore-util" Version="$(NetcoreUtilVersion)" />    
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
