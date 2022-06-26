@@ -1,7 +1,7 @@
 <!--Directory.Build.props: MSBuild properties that are included in every project--><!--Info: https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2019#directorybuildprops-and-directorybuildtargets-->
 <Project>
     <PropertyGroup>
-        <AvaloniaVersion>0.10.6</AvaloniaVersion>
-        <NetcoreUtilVersion>1.20.0</NetcoreUtilVersion>
+        <AvaloniaVersion>0.10.15</AvaloniaVersion>
+        <NetcoreUtilVersion>3.0.0</NetcoreUtilVersion>
     </PropertyGroup>
 </Project>
