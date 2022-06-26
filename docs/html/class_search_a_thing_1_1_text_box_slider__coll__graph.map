@@ -1,0 +1,5 @@
+<map id="TextBoxSlider" name="TextBoxSlider">
+<area shape="rect" id="node1" title="specify StepValue if want step by fixed value or specify StepFactor (eg.0.1 for 10% of step) or speci..." alt="" coords="50,241,161,268"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,104,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="128,5,187,32"/>
+</map>
