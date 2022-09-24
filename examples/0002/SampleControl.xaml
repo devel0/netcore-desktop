@@ -22,8 +22,9 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="5">
                         <TextBlock Text="Sample Control" Classes="ctlText"/>
-                        <TextBlock Text="{Binding #uc.InstanceNr}" Classes="ctlText" Margin="10,0,0,0"/>
+                        <TextBlock Text="{Binding #uc.InstanceNr}" Classes="ctlText" Margin="10,0,0,0"/>                        
                     </StackPanel>
+                    <TextBlock Text="{Binding #uc.Bounds}" Classes="ctlText" Margin="10,0,0,0"/>
                     <TextBlock TextAlignment="Center" Text="{Binding #uc.HashNr}" Classes="ctlText2"/>
                 </StackPanel>
             </Border>
