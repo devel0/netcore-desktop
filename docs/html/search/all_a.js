@@ -1,7 +1,20 @@
 var searchData=
 [
-  ['remove_32',['Remove',['../class_search_a_thing_1_1_grid_splitter_manager.html#a0a10f4aa9600a4852dd6f5245e6c3def',1,'SearchAThing::GridSplitterManager']]],
-  ['render_33',['Render',['../class_search_a_thing_1_1_text_box_slider.html#a182a57f8efe4e88d3387a920cb30b739',1,'SearchAThing::TextBoxSlider']]],
-  ['resizerhandlewidth_34',['ResizerHandleWidth',['../class_search_a_thing_1_1_text_box_slider.html#af7d0a9de36a995426530fe2d97906dae',1,'SearchAThing::TextBoxSlider']]],
-  ['resizerhandlewidthproperty_35',['ResizerHandleWidthProperty',['../class_search_a_thing_1_1_text_box_slider.html#a89d4f2fec1dacb97dfa335c60625422c',1,'SearchAThing::TextBoxSlider']]]
+  ['scrollableslider_35',['ScrollableSlider',['../class_scrollable_slider.html#acb5cf4c26adc3d70d21cb7f6c3a19e86',1,'ScrollableSlider.ScrollableSlider()'],['../class_scrollable_slider.html',1,'ScrollableSlider']]],
+  ['scrollstepdiv_36',['ScrollStepDiv',['../class_scrollable_slider.html#a52b6a6b77e937c1eeb06c19a5c2f8004',1,'ScrollableSlider']]],
+  ['scrollstepdivproperty_37',['ScrollStepDivProperty',['../class_scrollable_slider.html#a9c3a572a8ddbb5babca51a156b7b54d0',1,'ScrollableSlider']]],
+  ['slidercolor_38',['SliderColor',['../class_text_box_slider.html#aa5f02fc002a0ab64804cc4d911b1c265',1,'TextBoxSlider']]],
+  ['slidercolorproperty_39',['SliderColorProperty',['../class_text_box_slider.html#a0b184da9cfcbd59339608d756b0c3d87',1,'TextBoxSlider']]],
+  ['smartconverter_40',['SmartConverter',['../class_smart_converter.html',1,'']]],
+  ['split_41',['Split',['../class_grid_splitter_manager.html#a512fc1ba505485d54245b665f34ecc9d',1,'GridSplitterManager']]],
+  ['splitterbrush_42',['SplitterBrush',['../class_grid_splitter_manager.html#a0b00c4e580e705b7a7a1847d2d283bff',1,'GridSplitterManager']]],
+  ['splitterbrushproperty_43',['SplitterBrushProperty',['../class_grid_splitter_manager.html#ae8da95b56b559b7f4c1eecb94e0ca911',1,'GridSplitterManager']]],
+  ['splitterthickness_44',['SplitterThickness',['../class_grid_splitter_manager.html#ab3c0ec8c97fb272b25986118eef4ab43',1,'GridSplitterManager']]],
+  ['splitterthicknessproperty_45',['SplitterThicknessProperty',['../class_grid_splitter_manager.html#a3c354a20bc728d01dab71117dabaebcd',1,'GridSplitterManager']]],
+  ['stepfactor_46',['StepFactor',['../class_text_box_slider.html#a0b7942821af96291f654dfafa95dd883',1,'TextBoxSlider']]],
+  ['stepfactorproperty_47',['StepFactorProperty',['../class_text_box_slider.html#af46951f8f032a9543b20288cc284291c',1,'TextBoxSlider']]],
+  ['stepmultiple_48',['StepMultiple',['../class_text_box_slider.html#a7b8e91a63490e5334d5da6de0ac5a1b3',1,'TextBoxSlider']]],
+  ['stepmultipleproperty_49',['StepMultipleProperty',['../class_text_box_slider.html#a363a0b882a1e58c8d85b723351beb22e',1,'TextBoxSlider']]],
+  ['stepvalue_50',['StepValue',['../class_text_box_slider.html#a52ddce7c7d192c8543f2d74beed2a9a9',1,'TextBoxSlider']]],
+  ['stepvalueproperty_51',['StepValueProperty',['../class_text_box_slider.html#a466d77b17e32f246890d523252869b4f',1,'TextBoxSlider']]]
 ];

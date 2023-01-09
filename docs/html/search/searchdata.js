@@ -1,36 +1,27 @@
 var indexSectionsWithContent =
 {
-  0: "acdfghimoprstv",
+  0: "acdfgimoprstv",
   1: "fgst",
-  2: "s",
-  3: "cgoprst",
-  4: "acdfimrstv",
-  5: "g",
-  6: "hv",
-  7: "acdfimrstv"
+  2: "cgoprst",
+  3: "acdfimrstv",
+  4: "acdfimrstv"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "namespaces",
-  3: "functions",
-  4: "variables",
-  5: "enums",
-  6: "enumvalues",
-  7: "properties"
+  2: "functions",
+  3: "variables",
+  4: "properties"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Namespaces",
-  3: "Functions",
-  4: "Variables",
-  5: "Enumerations",
-  6: "Enumerator",
-  7: "Properties"
+  2: "Functions",
+  3: "Variables",
+  4: "Properties"
 };
 

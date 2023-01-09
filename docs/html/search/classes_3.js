@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['textboxslider_64',['TextBoxSlider',['../class_search_a_thing_1_1_text_box_slider.html',1,'SearchAThing']]]
+  ['textboxslider_61',['TextBoxSlider',['../class_text_box_slider.html',1,'']]]
 ];

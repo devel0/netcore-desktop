@@ -1,21 +1,6 @@
 var searchData=
 [
-  ['scrollableslider_36',['ScrollableSlider',['../class_search_a_thing_1_1_scrollable_slider.html#acb5cf4c26adc3d70d21cb7f6c3a19e86',1,'SearchAThing.ScrollableSlider.ScrollableSlider()'],['../class_search_a_thing_1_1_scrollable_slider.html',1,'ScrollableSlider']]],
-  ['scrollstepdiv_37',['ScrollStepDiv',['../class_search_a_thing_1_1_scrollable_slider.html#a52b6a6b77e937c1eeb06c19a5c2f8004',1,'SearchAThing::ScrollableSlider']]],
-  ['scrollstepdivproperty_38',['ScrollStepDivProperty',['../class_search_a_thing_1_1_scrollable_slider.html#a9c3a572a8ddbb5babca51a156b7b54d0',1,'SearchAThing::ScrollableSlider']]],
-  ['searchathing_39',['SearchAThing',['../namespace_search_a_thing.html',1,'']]],
-  ['slidercolor_40',['SliderColor',['../class_search_a_thing_1_1_text_box_slider.html#aa5f02fc002a0ab64804cc4d911b1c265',1,'SearchAThing::TextBoxSlider']]],
-  ['slidercolorproperty_41',['SliderColorProperty',['../class_search_a_thing_1_1_text_box_slider.html#a0b184da9cfcbd59339608d756b0c3d87',1,'SearchAThing::TextBoxSlider']]],
-  ['smartconverter_42',['SmartConverter',['../class_search_a_thing_1_1_smart_converter.html',1,'SearchAThing']]],
-  ['split_43',['Split',['../class_search_a_thing_1_1_grid_splitter_manager.html#a512fc1ba505485d54245b665f34ecc9d',1,'SearchAThing::GridSplitterManager']]],
-  ['splitterbrush_44',['SplitterBrush',['../class_search_a_thing_1_1_grid_splitter_manager.html#a0b00c4e580e705b7a7a1847d2d283bff',1,'SearchAThing::GridSplitterManager']]],
-  ['splitterbrushproperty_45',['SplitterBrushProperty',['../class_search_a_thing_1_1_grid_splitter_manager.html#ae8da95b56b559b7f4c1eecb94e0ca911',1,'SearchAThing::GridSplitterManager']]],
-  ['splitterthickness_46',['SplitterThickness',['../class_search_a_thing_1_1_grid_splitter_manager.html#ab3c0ec8c97fb272b25986118eef4ab43',1,'SearchAThing::GridSplitterManager']]],
-  ['splitterthicknessproperty_47',['SplitterThicknessProperty',['../class_search_a_thing_1_1_grid_splitter_manager.html#a3c354a20bc728d01dab71117dabaebcd',1,'SearchAThing::GridSplitterManager']]],
-  ['stepfactor_48',['StepFactor',['../class_search_a_thing_1_1_text_box_slider.html#a0b7942821af96291f654dfafa95dd883',1,'SearchAThing::TextBoxSlider']]],
-  ['stepfactorproperty_49',['StepFactorProperty',['../class_search_a_thing_1_1_text_box_slider.html#af46951f8f032a9543b20288cc284291c',1,'SearchAThing::TextBoxSlider']]],
-  ['stepmultiple_50',['StepMultiple',['../class_search_a_thing_1_1_text_box_slider.html#a7b8e91a63490e5334d5da6de0ac5a1b3',1,'SearchAThing::TextBoxSlider']]],
-  ['stepmultipleproperty_51',['StepMultipleProperty',['../class_search_a_thing_1_1_text_box_slider.html#a363a0b882a1e58c8d85b723351beb22e',1,'SearchAThing::TextBoxSlider']]],
-  ['stepvalue_52',['StepValue',['../class_search_a_thing_1_1_text_box_slider.html#a52ddce7c7d192c8543f2d74beed2a9a9',1,'SearchAThing::TextBoxSlider']]],
-  ['stepvalueproperty_53',['StepValueProperty',['../class_search_a_thing_1_1_text_box_slider.html#a466d77b17e32f246890d523252869b4f',1,'SearchAThing::TextBoxSlider']]]
+  ['textalignment_52',['TextAlignment',['../class_text_box_slider.html#a02b89539db9aedb6f19a136adbd8ca14',1,'TextBoxSlider']]],
+  ['textalignmentproperty_53',['TextAlignmentProperty',['../class_text_box_slider.html#a0aa874949b00815455597a8c56b51b7d',1,'TextBoxSlider']]],
+  ['textboxslider_54',['TextBoxSlider',['../class_text_box_slider.html',1,'TextBoxSlider'],['../class_text_box_slider.html#a7975d4a9b88703fe3784a3fa3d668167',1,'TextBoxSlider.TextBoxSlider()']]]
 ];
