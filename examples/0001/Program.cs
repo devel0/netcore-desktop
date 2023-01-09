@@ -1,9 +1,4 @@
-﻿using System;
-using Avalonia;
-using Avalonia.Logging;
-//using Avalonia.ReactiveUI;
-
-namespace SearchAThing.DesktopExamples
+﻿namespace SearchAThing.DesktopExamples
 {
     class Program
     {

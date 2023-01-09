@@ -1,8 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <LangVersion>10</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
     <AssemblyName>example</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
@@ -15,8 +17,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\netcore-desktop\netcore-desktop.csproj"/>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)"/>
-  </ItemGroup>
+    <Compile Include="../../netcore-desktop/Usings.cs" />
+  </ItemGroup>  
 </Project>

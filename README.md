@@ -114,10 +114,10 @@ namespace analysis2.ViewModels
         {
             base.OnDataContextChanged(e);
 
-            if (DataContext != null)
+            if (DataContext is not null)
             {
                 var model = DataContext as MainWindowViewModel;
-                if (model != null && !model.Initialized)
+                if (model is not null && !model.Initialized)
                 {
                     Task.Run(async () =>
                     {

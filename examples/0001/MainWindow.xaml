@@ -1,22 +1,28 @@
-<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="win" xmlns:desktop="clr-namespace:SearchAThing;assembly=netcore-desktop" xmlns:local="clr-namespace:SearchAThing.DesktopExamples" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" Width="640" Height="240" x:Class="SearchAThing.DesktopExamples.MainWindow" Title="example">
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Name="win" xmlns:desktop="clr-namespace:SearchAThing.Desktop;assembly=netcore-desktop"
+    xmlns:local="clr-namespace:SearchAThing.DesktopExamples"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    d:DesignWidth="800" d:DesignHeight="450" Width="640" Height="240"
+    x:Class="SearchAThing.DesktopExamples.MainWindow" Title="example">
     <Window.Styles>
         <Style Selector="TextBlock.notes">
-            <Setter Property="FontStyle" Value="Italic"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontStyle" Value="Italic" />
+            <Setter Property="FontSize" Value="16" />
         </Style>
     </Window.Styles>
     <StackPanel Margin="10">
-        <TextBlock Text="Change Value" Classes="notes"/>
-        <TextBlock Text="- direct edit" Classes="notes"/>
-        <TextBlock Text="- over block slider, left click then drag" Classes="notes"/>
-        <TextBlock Text="- over textbox in any position" Classes="notes"/>
-        <TextBlock Text="  - mouse wheel to scroll to prev/next step" Classes="notes"/>
-        <TextBlock Text="  - right click to get value in that place" Classes="notes"/>
-        <TextBlock Text="- set value from tbox over maximum value to autoexpand" Classes="notes"/>
-        <TextBlock Text="Value" FontWeight="Bold" Margin="0,10,0,0"/>
-        <desktop:TextBoxSlider Value="{Binding #win.SampleNumber, Mode=TwoWay}" 
+        <TextBlock Text="Change Value" Classes="notes" />
+        <TextBlock Text="- direct edit" Classes="notes" />
+        <TextBlock Text="- over block slider, left click then drag" Classes="notes" />
+        <TextBlock Text="- over textbox in any position" Classes="notes" />
+        <TextBlock Text="  - mouse wheel to scroll to prev/next step" Classes="notes" />
+        <TextBlock Text="  - right click to get value in that place" Classes="notes" />
+        <TextBlock Text="- set value from tbox over maximum value to autoexpand" Classes="notes" />
+        <TextBlock Text="Value" FontWeight="Bold" Margin="0,10,0,0" />
+        <desktop:TextBoxSlider Value="{Binding #win.SampleNumber, Mode=TwoWay}"
             Minimum="-10" Maximum="10"
             AutoExpandMinimum="true" AutoExpandMaximum="true"
-            StepMultiple="0.2" AutoRoundDigits="1" Margin="0,10,0,0"/>
+            StepMultiple="0.2" AutoRoundDigits="1" Margin="0,10,0,0" />
     </StackPanel>
 </Window>
