@@ -4,7 +4,7 @@
 
 .NET core desktop
 
-- [API Documentation](https://devel0.github.io/netcore-desktop/api/SearchAThing.html)
+- [API Documentation](https://devel0.github.io/netcore-desktop/html/annotated.html)
 - [Changelog](https://github.com/devel0/netcore-desktop/commits/master)
 
 <hr/>
