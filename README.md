@@ -22,9 +22,13 @@
 
 ### 0001 ( TextBoxSlider )
 
+[code](https://github.com/devel0/netcore-desktop/blob/ed1b3e8c9bea960242138a0ed183044be5e01083/examples/0002/MainWindow.xaml#L40)
+
 ![](data/img/example-0001.png)
 
 ### 0002 ( GridSplitterManager )
+
+[code](https://github.com/devel0/netcore-desktop/blob/ed1b3e8c9bea960242138a0ed183044be5e01083/examples/0001/MainWindow.xaml#L23)
 
 ![](data/img/example-0002.gif)
 
