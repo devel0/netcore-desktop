@@ -34,7 +34,7 @@ public class GridSplitterManager : UserControl
     /// </summary>
     public class FocusedControlConverter : IMultiValueConverter
     {
-        public object Convert(IList<object> values, Type targetType, object parameter, CultureInfo culture)
+        public object? Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
         {
             var trBrush = new SolidColorBrush(Colors.Transparent);
             if (values is null) return trBrush;
@@ -42,33 +42,33 @@ public class GridSplitterManager : UserControl
             var objA = values[1];
             var objB = parameter;
             if (objA == objB)
-                return gridSplitterManager.FocusedControlBorderBrush;
+                return gridSplitterManager?.FocusedControlBorderBrush;
+
             return trBrush;
         }
     }
     #endregion
 
     Grid grRoot;
+
     /// <summary>
     /// dictionary that keep track of visited control age, used to retrieve last visited when remove
-    /// </summary>
-    /// <typeparam name="Control">any of visited (not removed) control</typeparam>
-    /// <typeparam name="int">age of visited control</typeparam>
-    /// <returns>age</returns>
+    /// </summary>    
     Dictionary<Control, int> visitedControlDict = new Dictionary<Control, int>();
     int visitedControlAge = 0;
 
     #region FocusedControl
-    private Control _FocusedControl = null;
+    private Control? _FocusedControl = null;
 
-    public static readonly DirectProperty<GridSplitterManager, Control> FocusedControlProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, Control>("FocusedControl", o => o.FocusedControl, (o, v) => o.FocusedControl = v);
+    public static readonly DirectProperty<GridSplitterManager, Control?> FocusedControlProperty =
+        AvaloniaProperty.RegisterDirect<GridSplitterManager, Control?>("FocusedControl",
+        o => o.FocusedControl, (o, v) => o.FocusedControl = v);
 
     /// <summary>
     /// current focused control
     /// </summary>
     /// <value></value>
-    public Control FocusedControl
+    public Control? FocusedControl
     {
         get => _FocusedControl;
         set
@@ -90,7 +90,8 @@ public class GridSplitterManager : UserControl
     private double _FocusedControlBorderThickness = 1;
 
     public static readonly DirectProperty<GridSplitterManager, double> FocusedControlBorderThicknessProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, double>("FocusedControlBorderThickness", o => o.FocusedControlBorderThickness, (o, v) => o.FocusedControlBorderThickness = v);
+        AvaloniaProperty.RegisterDirect<GridSplitterManager, double>("FocusedControlBorderThickness",
+        o => o.FocusedControlBorderThickness, (o, v) => o.FocusedControlBorderThickness = v);
 
     public double FocusedControlBorderThickness
     {
@@ -103,7 +104,8 @@ public class GridSplitterManager : UserControl
     private IBrush _FocusedControlBorderBrush = new SolidColorBrush(Colors.Yellow);
 
     public static readonly DirectProperty<GridSplitterManager, IBrush> FocusedControlBorderBrushProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, IBrush>("FocusedControlBorderBrush", o => o.FocusedControlBorderBrush, (o, v) => o.FocusedControlBorderBrush = v);
+        AvaloniaProperty.RegisterDirect<GridSplitterManager, IBrush>("FocusedControlBorderBrush",
+        o => o.FocusedControlBorderBrush, (o, v) => o.FocusedControlBorderBrush = v);
 
     public IBrush FocusedControlBorderBrush
     {
@@ -113,12 +115,13 @@ public class GridSplitterManager : UserControl
     #endregion
 
     #region CreateControl
-    private Func<Control> _CreateControl = null;
+    private Func<Control>? _CreateControl = null;
 
-    public static readonly DirectProperty<GridSplitterManager, Func<Control>> CreateControlProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, Func<Control>>("CreateControl", o => o.CreateControl, (o, v) => o.CreateControl = v);
+    public static readonly DirectProperty<GridSplitterManager, Func<Control>?> CreateControlProperty =
+        AvaloniaProperty.RegisterDirect<GridSplitterManager, Func<Control>?>("CreateControl",
+        o => o.CreateControl, (o, v) => o.CreateControl = v);
 
-    public Func<Control> CreateControl
+    public Func<Control>? CreateControl
     {
         get => _CreateControl;
         set
@@ -134,7 +137,8 @@ public class GridSplitterManager : UserControl
     private double _SplitterThickness = 10;
 
     public static readonly DirectProperty<GridSplitterManager, double> SplitterThicknessProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, double>("SplitterThickness", o => o.SplitterThickness, (o, v) => o.SplitterThickness = v);
+        AvaloniaProperty.RegisterDirect<GridSplitterManager, double>("SplitterThickness",
+        o => o.SplitterThickness, (o, v) => o.SplitterThickness = v);
 
     public double SplitterThickness
     {
@@ -147,7 +151,8 @@ public class GridSplitterManager : UserControl
     private IBrush _SplitterBrush = new SolidColorBrush(Colors.DarkGray);
 
     public static readonly DirectProperty<GridSplitterManager, IBrush> SplitterBrushProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, IBrush>("SplitterBrush", o => o.SplitterBrush, (o, v) => o.SplitterBrush = v);
+        AvaloniaProperty.RegisterDirect<GridSplitterManager, IBrush>("SplitterBrush",
+        o => o.SplitterBrush, (o, v) => o.SplitterBrush = v);
 
     public IBrush SplitterBrush
     {
@@ -160,7 +165,8 @@ public class GridSplitterManager : UserControl
     private bool _DistributeSplitSize = true;
 
     public static readonly DirectProperty<GridSplitterManager, bool> DistributeSplitSizeProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, bool>("DistributeSplitSize", o => o.DistributeSplitSize, (o, v) => o.DistributeSplitSize = v);
+        AvaloniaProperty.RegisterDirect<GridSplitterManager, bool>("DistributeSplitSize",
+        o => o.DistributeSplitSize, (o, v) => o.DistributeSplitSize = v);
 
     /// <summary>
     /// if false split will half its size; if true (default) it creates a def star so balanced between N axial parallel controls
@@ -176,7 +182,7 @@ public class GridSplitterManager : UserControl
     /// set to a valid text writer (eg.Console.Out) to debug structure processing;
     /// if null no debug output
     /// </summary>
-    public TextWriter DebugWriter { get; set; }
+    public TextWriter? DebugWriter { get; set; } = null;
 
     public GridSplitterManager()
     {
@@ -220,17 +226,20 @@ public class GridSplitterManager : UserControl
     /// </summary>
     /// <param name="gr">grid to count children</param>
     /// <returns>(tot, grCnt, brdCnt, splitterCnt) tuple</returns>
-    (int tot, int grCnt, int brdCnt, int splitterCnt) GridGetChildrenCount(Grid gr)
+    (int tot, int grCnt, int brdCnt, int splitterCnt) GridGetChildrenCount(Grid? gr)
     {
         int grCnt = 0;
         int brdCnt = 0;
         int splitterCnt = 0;
 
-        foreach (var x in gr.Children.Cast<Control>())
+        if (gr is not null)
         {
-            if (x is Grid) ++grCnt;
-            else if (x is Border) ++brdCnt;
-            else if (x is GridSplitter) ++splitterCnt;
+            foreach (var x in gr.Children.Cast<Control>())
+            {
+                if (x is Grid) ++grCnt;
+                else if (x is Border) ++brdCnt;
+                else if (x is GridSplitter) ++splitterCnt;
+            }
         }
 
         return (grCnt + brdCnt + splitterCnt, grCnt, brdCnt, splitterCnt);
@@ -242,7 +251,7 @@ public class GridSplitterManager : UserControl
     /// <param name="wr">output (default console.out)</param>
     /// <param name="highLightControl">show an arrow on control focused</param>
     /// <param name="breakOnWarn">break debugger if warn encountered</param>
-    public void PrintStructure(TextWriter wr = null, Control highLightControl = null, bool breakOnWarn = false)
+    public void PrintStructure(TextWriter? wr = null, Control? highLightControl = null, bool breakOnWarn = false)
     {
         if (wr is null) wr = Console.Out;
 
@@ -261,26 +270,32 @@ public class GridSplitterManager : UserControl
             var dirStr = "";
             var posStr = grDir == GridSplitDirection.Horizontally ? "col:" : "row:";
             posStr += ctlPos;
-            if (ctl is Grid) dirStr = $"[{ctlDir} cnt:{(ctl as Grid).Children.Count(w => !(w is GridSplitter))}] ";
+            if (ctl is Grid ctlGrid) dirStr = $"[{ctlDir} cnt:{(ctlGrid).Children.Count(w => !(w is GridSplitter))}] ";
 
-            if (ctlPos >= (ctl.Parent as Grid).Children.Count)
+            if (ctl.Parent is Grid ctlParentGrid && ctlPos >= ctlParentGrid.Children.Count)
                 Debugger.Break();
 
             var highStr = "";
-            if (highLightControl is not null && ctl is Border && (ctl as Border).Child == highLightControl) highStr = " <===";
+            {
+                if (highLightControl is not null &&
+                    ctl is Border ctlBorder &&
+                    ctlBorder.Child == highLightControl)
+                    highStr = " <===";
+            }
 
             var hcStr = ctl.GetHashCode().ToString();
-            if (ctl is Border) hcStr += "," + (ctl as Border).Child.GetHashCode().ToString();
+            {
+                if (ctl is Border ctlBorder)
+                    hcStr += "," + ctlBorder.Child.GetHashCode().ToString();
+            }
 
             var warnStr = "";
-            if (ctl is Grid)
+            if (ctl is Grid g)
             {
-                var g = ctl as Grid;
                 var gc = GridGetChildrenCount(g);
-                if (gc.grCnt == 1 && gc.brdCnt == 0)
-                {
-                    g = g.Children.First(w => w is Grid) as Grid;
-                    gc = GridGetChildrenCount(g);
+                if (gc.grCnt == 1 && gc.brdCnt == 0 && g.Children.FirstOrDefault() is Grid gg)
+                {                    
+                    gc = GridGetChildrenCount(gg);
                     if (gc.grCnt == 1 && gc.brdCnt == 0)
                     {
                         warnStr = " ***";
@@ -308,10 +323,12 @@ public class GridSplitterManager : UserControl
         };
         brd.PointerPressed += (s, e) =>
         {
-            var sBrd = s as Border;
-            FocusedControl = BorderGetChildControl(sBrd);
-            var ctl = BorderGetChildControl(sBrd);
-            ctl.Focus();
+            if (s is Border sBrd)
+            {
+                FocusedControl = BorderGetChildControl(sBrd);
+                var ctl = BorderGetChildControl(sBrd);
+                ctl?.Focus();
+            }
         };
         var bind = new MultiBinding()
         {
@@ -341,7 +358,7 @@ public class GridSplitterManager : UserControl
     /// </summary>
     void CreateInitialControl()
     {
-        var initialChild = CreateControl();
+        var initialChild = CreateControl!.Invoke();
 
         var brd = newBorder(initialChild);
 
@@ -365,14 +382,14 @@ public class GridSplitterManager : UserControl
     /// </summary>
     /// <param name="ctl">control</param>
     /// <returns>border</returns>
-    Border ControlGetParentBorder(Control ctl) => ctl.Parent as Border;
+    Border? ControlGetParentBorder(Control ctl) => ctl.Parent as Border;
 
     /// <summary>
     /// retrieve control from given border
     /// </summary>
     /// <param name="brd">border that contains the control</param>
     /// <returns>control inside border</returns>
-    Control BorderGetChildControl(Border brd) => brd.Child as Control;
+    Control? BorderGetChildControl(Border brd) => brd.Child as Control;
 
     /// <summary>
     /// retrieve grid associated to given ctl;
@@ -380,14 +397,23 @@ public class GridSplitterManager : UserControl
     /// </summary>
     /// <param name="ctl">control for which to retrieve associated grid</param>
     /// <returns>grid associated to the given ctl</returns>
-    Grid ControlGetParentGrid(Control ctl) => ControlGetParentBorder(ctl).Parent as Grid;
+    Grid? ControlGetParentGrid(Control ctl) => ControlGetParentBorder(ctl)?.Parent as Grid;
 
     /// <summary>
     /// retrieve split direction of the grid associated to the given ctl
     /// </summary>
     /// <param name="ctl">ctl for which to retrieve grid's associated direction</param>
     /// <returns>ctl associated grid direction</returns>
-    GridSplitDirection ControlGetSplitDirection(Control ctl) => GridGetSplitDirection(ControlGetParentGrid(ctl));
+    GridSplitDirection? ControlGetSplitDirection(Control ctl)
+    {
+        if (ctl is null) return null;
+
+        var ctlParentGrid = ControlGetParentGrid(ctl);
+
+        if (ctlParentGrid is null) return null;
+
+        return GridGetSplitDirection(ctlParentGrid);
+    }
 
     /// <summary>
     /// retrieve split direction of the given grid
@@ -525,29 +551,35 @@ public class GridSplitterManager : UserControl
     /// <param name="dir">split direction</param>
     public void Split(GridSplitDirection dir)
     {
-        if (FocusedControl is null) return;
+        if (FocusedControl is null || CreateControl is null) return;
 
         var fCtl = FocusedControl;
         var fDir = ControlGetSplitDirection(fCtl);
+        if (fDir is null) return;
+
         var fBrd = ControlGetParentBorder(fCtl);
-        var fBrdPos = GetPos(fDir, fBrd);
+        if (fBrd is null) return;
+
+        var fBrdPos = GetPos(fDir.Value, fBrd);
         var fGr = ControlGetParentGrid(fCtl);
+        if (fGr is null) return;
+
         var nBrd = newBorder(CreateControl());
 
         if (fDir == dir) // parallel
         {
-            var halfSize = GridGetDefSize(fGr, fDir, fBrdPos) / 2;
+            var halfSize = GridGetDefSize(fGr, fDir.Value, fBrdPos) / 2;
 
-            GridRemoveDef(fGr, fDir, fBrdPos);
-            InsertDef(fGr, fDir, fBrdPos, DistributeSplitSize ? 1 : halfSize);
-            InsertDef(fGr, fDir, fBrdPos + 1, DistributeSplitSize ? 1 : halfSize);
+            GridRemoveDef(fGr, fDir.Value, fBrdPos);
+            InsertDef(fGr, fDir.Value, fBrdPos, DistributeSplitSize ? 1 : halfSize);
+            InsertDef(fGr, fDir.Value, fBrdPos + 1, DistributeSplitSize ? 1 : halfSize);
             foreach (var x in fGr.Children.Where(y => !(y is GridSplitter)).Cast<Control>())
             {
-                var pos = GetPos(fDir, x);
-                if (pos > fBrdPos) SetPos(fDir, x, pos + 1);
+                var pos = GetPos(fDir.Value, x);
+                if (pos > fBrdPos) SetPos(fDir.Value, x, pos + 1);
             }
 
-            SetPos(fDir, nBrd, fBrdPos + 1);
+            SetPos(fDir.Value, nBrd, fBrdPos + 1);
             fGr.Children.Add(nBrd);
         }
         else // transverse
@@ -555,10 +587,10 @@ public class GridSplitterManager : UserControl
             fGr.Children.Remove(fBrd);
 
             var oGr = new Grid();
-            SetPos(fDir, oGr, fBrdPos); // new grid oGr take pos of fBrd
+            SetPos(fDir.Value, oGr, fBrdPos); // new grid oGr take pos of fBrd
             fGr.Children.Add(oGr);
 
-            var oDir = OtherDir(fDir);
+            var oDir = OtherDir(fDir.Value);
             InsertDef(oGr, oDir, 0);
             SetPos(oDir, fBrd, 0);
             oGr.Children.Add(fBrd);
@@ -589,9 +621,14 @@ public class GridSplitterManager : UserControl
 
         var fCtl = FocusedControl;
         var fDir = ControlGetSplitDirection(fCtl);
+        if (fDir is null) return;
+
         var fBrd = ControlGetParentBorder(fCtl);
-        var fBrdPos = GetPos(fDir, fBrd);
+        if (fBrd is null) return;
+
+        var fBrdPos = GetPos(fDir.Value, fBrd);
         var fGr = ControlGetParentGrid(fCtl);
+        if (fGr is null) return;
 
         var fGrCnt = fGr.Children.Count(x => !(x is GridSplitter));
 
@@ -601,55 +638,57 @@ public class GridSplitterManager : UserControl
 
         if (fGrCnt > 1)
         {
-            var sizeToReintegrate = GridGetDefSize(fGr, fDir, fBrdPos) / (fGrCnt - 1);
+            var sizeToReintegrate = GridGetDefSize(fGr, fDir.Value, fBrdPos) / (fGrCnt - 1);
 
             foreach (var x in fGr.Children.Where(y => !(y is GridSplitter)).Cast<Control>())
             {
-                var pos = GetPos(fDir, x);
+                var pos = GetPos(fDir.Value, x);
                 if (pos > fBrdPos)
                 {
-                    var prevSize = GridGetDefSize(fGr, fDir, pos);
-                    SetPos(fDir, x, pos - 1);
-                    GridSetDefSize(fGr, fDir, pos - 1, prevSize + sizeToReintegrate);
+                    var prevSize = GridGetDefSize(fGr, fDir.Value, pos);
+                    SetPos(fDir.Value, x, pos - 1);
+                    GridSetDefSize(fGr, fDir.Value, pos - 1, prevSize + sizeToReintegrate);
                 }
             }
             fGr.Children.Remove(fBrd);
-            GridRemoveDef(fGr, fDir, fGrCnt - 1);
+            GridRemoveDef(fGr, fDir.Value, fGrCnt - 1);
 
             removed = true;
         }
         else if (visitedControlDict.Count > 1) // remove fGr and integrate to parent
         {
-            var pGr = fGr.Parent as Grid;
-            var pGrDir = GridGetSplitDirection(pGr);
-            if (pGrDir != fDir)
+            if (fGr.Parent is Grid pGr)
             {
-                var fGrPos = GetPos(pGrDir, fGr);
-                var pGrCnt = pGr.Children.Count(x => !(x is GridSplitter));
-                var sizeToReintegrate = GridGetDefSize(pGr, pGrDir, fGrPos) / (pGrCnt - 1);
-                pGr.Children.Remove(fGr);
-                GridRemoveDef(pGr, pGrDir, fGrPos);
-                var distributeToNexts = fGrPos < pGrCnt - 1;
-                foreach (var x in pGr.Children.Where(y => !(y is GridSplitter)).Cast<Control>())
+                var pGrDir = GridGetSplitDirection(pGr);
+                if (pGrDir != fDir)
                 {
-                    var pos = GetPos(pGrDir, x);
-                    if (distributeToNexts) // removed internal then distribute to nexts
+                    var fGrPos = GetPos(pGrDir, fGr);
+                    var pGrCnt = pGr.Children.Count(x => !(x is GridSplitter));
+                    var sizeToReintegrate = GridGetDefSize(pGr, pGrDir, fGrPos) / (pGrCnt - 1);
+                    pGr.Children.Remove(fGr);
+                    GridRemoveDef(pGr, pGrDir, fGrPos);
+                    var distributeToNexts = fGrPos < pGrCnt - 1;
+                    foreach (var x in pGr.Children.Where(y => !(y is GridSplitter)).Cast<Control>())
                     {
-                        if (pos > fGrPos)
+                        var pos = GetPos(pGrDir, x);
+                        if (distributeToNexts) // removed internal then distribute to nexts
                         {
-                            var prevSize = GridGetDefSize(pGr, pGrDir, pos - 1);
-                            SetPos(pGrDir, x, pos - 1);
-                            GridSetDefSize(pGr, pGrDir, pos - 1, prevSize + sizeToReintegrate);
+                            if (pos > fGrPos)
+                            {
+                                var prevSize = GridGetDefSize(pGr, pGrDir, pos - 1);
+                                SetPos(pGrDir, x, pos - 1);
+                                GridSetDefSize(pGr, pGrDir, pos - 1, prevSize + sizeToReintegrate);
+                            }
+                        }
+                        else // removed last then distribute to prevs
+                        {
+                            var prevSize = GridGetDefSize(pGr, pGrDir, pos);
+                            GridSetDefSize(pGr, pGrDir, pos, prevSize + sizeToReintegrate);
                         }
                     }
-                    else // removed last then distribute to prevs
-                    {
-                        var prevSize = GridGetDefSize(pGr, pGrDir, pos);
-                        GridSetDefSize(pGr, pGrDir, pos, prevSize + sizeToReintegrate);
-                    }
                 }
+                removed = true;
             }
-            removed = true;
         }
 
         if (removed)
@@ -667,8 +706,8 @@ public class GridSplitterManager : UserControl
         var aliveControls = new HashSet<Control>();
         CustomScanGrid((x) =>
         {
-            if (x.ctl is Border)
-                aliveControls.Add((x.ctl as Border).Child as Control);
+            if (x.ctl is Border xBrd && xBrd.Child is Control brdChild)
+                aliveControls.Add(brdChild);
             return true;
         });
         var removedVisitedCtls = visitedControlDict.Where(r => !aliveControls.Contains(r.Key)).Select(w => w.Key).ToList();
@@ -718,30 +757,41 @@ public class GridSplitterManager : UserControl
             }
         }
 
-        SearchLeafGrid(grRoot.Children.First() as Grid);
+        var qGrRootFirstChild = grRoot.Children.FirstOrDefault();
+
+        if (qGrRootFirstChild is null || qGrRootFirstChild is not Grid grRootFirstChildGrid)
+            return;
+
+        SearchLeafGrid(grRootFirstChildGrid);
 
         foreach (var gr in leafGrids)
         {
             if (gr.Parent is null) continue; // during this process an existing leaf can removed
             if (gr.Parent == grRoot) continue;
 
-            var pGr = gr.Parent as Grid;
-            while (pGr.Parent != grRoot)
+            Grid? pGr = null;
+
+            if (gr.Parent is Grid qpGr)
             {
-                var c = GridGetChildrenCount(pGr);
-                if (c.grCnt == 1 && c.brdCnt == 0)
+                pGr = qpGr;
+
+                while (pGr is not null && pGr.Parent != grRoot)
                 {
-                    var tpGr = pGr.Parent as Grid;
-                    var tc = GridGetChildrenCount(tpGr);
-                    if (tc.grCnt == 1 && tc.brdCnt == 0)
-                        pGr = pGr.Parent as Grid;
+                    var c = GridGetChildrenCount(pGr);
+                    if (c.grCnt == 1 && c.brdCnt == 0 && pGr.Parent is Grid tpGr)
+                    {
+                        var tc = GridGetChildrenCount(tpGr);
+                        if (tc.grCnt == 1 && tc.brdCnt == 0 && pGr.Parent is Grid pGrParentGrid)
+                            pGr = pGrParentGrid;
+                        else
+                            break;
+                    }
                     else
                         break;
                 }
-                else
-                    break;
             }
-            if (pGr != gr.Parent)
+
+            if (pGr is not null && pGr != gr.Parent)
             {
                 var grDir = GridGetSplitDirection(gr);
                 var pGrdir = GridGetSplitDirection(pGr);
@@ -752,8 +802,8 @@ public class GridSplitterManager : UserControl
 
                     var rowsDefs = gr.RowDefinitions.ToList();
                     var colsDefs = gr.ColumnDefinitions.ToList();
-                    if (rowsDefs.Count == 0 && colsDefs.Count == 0)
-                        ;
+                    // if (rowsDefs.Count == 0 && colsDefs.Count == 0)
+                    //     ;
                     gr.Children.Clear();
 
                     pGr.Children.Clear();
@@ -788,17 +838,21 @@ public class GridSplitterManager : UserControl
             }
         }
 
-        SearchGridWithOneBorderChild(grRoot.Children.First() as Grid);
+        {
+            if (grRoot.Children.FirstOrDefault() is Grid grRootFirstChild)
+                SearchGridWithOneBorderChild(grRootFirstChild);
+        }
 
         foreach (var gr in gridWithOneBorderChild)
         {
             var brd = gr.Children.First(w => w is Border) as Border;
 
-            Grid pGrLeader = null;
+            Grid? pGrLeader = null;
+
             var xGr = gr;
-            while (xGr.Parent != grRoot)
+            while (xGr?.Parent != grRoot)
             {
-                var pGr = xGr.Parent as Grid;
+                var pGr = xGr?.Parent as Grid;
                 var pC = GridGetChildrenCount(pGr);
                 if (pC.brdCnt == 0 && pC.grCnt == 1)
                 {
@@ -808,12 +862,13 @@ public class GridSplitterManager : UserControl
 
                 xGr = pGr;
             }
+
             if (pGrLeader is not null)
             {
                 pGrLeader.Children.Clear();
                 Grid.SetRow(brd, 0);
                 Grid.SetColumn(brd, 0);
-                (brd.Parent as Grid).Children.Remove(brd);
+                (brd?.Parent as Grid)?.Children.Remove(brd);
                 pGrLeader.Children.Add(brd);
             }
         }
@@ -836,35 +891,28 @@ public class GridSplitterManager : UserControl
                     gr.Children.Add(xSplitter);
                 }
 
-                switch (grDir)
+                x.Margin = grDir switch
                 {
-                    case GridSplitDirection.Horizontally:
-                        {
-                            x.Margin = new Thickness(xPos == 0 ? 0 : SplitterThickness, 0, 0, 0);
-                        }
-                        break;
+                    GridSplitDirection.Horizontally => new Thickness(xPos == 0 ? 0 : SplitterThickness, 0, 0, 0),
+                    GridSplitDirection.Vertically => new Thickness(0, xPos == 0 ? 0 : SplitterThickness, 0, 0),
+                    _ => throw new ArgumentException($"invalid dir {grDir}")
+                };
 
-                    case GridSplitDirection.Vertically:
-                        {
-                            x.Margin = new Thickness(0, xPos == 0 ? 0 : SplitterThickness, 0, 0);
-                        }
-                        break;
-                }
-
-                if (x is Grid)
+                if (x is Grid xGr)
                 {
-                    var g = x as Grid;
-                    if (g.Children.Count == 0)
-                    {
-                        (g.Parent as Grid).Children.Remove(g);
-                    }
+                    if (xGr.Children.Count == 0)
+                        (xGr.Parent as Grid)?.Children.Remove(xGr);
+
                     else
-                        RebuildSplitterAndSetMargin(g);
+                        RebuildSplitterAndSetMargin(xGr);
                 }
             }
         }
 
-        RebuildSplitterAndSetMargin(grRoot.Children.First() as Grid);
+        {
+            if (grRoot.Children.FirstOrDefault() is Grid grRootFirstChild)
+                RebuildSplitterAndSetMargin(grRootFirstChild);
+        }
 
         var totAfter = GetTotalControlsCount();
 
@@ -922,17 +970,18 @@ public class GridSplitterManager : UserControl
             {
                 var xPos = GetPos(grDir, x);
 
-                var ctlDir = (x is Grid) ? GridGetSplitDirection(x as Grid) : new GridSplitDirection?();
+                var ctlDir = (x is Grid grS) ? GridGetSplitDirection(grS) : new GridSplitDirection?();
 
                 if (!continueScan((grDir, gr, xPos, x, ctlDir, lvl))) break;
 
                 ++lvl;
-                if (x is Grid) ScanGrid(x as Grid);
+                if (x is Grid xGr) ScanGrid(xGr);
                 --lvl;
             }
         }
 
-        ScanGrid(grRoot.Children.First() as Grid);
+        if (grRoot.Children.FirstOrDefault() is Grid cGr)
+            ScanGrid(cGr);
     }
 
 }
