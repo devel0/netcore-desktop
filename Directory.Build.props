@@ -1,0 +1,20 @@
+<Project>
+
+	<PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+		<DefineConstants>WINDOWS_PLATFORM</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$([MSBuild]::IsOSPlatform('OSX'))">
+		<DefineConstants>OSX_PLATFORM</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Linux'))">
+		<DefineConstants>LINUX_PLATFORM</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<AvaloniaVersion>11.0.0-preview4</AvaloniaVersion>
+		<XamlNameReferenceGeneratorVersion>1.5.1</XamlNameReferenceGeneratorVersion>		
+	</PropertyGroup>
+
+</Project>

@@ -20,6 +20,7 @@
         <TextBlock Text="  - right click to get value in that place" Classes="notes" />
         <TextBlock Text="- set value from tbox over maximum value to autoexpand" Classes="notes" />
         <TextBlock Text="Value" FontWeight="Bold" Margin="0,10,0,0" />
+        
         <desktop:TextBoxSlider Value="{Binding #win.SampleNumber, Mode=TwoWay}"
             Minimum="-10" Maximum="10"
             AutoExpandMinimum="true" AutoExpandMaximum="true"

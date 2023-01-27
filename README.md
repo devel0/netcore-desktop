@@ -42,8 +42,8 @@ dotnet new sln
 dotnet new classlib -n netcore-desktop
 
 cd netcore-desktop
-dotnet add package netcore-ext --version 1.0.0
-dotnet add package Avalonia.Desktop --version 0.10.18
+dotnet add package netcore-ext
+dotnet add package Avalonia.Desktop
 cd ..
 
 dotnet sln add netcore-desktop

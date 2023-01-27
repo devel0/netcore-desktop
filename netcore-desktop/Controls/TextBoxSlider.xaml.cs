@@ -410,7 +410,7 @@ public class TextBoxSlider : UserControl
 
     void evalTboxRightClick(PointerEventArgs e)
     {
-        if (tboxPressedPos is not null && tboxPressedPos.Properties.IsRightButtonPressed)
+        if (tboxPressedPos is not null && tboxPressedPos.Value.Properties.IsRightButtonPressed)
             {
             var posx = e.GetCurrentPoint(brd).Position.X;
 

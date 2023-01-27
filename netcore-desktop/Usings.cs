@@ -18,5 +18,5 @@ global using static System.FormattableString;
 global using Avalonia;
 global using Avalonia.Media;
 
-global using SearchAThing;
-global using static SearchAThing.Toolkit;
+global using SearchAThing.Ext;
+global using static SearchAThing.Ext.Toolkit;
