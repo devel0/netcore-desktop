@@ -9,3 +9,5 @@ git merge master --commit --no-edit
 ./doc build
 git commit -a -m "doc"
 git checkout master
+
+echo "issue 'git push origin docs' to push docs"
