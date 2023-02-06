@@ -1,7 +1,5 @@
-﻿using Avalonia.Controls;
-using Avalonia.Data;
+﻿using Avalonia.Data;
 using Avalonia.Data.Converters;
-using Avalonia.Markup.Xaml;
 
 namespace SearchAThing.Desktop;
 
@@ -14,13 +12,14 @@ public enum GridSplitDirection
     /// horizontally splitting works on Columns
     /// </summary>
     Horizontally,
+    
     /// <summary>
     /// vertically splitting works on Rows
     /// </summary>
     Vertically
 };
 
-public class GridSplitterManager : UserControl
+public class GridSplitterManager<T> : Grid where T : class, IControl
 {
     static SmartConverter smartConverter = new SmartConverter();
     static FocusedControlConverter focusedControlConverter = new FocusedControlConverter();
@@ -38,7 +37,7 @@ public class GridSplitterManager : UserControl
         {
             var trBrush = new SolidColorBrush(Colors.Transparent);
             if (values is null) return trBrush;
-            var gridSplitterManager = values[0] as GridSplitterManager;
+            var gridSplitterManager = values[0] as GridSplitterManager<T>;
             var objA = values[1];
             var objB = parameter;
             if (objA == objB)
@@ -49,26 +48,26 @@ public class GridSplitterManager : UserControl
     }
     #endregion
 
-    Grid grRoot;
+    Grid grRoot => this;
 
     /// <summary>
     /// dictionary that keep track of visited control age, used to retrieve last visited when remove
     /// </summary>    
-    Dictionary<Control, int> visitedControlDict = new Dictionary<Control, int>();
+    Dictionary<T, int> visitedControlDict = new Dictionary<T, int>();
     int visitedControlAge = 0;
 
     #region FocusedControl
-    private Control? _FocusedControl = null;
+    private T? _FocusedControl = null;
 
-    public static readonly DirectProperty<GridSplitterManager, Control?> FocusedControlProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, Control?>("FocusedControl",
+    public static readonly DirectProperty<GridSplitterManager<T>, T?> FocusedControlProperty =
+        AvaloniaProperty.RegisterDirect<GridSplitterManager<T>, T?>("FocusedControl",
         o => o.FocusedControl, (o, v) => o.FocusedControl = v);
 
     /// <summary>
     /// current focused control
     /// </summary>
     /// <value></value>
-    public Control? FocusedControl
+    public T? FocusedControl
     {
         get => _FocusedControl;
         set
@@ -89,8 +88,8 @@ public class GridSplitterManager : UserControl
     #region FocusedControlBorderThickness
     private double _FocusedControlBorderThickness = 1;
 
-    public static readonly DirectProperty<GridSplitterManager, double> FocusedControlBorderThicknessProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, double>("FocusedControlBorderThickness",
+    public static readonly DirectProperty<GridSplitterManager<T>, double> FocusedControlBorderThicknessProperty =
+        AvaloniaProperty.RegisterDirect<GridSplitterManager<T>, double>("FocusedControlBorderThickness",
         o => o.FocusedControlBorderThickness, (o, v) => o.FocusedControlBorderThickness = v);
 
     public double FocusedControlBorderThickness
@@ -103,8 +102,8 @@ public class GridSplitterManager : UserControl
     #region FocusedControlBorderBrush
     private IBrush _FocusedControlBorderBrush = new SolidColorBrush(Colors.Yellow);
 
-    public static readonly DirectProperty<GridSplitterManager, IBrush> FocusedControlBorderBrushProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, IBrush>("FocusedControlBorderBrush",
+    public static readonly DirectProperty<GridSplitterManager<T>, IBrush> FocusedControlBorderBrushProperty =
+        AvaloniaProperty.RegisterDirect<GridSplitterManager<T>, IBrush>("FocusedControlBorderBrush",
         o => o.FocusedControlBorderBrush, (o, v) => o.FocusedControlBorderBrush = v);
 
     public IBrush FocusedControlBorderBrush
@@ -115,13 +114,13 @@ public class GridSplitterManager : UserControl
     #endregion
 
     #region CreateControl
-    private Func<Control>? _CreateControl = null;
+    private Func<T>? _CreateControl = null;
 
-    public static readonly DirectProperty<GridSplitterManager, Func<Control>?> CreateControlProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, Func<Control>?>("CreateControl",
+    public static readonly DirectProperty<GridSplitterManager<T>, Func<T>?> CreateControlProperty =
+        AvaloniaProperty.RegisterDirect<GridSplitterManager<T>, Func<T>?>("CreateControl",
         o => o.CreateControl, (o, v) => o.CreateControl = v);
 
-    public Func<Control>? CreateControl
+    public Func<T>? CreateControl
     {
         get => _CreateControl;
         set
@@ -136,8 +135,8 @@ public class GridSplitterManager : UserControl
     #region SplitterThickness
     private double _SplitterThickness = 10;
 
-    public static readonly DirectProperty<GridSplitterManager, double> SplitterThicknessProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, double>("SplitterThickness",
+    public static readonly DirectProperty<GridSplitterManager<T>, double> SplitterThicknessProperty =
+        AvaloniaProperty.RegisterDirect<GridSplitterManager<T>, double>("SplitterThickness",
         o => o.SplitterThickness, (o, v) => o.SplitterThickness = v);
 
     public double SplitterThickness
@@ -150,8 +149,8 @@ public class GridSplitterManager : UserControl
     #region SplitterBrush
     private IBrush _SplitterBrush = new SolidColorBrush(Colors.DarkGray);
 
-    public static readonly DirectProperty<GridSplitterManager, IBrush> SplitterBrushProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, IBrush>("SplitterBrush",
+    public static readonly DirectProperty<GridSplitterManager<T>, IBrush> SplitterBrushProperty =
+        AvaloniaProperty.RegisterDirect<GridSplitterManager<T>, IBrush>("SplitterBrush",
         o => o.SplitterBrush, (o, v) => o.SplitterBrush = v);
 
     public IBrush SplitterBrush
@@ -164,8 +163,8 @@ public class GridSplitterManager : UserControl
     #region DistributeSplitSize
     private bool _DistributeSplitSize = true;
 
-    public static readonly DirectProperty<GridSplitterManager, bool> DistributeSplitSizeProperty =
-        AvaloniaProperty.RegisterDirect<GridSplitterManager, bool>("DistributeSplitSize",
+    public static readonly DirectProperty<GridSplitterManager<T>, bool> DistributeSplitSizeProperty =
+        AvaloniaProperty.RegisterDirect<GridSplitterManager<T>, bool>("DistributeSplitSize",
         o => o.DistributeSplitSize, (o, v) => o.DistributeSplitSize = v);
 
     /// <summary>
@@ -187,8 +186,6 @@ public class GridSplitterManager : UserControl
     public GridSplitterManager()
     {
         InitializeComponent();
-
-        grRoot = this.FindControl<Grid>("grRoot");
     }
 
     /// <summary>
@@ -199,7 +196,7 @@ public class GridSplitterManager : UserControl
     /// <returns>new gridsplitter</returns>
     GridSplitter newGridSplitter(GridSplitDirection dir, int pos)
     {
-        var res = new GridSplitter();
+        var res = new GridSplitter() { Background = SplitterBrush };
 
         switch (dir)
         {
@@ -251,7 +248,7 @@ public class GridSplitterManager : UserControl
     /// <param name="wr">output (default console.out)</param>
     /// <param name="highLightControl">show an arrow on control focused</param>
     /// <param name="breakOnWarn">break debugger if warn encountered</param>
-    public void PrintStructure(TextWriter? wr = null, Control? highLightControl = null, bool breakOnWarn = false)
+    public void PrintStructure(TextWriter? wr = null, T? highLightControl = null, bool breakOnWarn = false)
     {
         if (wr is null) wr = Console.Out;
 
@@ -294,7 +291,7 @@ public class GridSplitterManager : UserControl
             {
                 var gc = GridGetChildrenCount(g);
                 if (gc.grCnt == 1 && gc.brdCnt == 0 && g.Children.FirstOrDefault() is Grid gg)
-                {                    
+                {
                     gc = GridGetChildrenCount(gg);
                     if (gc.grCnt == 1 && gc.brdCnt == 0)
                     {
@@ -315,7 +312,7 @@ public class GridSplitterManager : UserControl
     /// </summary>
     /// <param name="child">child to insert int the border content</param>
     /// <returns>border</returns>
-    Border newBorder(Control child)
+    Border newBorder(T child)
     {
         var brd = new Border()
         {
@@ -373,7 +370,7 @@ public class GridSplitterManager : UserControl
 
     private void InitializeComponent()
     {
-        AvaloniaXamlLoader.Load(this);
+        // AvaloniaXamlLoader.Load(this);
     }
 
     /// <summary>
@@ -382,14 +379,14 @@ public class GridSplitterManager : UserControl
     /// </summary>
     /// <param name="ctl">control</param>
     /// <returns>border</returns>
-    Border? ControlGetParentBorder(Control ctl) => ctl.Parent as Border;
+    Border? ControlGetParentBorder(T ctl) => ctl.Parent as Border;
 
     /// <summary>
     /// retrieve control from given border
     /// </summary>
     /// <param name="brd">border that contains the control</param>
     /// <returns>control inside border</returns>
-    Control? BorderGetChildControl(Border brd) => brd.Child as Control;
+    T? BorderGetChildControl(Border brd) => brd.Child as T;
 
     /// <summary>
     /// retrieve grid associated to given ctl;
@@ -397,14 +394,14 @@ public class GridSplitterManager : UserControl
     /// </summary>
     /// <param name="ctl">control for which to retrieve associated grid</param>
     /// <returns>grid associated to the given ctl</returns>
-    Grid? ControlGetParentGrid(Control ctl) => ControlGetParentBorder(ctl)?.Parent as Grid;
+    Grid? ControlGetParentGrid(T ctl) => ControlGetParentBorder(ctl)?.Parent as Grid;
 
     /// <summary>
     /// retrieve split direction of the grid associated to the given ctl
     /// </summary>
     /// <param name="ctl">ctl for which to retrieve grid's associated direction</param>
     /// <returns>ctl associated grid direction</returns>
-    GridSplitDirection? ControlGetSplitDirection(Control ctl)
+    GridSplitDirection? ControlGetSplitDirection(T ctl)
     {
         if (ctl is null) return null;
 
@@ -703,10 +700,10 @@ public class GridSplitterManager : UserControl
 
         Adjust();
 
-        var aliveControls = new HashSet<Control>();
+        var aliveControls = new HashSet<T>();
         CustomScanGrid((x) =>
         {
-            if (x.ctl is Border xBrd && xBrd.Child is Control brdChild)
+            if (x.ctl is Border xBrd && xBrd.Child is T brdChild)
                 aliveControls.Add(brdChild);
             return true;
         });

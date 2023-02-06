@@ -16,6 +16,7 @@
     </AvaloniaResource>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="XamlNameReferenceGenerator" Version="$(XamlNameReferenceGeneratorVersion)" />
     <ProjectReference Include="..\..\netcore-desktop\netcore-desktop.csproj"/>
     <Compile Include="../../netcore-desktop/Usings.cs" />
   </ItemGroup>  

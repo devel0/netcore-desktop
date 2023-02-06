@@ -51,8 +51,6 @@
 
         </StackPanel>
 
-        <desktop:GridSplitterManager Grid.Row="1" x:Name="gridSplitterMasnager"
-            CreateControl="{Binding #win.CreateControlSample}" FocusedControlBorderThickness="0"
-            Margin="0,10,0,0" />
+        <Grid Grid.Row="1" Name="grSplitContainer" />
     </Grid>
 </Window>

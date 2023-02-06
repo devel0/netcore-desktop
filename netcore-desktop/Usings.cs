@@ -17,6 +17,9 @@ global using static System.FormattableString;
 
 global using Avalonia;
 global using Avalonia.Media;
+global using Avalonia.Controls;
 
 global using SearchAThing.Ext;
 global using static SearchAThing.Ext.Toolkit;
+
+global using SearchAThing.Desktop;

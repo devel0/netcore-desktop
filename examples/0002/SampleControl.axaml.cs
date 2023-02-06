@@ -1,12 +1,8 @@
-using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
-
-using SearchAThing.Desktop;
 
 namespace SearchAThing.DesktopExamples;
 
-public class SampleControl : UserControl
+public partial class SampleControl : UserControl
 {
 
     static int instanceCount = 0;
@@ -30,22 +26,25 @@ public class SampleControl : UserControl
     #endregion
 
     #region GridSplitterManager
-    private GridSplitterManager _GridSplitterManager = null;
+    private GridSplitterManager<SampleControl>? _GridSplitterManager = null;
 
-    public static readonly DirectProperty<SampleControl, GridSplitterManager> GridSplitterManagerProperty =
-        AvaloniaProperty.RegisterDirect<SampleControl, GridSplitterManager>("GridSplitterManager", o => o.GridSplitterManager, (o, v) => o.GridSplitterManager = v);
+    public static readonly DirectProperty<SampleControl, GridSplitterManager<SampleControl>?> GridSplitterManagerProperty =
+        AvaloniaProperty.RegisterDirect<SampleControl, GridSplitterManager<SampleControl>?>("GridSplitterManager", o => o.GridSplitterManager, (o, v) => o.GridSplitterManager = v);
 
-    public GridSplitterManager GridSplitterManager
+    public GridSplitterManager<SampleControl>? GridSplitterManager
     {
         get => _GridSplitterManager;
         set
         {
             SetAndRaise(GridSplitterManagerProperty, ref _GridSplitterManager, value);
-            if (value.FocusedControl == this) GridSplitterManagerFocused = true;
-            value.GetObservable(GridSplitterManager.FocusedControlProperty).Subscribe((x) =>
+            if (value is not null)
             {
-                GridSplitterManagerFocused = x == this;
-            });
+                if (value.FocusedControl == this) GridSplitterManagerFocused = true;
+                value.GetObservable(GridSplitterManager<SampleControl>.FocusedControlProperty).Subscribe((x) =>
+                {
+                    GridSplitterManagerFocused = x == this;
+                });
+            }
         }
     }
     #endregion
@@ -58,11 +57,6 @@ public class SampleControl : UserControl
     public override void Render(Avalonia.Media.DrawingContext context)
     {
         base.Render(context);
-    }
-
-    private void InitializeComponent()
-    {
-        AvaloniaXamlLoader.Load(this);
     }
 
 }
