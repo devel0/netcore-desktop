@@ -68,3 +68,25 @@ cd data/doxygen-awesome-css
 git checkout 45f50e0438ac31ec3b3cd594ae68925fc8d4aeae
 cd ../..
 ```
+
+## documentation (github pages)
+
+### build and view locally
+
+```sh
+git checkout docs
+git merge master
+./doc build
+./doc serve
+./doc view
+```
+
+### integrate
+
+```sh
+git checkout docs
+git merge master
+./doc build
+git commit -m "doc"
+git checkout master
+```
