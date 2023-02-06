@@ -1,0 +1,46 @@
+<Window xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:example.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+    xmlns:desktop="clr-namespace:SearchAThing.Desktop;assembly=netcore-desktop"
+    x:Class="example.Views.MainWindow"
+    Icon="/Assets/avalonia-logo.ico">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid RowDefinitions="*,Auto,*">
+        <Grid.Styles>
+            <Style Selector="TextBlock">
+                <Setter Property="TextAlignment" Value="Center" />
+            </Style>
+        </Grid.Styles>
+
+        <!-- use of GridAutoRow allow easy insertion and arrangement of rows.
+            grid rowdefinitions automatically expands -->
+
+        <Border Grid.Row="0" BorderBrush="Blue" BorderThickness="3" Margin="50" />
+
+        <Grid Grid.Row="1" desktop:GridAutoRow.AutoRowDefinitions="true" Grid.ColumnDefinitions="*,*">
+
+            <TextBlock desktop:GridAutoRow.Name="A" Grid.Column="0" Text="A" />
+            <TextBlock desktop:GridAutoRow.Name="A" Grid.Column="1" Text="rowA" />
+
+            <TextBlock desktop:GridAutoRow.Name="B" Grid.Column="0" Text="B" />
+            <TextBlock desktop:GridAutoRow.Name="B" Grid.Column="1" Text="rowB" />
+
+            <TextBlock desktop:GridAutoRow.Name="C" Grid.Column="0" Text="C" />
+            <TextBlock desktop:GridAutoRow.Name="C" Grid.Column="1" Text="rowC" />
+
+        </Grid>
+
+        <Border Grid.Row="2" BorderBrush="Green" BorderThickness="3" Margin="50" />
+
+    </Grid>
+
+</Window>

@@ -20,13 +20,11 @@
 
 ## Examples
 
-### 0001 ( TextBoxSlider )
+### 0001 ( GridAutoRow )
 
-[code](https://github.com/devel0/netcore-desktop/blob/ed1b3e8c9bea960242138a0ed183044be5e01083/examples/0001/MainWindow.xaml#L23)
+### 0002 ( SmartConverter )
 
-![](data/img/example-0001.png)
-
-### 0002 ( GridSplitterManager )
+### 0003 ( GridSplitterManager )
 
 [code](https://github.com/devel0/netcore-desktop/blob/ed1b3e8c9bea960242138a0ed183044be5e01083/examples/0002/MainWindow.xaml#L40)
 
@@ -39,14 +37,34 @@ mkdir netcore-desktop
 cd netcore-desktop
 
 dotnet new sln
-dotnet new classlib -n netcore-desktop
 
-cd netcore-desktop
+mkdir src examples
+
+cd src
+dotnet new classlib -n netcore-desktop
+mv netcore-desktop desktop
+cd desktop
 dotnet add package netcore-ext
 dotnet add package Avalonia.Desktop
+cd ../..
+
+cd examples
+dotnet new avalonia.mvvm -n example
+mv example/example.csproj example/example-0001.csproj
+mv example example-0001
 cd ..
 
-dotnet sln add netcore-desktop
-dotnet restore
+dotnet sln add src/desktop examples/example-0001
+
 dotnet build
+
+# documentation css
+
+mkdir data
+git submodule add https://github.com/jothepro/doxygen-awesome-css.git data/doxygen-awesome-css
+cd data/doxygen-awesome-css
+# doxygen 1.9.2 ( workaround about treeview https://github.com/doxygen/doxygen/issues/9254 )
+# doxygen version used https://github.com/SearchAThing-forks/doxygen/tree/Release_1_9_2_with_autotrimleft
+git checkout 45f50e0438ac31ec3b3cd594ae68925fc8d4aeae
+cd ../..
 ```

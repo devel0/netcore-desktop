@@ -1,0 +1,83 @@
+#!/bin/env bash
+
+exdir="$(dirname `readlink -f "$0"`)"
+
+docsdir="$exdir/docs"
+serve_port=8000
+cmd=""
+
+#--
+
+help()
+{
+    echo "Usage: doc [options] command
+
+    commands
+        build     Generate docs documentation
+        serve     Start webserver
+        view      Open default app to view documentation
+
+    options
+        [ -p | --port ]     specify serve port"
+
+    exit 2
+}
+
+SHORT=p:,h:
+LONG=port:,help
+OPTS=$(getopt -a -n doc --options $SHORT --longoptions $LONG -- "$@")
+
+VALID_ARGUMENTS=$# # Returns the count of arguments that are in short or long options
+
+if [ "$VALID_ARGUMENTS" -eq 0 ]; then
+  help
+fi
+
+eval set -- "$OPTS"
+
+while :
+do
+  case "$1" in    
+    -p | --port )
+      serve_port=$2
+      echo "port specified [$serve_port]"
+      shift 2
+      ;;    
+    -h | --help)
+      help
+      ;;
+    --)
+      shift;
+      break
+      ;;
+    *)
+      echo "Unexpected option: $1"
+      help
+      ;;
+  esac
+done
+
+#--[ build ]
+
+if [ "$1" == "build" ]; then    
+  rm -fr "$docsdir"
+  mkdir "$docsdir"
+  cd "$exdir"
+  doxygen
+  exit 0
+fi
+
+#--[ serve ]
+
+if [ "$1" == "serve" ]; then
+  cd "$exdir"/docs/html
+  python3 -m http.server &
+  cd "$exdir"
+  exit 0
+fi
+
+#--[ view ]
+
+if [ "$1" == "view" ]; then
+  xdg-open http://localhost:$serve_port
+fi
