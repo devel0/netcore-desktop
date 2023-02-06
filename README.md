@@ -20,13 +20,9 @@
 
 ## Examples
 
-### 0001 ( GridAutoRow )
-
-### 0002 ( SmartConverter )
+List of [examples](https://devel0.github.io/netcore-desktop/html/examples.html).
 
 ### 0003 ( GridSplitterManager )
-
-[code](https://github.com/devel0/netcore-desktop/blob/ed1b3e8c9bea960242138a0ed183044be5e01083/examples/0002/MainWindow.xaml#L40)
 
 ![](data/img/example-0002.gif)
 
