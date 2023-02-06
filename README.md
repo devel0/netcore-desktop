@@ -11,9 +11,11 @@
 
 <!-- TOC -->
 * [Examples](#examples)
-    - [0001 ( TextBoxSlider )](#0001--textboxslider-)
-    - [0002 ( GridSplitterManager )](#0002--gridsplittermanager-)
+  + [0003 ( GridSplitterManager )](#0003--gridsplittermanager-)
 * [How this project was built](#how-this-project-was-built)
+* [Documentation (github pages)](#documentation-github-pages)
+  + [Build and view locally](#build-and-view-locally)
+  + [Integrate](#integrate)
 <!-- TOCEND -->
 
 <hr/>
