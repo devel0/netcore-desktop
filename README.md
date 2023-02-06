@@ -65,9 +65,13 @@ git checkout 45f50e0438ac31ec3b3cd594ae68925fc8d4aeae
 cd ../..
 ```
 
-## documentation (github pages)
+## Documentation (github pages)
 
-### build and view locally
+Configured through Settings/Pages on Branch docs ( path /docs ).
+
+- while master branch exclude "docs" with .gitignore the docs branch doesn't
+
+### Build and view locally
 
 ```sh
 ./doc build
@@ -75,7 +79,7 @@ cd ../..
 ./doc view
 ```
 
-### integrate
+### Integrate
 
 ```sh
 git checkout docs
