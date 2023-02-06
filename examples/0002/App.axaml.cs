@@ -1,9 +1,12 @@
+using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using _0002.ViewModels;
+using _0002.Views;
 
-namespace SearchAThing.DesktopExamples;
+namespace _0002;
 
-public class App : Application
+public partial class App : Application
 {
     public override void Initialize()
     {
@@ -14,7 +17,10 @@ public class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = new MainWindow();
+            desktop.MainWindow = new MainWindow
+            {
+                DataContext = new MainWindowViewModel(),
+            };
         }
 
         base.OnFrameworkInitializationCompleted();
