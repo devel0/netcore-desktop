@@ -1,0 +1,11 @@
+#!/bin/env bash
+
+exdir="$(dirname `readlink -f "$0"`)"
+
+cd "$exdir"
+
+git checkout docs
+git merge master --commit --no-edit
+./doc build
+git commit -a -m "doc"
+git checkout master
