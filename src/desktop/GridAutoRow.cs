@@ -5,6 +5,9 @@ namespace SearchAThing.Desktop;
 
 // refs: https://docs.avaloniaui.net/docs/data-binding/creating-and-binding-attached-properties
 
+/// <summary>
+/// Auto attach Grid.Row property to rows and expands RowDefinitions accordingly.
+/// </summary>
 public class GridAutoRow : AvaloniaObject
 {
 

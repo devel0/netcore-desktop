@@ -18,6 +18,9 @@ public enum GridSplitDirection
     Vertically
 };
 
+/// <summary>
+/// Manage arrangement of control that allow split Vertically or Horizontally.
+/// </summary>
 public class GridSplitterManager<T> : Grid where T : class, IControl, INotifyPropertyChanged
 {
 
@@ -218,7 +221,7 @@ public class GridSplitterManager<T> : Grid where T : class, IControl, INotifyPro
 
     public GridSplitterManager()
     {
-        
+
     }
 
     /// <summary>
@@ -399,7 +402,7 @@ public class GridSplitterManager<T> : Grid where T : class, IControl, INotifyPro
         grRoot.Children.Add(gr);
 
         FocusedControl = initialChild;
-    } 
+    }
 
     /// <summary>
     /// retrieve border associated with control;
