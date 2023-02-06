@@ -85,8 +85,8 @@ git merge master
 
 ```sh
 git checkout docs
-git merge master
+git merge master --commit --no-edit
 ./doc build
-git commit -m "doc"
+git commit -a -m "doc"
 git checkout master
 ```
