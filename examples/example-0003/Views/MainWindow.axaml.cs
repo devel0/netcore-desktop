@@ -18,10 +18,7 @@ public partial class MainWindow : Window
             Margin = new Thickness(0, 10, 0, 0),
             CreateControl = () =>
             {
-                var ctl = new SampleControl()
-                {
-                    // GridSplitterManager = gridSplitterManager
-                };
+                var ctl = new SampleControl();
                 var rnd = new Random();
                 var colMaxVal = 100;
                 ctl.Background = new SolidColorBrush(Color.FromRgb(
@@ -35,31 +32,6 @@ public partial class MainWindow : Window
         grSplitContainer.Children.Add(gridSplitterManager);
 
         gridSplitterManager.PropertyChanged += GridSplitterManager_PropertyChanged;
-
-
-        /*
-                gridSplitterManager = this.FindControl<GridSplitterManager>("gridSplitterMasnager");
-
-                CreateControlSample = () =>
-                {
-                    var ctl = new SampleControl()
-                    {
-                        GridSplitterManager = gridSplitterManager
-                    };
-                    var rnd = new Random();
-                    var colMaxVal = 100;
-                    ctl.Background = new SolidColorBrush(Color.FromRgb(
-                        (byte)rnd.Next(colMaxVal),
-                        (byte)rnd.Next(colMaxVal),
-                        (byte)rnd.Next(colMaxVal)));
-                    return ctl;
-                };
-                this.Opened += (s, e) =>
-                {
-                    var fc = gridSplitterManager.FocusedControl;
-                    gridSplitterManager.FocusedControl = null;
-                    gridSplitterManager.FocusedControl = fc;
-                };*/
     }
 
     private void GridSplitterManager_PropertyChanged(object? sender, PropertyChangedEventArgs e)
