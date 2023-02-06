@@ -79,6 +79,11 @@ public class GridSplitterManager<T> : Grid where T : class, IControl, INotifyPro
 
     #endregion
 
+    /// <summary>
+    /// List programmatically created controls
+    /// </summary>
+    public new ObservableCollection<T> Children { get; private set; } = new ObservableCollection<T>();
+
     #region FocusedControlBorderThickness
 
     private double _FocusedControlBorderThickness = DEFAULT_GridSplitterManager_FocusedControlBorderThickness;
@@ -218,6 +223,18 @@ public class GridSplitterManager<T> : Grid where T : class, IControl, INotifyPro
     /// if null no debug output
     /// </summary>
     public TextWriter? DebugWriter { get; set; } = null;
+
+    public delegate void ControlEventDelegate(T control);
+
+    /// <summary>
+    /// event fired when a child control created by split
+    /// </summary>
+    public event ControlEventDelegate ControlCreated;
+
+    /// <summary>
+    /// event fired when a child control removed by Remove() method
+    /// </summary>
+    public event ControlEventDelegate ControlRemoved;
 
     public GridSplitterManager()
     {
@@ -385,13 +402,32 @@ public class GridSplitterManager<T> : Grid where T : class, IControl, INotifyPro
     RowDefinition RowStar(double size = 1) => new RowDefinition(size, GridUnitType.Star);
     ColumnDefinition ColStar(double size = 1) => new ColumnDefinition(size, GridUnitType.Star);
 
+    T? create_control()
+    {
+        if (CreateControl is null) return null;
+
+        var res = CreateControl();
+
+        ControlCreated?.Invoke(res);
+
+        Children.Add(res);
+
+        return res;
+    }
+
+    void control_removed(T ctl)
+    {
+        Children.Remove(ctl);
+        ControlRemoved?.Invoke(ctl);
+    }
+
     /// <summary>
     /// called once after CreateControl method setup;
     /// it creates a grid (vertically splitted with 1 rows) with a border that contains the control;        
     /// </summary>
     void CreateInitialControl()
     {
-        var initialChild = CreateControl!.Invoke();
+        var initialChild = create_control()!;
 
         var brd = newBorder(initialChild);
 
@@ -592,7 +628,9 @@ public class GridSplitterManager<T> : Grid where T : class, IControl, INotifyPro
         var fGr = ControlGetParentGrid(fCtl);
         if (fGr is null) return;
 
-        var nBrd = newBorder(CreateControl());
+        var nBrdContent = create_control()!;
+
+        var nBrd = newBorder(nBrdContent);
 
         if (fDir == dir) // parallel
         {
@@ -694,6 +732,7 @@ public class GridSplitterManager<T> : Grid where T : class, IControl, INotifyPro
                     var pGrCnt = pGr.Children.Count(x => !(x is GridSplitter));
                     var sizeToReintegrate = GridGetDefSize(pGr, pGrDir, fGrPos) / (pGrCnt - 1);
                     pGr.Children.Remove(fGr);
+
                     GridRemoveDef(pGr, pGrDir, fGrPos);
                     var distributeToNexts = fGrPos < pGrCnt - 1;
                     foreach (var x in pGr.Children.Where(y => !(y is GridSplitter)).Cast<Control>())
@@ -722,6 +761,7 @@ public class GridSplitterManager<T> : Grid where T : class, IControl, INotifyPro
         if (removed)
         {
             visitedControlDict.Remove(fCtl);
+            control_removed(fCtl);
 
             if (visitedControlDict.Count > 0)
                 FocusedControl = visitedControlDict.OrderByDescending(w => w.Value).First().Key;
@@ -740,7 +780,10 @@ public class GridSplitterManager<T> : Grid where T : class, IControl, INotifyPro
         });
         var removedVisitedCtls = visitedControlDict.Where(r => !aliveControls.Contains(r.Key)).Select(w => w.Key).ToList();
 
-        foreach (var x in removedVisitedCtls) visitedControlDict.Remove(x);
+        foreach (var x in removedVisitedCtls)
+        {
+            visitedControlDict.Remove(x);
+        }
 
         if (DebugWriter is not null)
         {
