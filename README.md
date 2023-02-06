@@ -74,8 +74,6 @@ cd ../..
 ### build and view locally
 
 ```sh
-git checkout docs
-git merge master --commit --no-edit
 ./doc build
 ./doc serve
 ./doc view
