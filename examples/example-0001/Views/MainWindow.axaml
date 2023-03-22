@@ -28,14 +28,14 @@
 
         <Grid Grid.Row="1" desktop:GridAutoRow.AutoRowDefinitions="true" Grid.ColumnDefinitions="*,*">
 
-            <TextBlock desktop:GridAutoRow.Name="A" Grid.Column="0" Text="A" />
-            <TextBlock desktop:GridAutoRow.Name="A" Grid.Column="1" Text="rowA" />
+            <TextBlock desktop:GridAutoRow.Ref="A" Grid.Column="0" Text="A" />
+            <TextBlock desktop:GridAutoRow.Ref="A" Grid.Column="1" Text="rowA" />
 
-            <TextBlock desktop:GridAutoRow.Name="B" Grid.Column="0" Text="B" />
-            <TextBlock desktop:GridAutoRow.Name="B" Grid.Column="1" Text="rowB" />
+            <TextBlock desktop:GridAutoRow.Ref="B" Grid.Column="0" Text="B" />
+            <TextBlock desktop:GridAutoRow.Ref="B" Grid.Column="1" Text="rowB" />
 
-            <TextBlock desktop:GridAutoRow.Name="C" Grid.Column="0" Text="C" />
-            <TextBlock desktop:GridAutoRow.Name="C" Grid.Column="1" Text="rowC" />
+            <TextBlock desktop:GridAutoRow.Ref="C" Grid.Column="0" Text="C" />
+            <TextBlock desktop:GridAutoRow.Ref="C" Grid.Column="1" Text="rowC" />
 
         </Grid>
 
