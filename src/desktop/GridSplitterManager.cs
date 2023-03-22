@@ -1,4 +1,5 @@
 ﻿using Avalonia.Data;
+using Avalonia.Input;
 
 namespace SearchAThing.Desktop;
 
@@ -21,7 +22,7 @@ public enum GridSplitDirection
 /// <summary>
 /// Manage arrangement of control that allow split Vertically or Horizontally.
 /// </summary>
-public class GridSplitterManager<T> : Grid where T : class, IControl, INotifyPropertyChanged
+public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyChanged
 {
 
     #region property changed
@@ -613,20 +614,20 @@ public class GridSplitterManager<T> : Grid where T : class, IControl, INotifyPro
     /// split focused control over given direction; does nothing if focused control is null
     /// </summary>
     /// <param name="dir">split direction</param>
-    public void Split(GridSplitDirection dir)
+    public T? Split(GridSplitDirection dir)
     {
-        if (FocusedControl is null || CreateControl is null) return;
+        if (FocusedControl is null || CreateControl is null) return null;
 
         var fCtl = FocusedControl;
         var fDir = ControlGetSplitDirection(fCtl);
-        if (fDir is null) return;
+        if (fDir is null) return null;
 
         var fBrd = ControlGetParentBorder(fCtl);
-        if (fBrd is null) return;
+        if (fBrd is null) return null;
 
         var fBrdPos = GetPos(fDir.Value, fBrd);
         var fGr = ControlGetParentGrid(fCtl);
-        if (fGr is null) return;
+        if (fGr is null) return null;
 
         var nBrdContent = create_control()!;
 
@@ -669,6 +670,8 @@ public class GridSplitterManager<T> : Grid where T : class, IControl, INotifyPro
         Adjust();
 
         FocusedControl = BorderGetChildControl(nBrd);
+
+        return FocusedControl;
     }
 
     /// <summary>
