@@ -13,6 +13,7 @@ namespace SearchAThing.Desktop;
 /// <b>Functions</b>:<br/>
 /// - ?IsNull : true if given argument is null<br/>
 /// - ?{gt,lt,gte,ltq,eq} v : true if given argument equals to parameter v<br/>
+/// - ?{add,sub} v : add/sub v<br/>
 /// - ?Lighter : double given argument brighness<br/>
 /// - ?Lighter v : increase of given argument v=0-1 brighness<br/>
 /// - ?Darker : half brighness<br/>
@@ -35,6 +36,28 @@ namespace SearchAThing.Desktop;
 /// </summary>
 public class SmartConverter : IValueConverter
 {
+    #region Instance
+
+    static object lckInstance = new Object();
+    static SmartConverter? _Instance = null;
+    public static SmartConverter Instance
+    {
+        get
+        {
+            if (_Instance is null)
+            {
+                lock (lckInstance)
+                {
+                    if (_Instance is null)
+                        _Instance = new SmartConverter();
+                }
+            }
+            return _Instance;
+        }
+    }
+
+    #endregion
+
 
     static readonly Type typeofInt = typeof(int);
     static readonly Type typeofDecimal = typeof(decimal);
@@ -63,13 +86,12 @@ public class SmartConverter : IValueConverter
 
         int matchIPos = 1;
 
+        #region ? operators
         if (pstr.StartsWith("?"))
         {
             matchFn = true;
-            if (pstr.StartsWith("?IsNull "))
-            {
-                matches = value is null;
-            }
+            if (pstr.StartsWith("?IsNull ")) matches = value is null;
+
             else if (pstr == "?Darker" || pstr.StartsWith("?Darker "))
             {
                 if (value is null) return null;
@@ -95,6 +117,7 @@ public class SmartConverter : IValueConverter
 
                 return res;
             }
+
             else if (pstr == "?Lighter" || pstr.StartsWith("?Lighter "))
             {
                 if (value is null) return null;
@@ -120,6 +143,7 @@ public class SmartConverter : IValueConverter
 
                 return res;
             }
+
             else if (pstr.StartsWith("?Round "))
             {
                 var dec = int.Parse(ss[1]);
@@ -133,7 +157,11 @@ public class SmartConverter : IValueConverter
 
                 return System.Convert.ChangeType(res, targetType);
             }
-            else if (pstr.StartsWith("?gt ") || pstr.StartsWith("?gte ") || pstr.StartsWith("?lt ") || pstr.StartsWith("?lte ") || pstr.StartsWith("?eq "))
+
+            else if (
+                pstr.StartsWith("?gt ") || pstr.StartsWith("?gte ") ||
+                pstr.StartsWith("?lt ") || pstr.StartsWith("?lte ") ||
+                pstr.StartsWith("?eq "))
             {
                 ++matchIPos;
 
@@ -158,8 +186,51 @@ public class SmartConverter : IValueConverter
                     else if (typeOfValue == typeofInt) matches = operand((int)value, int.Parse(ss[1], CultureInfo.InvariantCulture));
                 }
             }
+
+            else if (
+                pstr.StartsWith("?add ") || pstr.StartsWith("?sub "))
+            {
+
+                if (value is not null)
+                {
+                    if (typeOfValue == typeofDecimal)
+                    {
+                        var y = decimal.Parse(ss[1], CultureInfo.InvariantCulture);
+                        if (pstr.StartsWith("?add ")) res = (decimal)value + y;
+                        else if (pstr.StartsWith("?sub ")) res = (decimal)value - y;
+                    }
+
+                    else if (typeOfValue == typeofFloat)
+                    {
+                        var y = float.Parse(ss[1], CultureInfo.InvariantCulture);
+                        if (pstr.StartsWith("?add ")) res = (float)value + y;
+                        else if (pstr.StartsWith("?sub ")) res = (float)value - y;
+                    }
+
+                    else if (typeOfValue == typeofDouble)
+                    {
+                        var y = double.Parse(ss[1], CultureInfo.InvariantCulture);
+                        if (pstr.StartsWith("?add ")) res = (double)value + y;
+                        else if (pstr.StartsWith("?sub ")) res = (double)value - y;
+                    }
+
+                    else if (typeOfValue == typeofInt)
+                    {
+                        var y = int.Parse(ss[1], CultureInfo.InvariantCulture);
+                        if (pstr.StartsWith("?add ")) res = (int)value + y;
+                        else if (pstr.StartsWith("?sub ")) res = (int)value - y;
+                    }
+
+                    if (res is not null)
+                    {
+                        return System.Convert.ChangeType(res, targetType);
+                    }
+                }
+            }
+
             else matchFn = false;
         }
+        #endregion
 
         else if (typeOfValue?.IsEnum == true)
         {
@@ -233,7 +304,7 @@ public class SmartConverter : IValueConverter
         {
             res = brushCvt.ConvertFrom(ss[i]);
         }
-        
+
         else
             res = System.Convert.ChangeType(ss[i], targetType);
 
