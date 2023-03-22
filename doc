@@ -16,6 +16,7 @@ help()
         build     Generate docs documentation
         serve     Start webserver
         view      Open default app to view documentation
+        commit    build + commit doc into docs branch        
 
     options
         [ -p | --port ]     specify serve port"
@@ -80,4 +81,15 @@ fi
 
 if [ "$1" == "view" ]; then
   xdg-open http://localhost:$serve_port
+fi
+
+#--[ commit ]
+if [ "$1" == "commit" ]; then
+  cd "$exdir"
+  git checkout docs
+  git merge main --commit --no-edit
+  ./doc build
+  git add -A
+  git commit -a -m "doc"
+  git checkout main
 fi

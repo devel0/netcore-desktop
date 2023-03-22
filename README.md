@@ -15,7 +15,7 @@
 * [How this project was built](#how-this-project-was-built)
 * [Documentation (github pages)](#documentation-github-pages)
   + [Build and view locally](#build-and-view-locally)
-  + [Integrate](#integrate)
+  + [Build and commit into docs branch](#build-and-commit-into-docs-branch)
 <!-- TOCEND -->
 
 <hr/>
@@ -81,12 +81,8 @@ Configured through Settings/Pages on Branch docs ( path /docs ).
 ./doc view
 ```
 
-### Integrate
+### Build and commit into docs branch
 
 ```sh
-git checkout docs
-git merge master --commit --no-edit
-./doc build
-git commit -a -m "doc"
-git checkout master
+./doc commit
 ```
