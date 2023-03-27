@@ -61,9 +61,8 @@ dotnet build
 mkdir data
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git data/doxygen-awesome-css
 cd data/doxygen-awesome-css
-# doxygen 1.9.2 ( workaround about treeview https://github.com/doxygen/doxygen/issues/9254 )
-# doxygen version used https://github.com/SearchAThing-forks/doxygen/tree/Release_1_9_2_with_autotrimleft
-git checkout 45f50e0438ac31ec3b3cd594ae68925fc8d4aeae
+# doxygen 1.9.7
+git checkout 245c7c94c20eac22730ef89035967f78b77bf405
 cd ../..
 ```
 
