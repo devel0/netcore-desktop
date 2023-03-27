@@ -297,6 +297,174 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
     }
 
     /// <summary>
+    /// remove all layout except the topmost control view
+    /// </summary>
+    public void Clear()
+    {
+        T leaf;
+        var g = grRoot;
+        while (true)
+        {
+            if (g.Children.Count == 0) throw new Exception($"can't find a border");
+            var q = g.Children.OfType<Border>().FirstOrDefault();
+            if (q is not null && q.Child is T t)
+            {
+                g.Children.Clear();
+                g.RowDefinitions.Clear();
+                g.ColumnDefinitions.Clear();
+                g.RowDefinitions.Add(RowStar());
+                g.Children.Add(q);
+                leaf = t;
+                FocusedControl = leaf;
+                break;
+            }
+            g = (Grid)g.Children[0];
+        }
+    }
+
+    /// <summary>
+    /// configure control delegate
+    /// </summary>
+    /// <param name="ctl">control</param>
+    /// <param name="uid">control identifier ( generated in SaveStructure )</param>
+    public delegate void ConfigControlDelegate(T ctl, int uid);
+
+    /// <summary>
+    /// load split layout from object ( see SaveStructure )
+    /// </summary>
+    /// <param name="layout">split layout object</param>
+    /// <param name="reconfigureControl">optional configure control delegate</param>
+    public void LoadStructure(GridSplitterManagerLayoutItem layout, ConfigControlDelegate? reconfigureControl = null)
+    {
+        Clear();
+
+        void LoadLayout(GridSplitterManagerLayoutItem layout)
+        {
+            var ctls = Split(layout.SplitDirection, layout.Sizes.ToArray());
+            for (int ci = 0; ci < ctls!.Length; ++ci)
+            {
+                FocusedControl = ctls[ci];
+                var uid = layout.LeafUIDs[ci];
+
+                if (uid is not null)
+                    reconfigureControl?.Invoke(FocusedControl, uid.Value);
+            }
+
+            for (int ci = 0; ci < layout.Children.Count; ++ci)
+            {
+                var child = layout.Children[ci];
+
+                FocusedControl = ctls![child.Index];
+
+                LoadLayout(child);
+            }
+        }
+
+        LoadLayout(layout);
+    }
+
+    /// <summary>
+    /// create a serializable object that hold split configuration
+    /// </summary>
+    /// <param name="emitControl">optionally an action to save apart control info</param>    
+    public GridSplitterManagerLayoutItem SaveStructure(ConfigControlDelegate? emitControl = null)
+    {
+        GridSplitterManagerLayoutItem? res = null;
+        GridSplitterManagerLayoutItem? parent = null;
+        var cur = res;
+
+        int? prevLvl = null;
+
+        int uid = 0;
+
+        CustomScanGrid(x =>
+        {
+            var ctl = x.ctl;
+            var ctlPos = x.ctlPos;
+            var gr = x.gr;
+            var grDir = x.grDir;
+            var lvl = x.lvl;
+            var ctlDir = x.ctlDir;
+
+            var ctlTypeStr = ctl.GetType().Name;
+
+            if (cur is not null)
+            {
+                if (ctl is Border brd && brd.Child is T t)
+                {
+                    emitControl?.Invoke(t, uid);
+                    cur.LeafUIDs[ctlPos] = uid++;
+                }
+            }
+
+            if (ctl is Grid ctlGrid)
+            {
+                var item = new GridSplitterManagerLayoutItem();
+                item.SplitDirection = ctlDir!.Value;
+
+                if (ctlDir == GridSplitDirection.Horizontally)
+                    item.Sizes = ctlGrid.ColumnDefinitions.Select(w => w.Width.Value).ToList();
+
+                else
+                    item.Sizes = ctlGrid.RowDefinitions.Select(w => w.Height.Value).ToList();
+
+                item.LeafUIDs = new int?[item.Sizes.Count].ToList();
+
+                item.Index = ctlPos;
+
+                if (res is null)
+                {
+                    res = cur = item;
+                    prevLvl = lvl;
+                    parent = res;
+                }
+
+                else if (prevLvl.HasValue)
+                {
+                    if (prevLvl > lvl)
+                    {
+                        while (prevLvl != lvl)
+                        {
+                            parent = parent!.Parent;
+                            --prevLvl;
+                        }
+                        --prevLvl;
+
+                        parent!.Children.Add(item);
+                        cur = item;
+                        parent = cur.Parent;
+
+                    }
+                    else
+                    {
+                        if (prevLvl == lvl)
+                        {
+                            item.Parent = parent;
+                            parent!.Children.Add(item);
+                        }
+                        else
+                        {
+                            item.Parent = cur;
+                            cur!.Children.Add(item);
+                            parent = cur;
+                        }
+
+                        cur = item;
+                        prevLvl = lvl;
+                    }
+                }
+            }
+
+            if (ctl.Parent is Grid ctlParentGrid && ctlPos >= ctlParentGrid.Children.Count)
+                Debugger.Break();
+
+            return true;
+        });
+
+        return res;
+    }
+
+    /// <summary>
     /// debug print info
     /// </summary>
     /// <param name="wr">output (default console.out)</param>
@@ -611,6 +779,47 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
     }
 
     /// <summary>
+    /// split in the direction given producing a set of given sizes children
+    /// </summary>
+    /// <param name="dir">direction split</param>
+    /// <param name="sizes">list star size for produced children</param>
+    public T[]? Split(GridSplitDirection dir, params double[] sizes)
+    {
+        if (FocusedControl is null || CreateControl is null || sizes.Length < 2) return null;
+
+        var fCtl = FocusedControl;
+        var fDir = ControlGetSplitDirection(fCtl);
+        if (fDir is null) return null;
+
+        var fBrd = ControlGetParentBorder(fCtl);
+        if (fBrd is null) return null;
+
+        var fBrdPos = GetPos(fDir.Value, fBrd);
+        var fGr = ControlGetParentGrid(fCtl);
+        if (fGr is null) return null;
+
+        var splitted = new List<T>() { FocusedControl };
+
+        for (int si = 0; si < sizes.Length - 1; ++si)
+        {
+            var s = Split(dir);
+            if (s is null) return null;
+            FocusedControl = s;
+            splitted.Add(s);
+        }
+
+        for (int si = 0; si < sizes.Length; ++si)
+        {
+            var s = splitted[si];
+
+            fGr = ControlGetParentGrid(s);
+            GridSetDefSize(fGr, dir, si, sizes[si]);
+        }
+
+        return splitted.ToArray();
+    }
+
+    /// <summary>
     /// split focused control over given direction; does nothing if focused control is null
     /// </summary>
     /// <param name="dir">split direction</param>
@@ -635,11 +844,27 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
 
         if (fDir == dir) // parallel
         {
-            var halfSize = GridGetDefSize(fGr, fDir.Value, fBrdPos) / 2;
+            var size = GridGetDefSize(fGr, fDir.Value, fBrdPos) / 2;
+
+            if (DistributeSplitSize)
+            {
+                if (size > 1)
+                {
+                    var sum = 0d;
+                    int pos = 0;
+                    foreach (var x in fGr.Children.Where(y => !(y is GridSplitter)).Cast<Control>())
+                    {
+                        sum += GridGetDefSize(fGr, fDir.Value, pos++);
+                    }
+                    size = sum / pos;
+                }
+                else
+                    size = 1;
+            }
 
             GridRemoveDef(fGr, fDir.Value, fBrdPos);
-            InsertDef(fGr, fDir.Value, fBrdPos, DistributeSplitSize ? 1 : halfSize);
-            InsertDef(fGr, fDir.Value, fBrdPos + 1, DistributeSplitSize ? 1 : halfSize);
+            InsertDef(fGr, fDir.Value, fBrdPos, size);
+            InsertDef(fGr, fDir.Value, fBrdPos + 1, size);
             foreach (var x in fGr.Children.Where(y => !(y is GridSplitter)).Cast<Control>())
             {
                 var pos = GetPos(fDir.Value, x);
