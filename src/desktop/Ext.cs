@@ -7,7 +7,7 @@ public static partial class Ext
     /// Search from this control upward in the hierarchy searching given template type
     /// for all levels until root if default maxLevel (null) or for at most maxLevel of parents.
     /// </summary>
-    public static T? SearchParent<T>(this IControl ctl, int? maxLevel = null) where T : Control
+    public static T? SearchParent<T>(this StyledElement ctl, int? maxLevel = null) where T : Control
     {        
         if (ctl.Parent is null) return null;
         if (ctl.Parent is T t) return t;

@@ -18,7 +18,7 @@ public class GridAutoRow : AvaloniaObject
             HandleAutoRowDefinitionsChanged(x.Sender, x.NewValue.GetValueOrDefault<bool>()));
     }
 
-    private static void HandleAutoRowDefinitionsChanged(IAvaloniaObject sender, bool v)
+    private static void HandleAutoRowDefinitionsChanged(AvaloniaObject sender, bool v)
     {
         if (v && sender is Grid grid)
         {
