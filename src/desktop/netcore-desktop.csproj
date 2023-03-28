@@ -30,8 +30,11 @@
   <ItemGroup>        
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)" />        
     <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />    
-    <PackageReference Include="netcore-ext" Version="1.5.0" />
+    <!-- <PackageReference Include="netcore-ext" Version="1.5.0" /> -->
     <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="System.Reactive" Version="6.0.0-preview.1" />
+    <PackageReference Include="System.Reactive" Version="6.0.0-preview.1" />    
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\netcore-ext\src\ext\netcore-ext.csproj" />
   </ItemGroup>
 </Project>
