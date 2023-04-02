@@ -397,7 +397,8 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
                 }
             }
 
-            if (ctl is Grid ctlGrid)
+            if (ctl is Grid ctlGrid && ctlGrid.Children.Count > 0 &&
+                (ctlGrid.Children.Count > 1 || ctlGrid.Children[0] is Border))
             {
                 var item = new GridSplitterManagerLayoutItem();
                 item.SplitDirection = ctlDir!.Value;
