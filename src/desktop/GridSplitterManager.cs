@@ -341,7 +341,9 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
         void LoadLayout(GridSplitterManagerLayoutItem layout)
         {
             var ctls = Split(layout.SplitDirection, layout.Sizes.ToArray());
-            for (int ci = 0; ci < ctls!.Length; ++ci)
+            if (ctls is null) return;
+
+            for (int ci = 0; ci < ctls.Length; ++ci)
             {
                 FocusedControl = ctls[ci];
                 var uid = layout.LeafUIDs[ci];
@@ -354,7 +356,7 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
             {
                 var child = layout.Children[ci];
 
-                FocusedControl = ctls![child.Index];
+                FocusedControl = ctls[child.Index];
 
                 LoadLayout(child);
             }
