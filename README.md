@@ -20,6 +20,7 @@
 
 <hr/>
 
+
 ## Examples
 
 List of [examples](https://devel0.github.io/netcore-desktop/html/examples.html).

@@ -10,7 +10,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-        Title = AppDomain.CurrentDomain.FriendlyName;
+        Title = AppDomain.CurrentDomain.FriendlyName + " ( GridSplitterManager ) ";
 
         gridSplitterManager = new GridSplitterManager<SampleControl>()
         {

@@ -7,7 +7,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-        Title = AppDomain.CurrentDomain.FriendlyName;
+        Title = AppDomain.CurrentDomain.FriendlyName + " ( SmartConverter )";
 
         Width = 600;
         Height = 400;
