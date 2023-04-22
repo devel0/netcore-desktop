@@ -71,7 +71,7 @@ public class SmartConverter : IValueConverter
     static readonly Type typeofFontWeight = typeof(FontWeight);
     static readonly BrushConverter brushCvt = new BrushConverter();
 
-    public object? operand(object? value, Type targetType, object parameter, CultureInfo culture)
+    public object? operand(object? value, Type targetType, object parameter, CultureInfo culture, bool isBackCvt)
     {
         Type? typeOfValue = value is null ? null : value.GetType();
         if (parameter is null) return null;
@@ -248,13 +248,25 @@ public class SmartConverter : IValueConverter
                 if (tl == "true" || tl == "false") str = tl;
             }
 
-            matches = str == ss[0].ToLower();
+            if (isBackCvt)
+                matches = str == ss[1].ToLower();
+            else
+                matches = str == ss[0].ToLower();
+
             if (!matches && ss.Length <= 2) return null;
         }
 
         var i = matches ? matchIPos : matchIPos + 1;
 
-        if (targetType == typeofBoolean)
+        if (isBackCvt)
+        {
+            if (targetType.IsEnum && matches)
+            {
+                res = Enum.Parse(targetType, ss[0]);
+            }
+        }
+
+        else if (targetType == typeofBoolean)
         {
             res = bool.Parse(ss[i]);
         }
@@ -312,9 +324,9 @@ public class SmartConverter : IValueConverter
     }
 
     public object? Convert(object? value, Type targetType, object parameter, CultureInfo culture) =>
-        operand(value, targetType, parameter, culture);
+        operand(value, targetType, parameter, culture, isBackCvt: false);
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) =>
-        operand(value, targetType, parameter, culture) ?? value;
+        operand(value, targetType, parameter, culture, isBackCvt: true) ?? value;
 
 }
