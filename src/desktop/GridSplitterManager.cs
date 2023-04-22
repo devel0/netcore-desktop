@@ -1,5 +1,4 @@
 ﻿using Avalonia.Data;
-using Avalonia.Input;
 
 namespace SearchAThing.Desktop;
 
@@ -379,6 +378,8 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
 
         int uid = 0;
 
+        bool initial = true;
+
         CustomScanGrid(x =>
         {
             var ctl = x.ctl;
@@ -388,7 +389,7 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
             var lvl = x.lvl;
             var ctlDir = x.ctlDir;
 
-            var ctlTypeStr = ctl.GetType().Name;
+            // var ctlTypeStr = ctl.GetType().Name;
 
             if (cur is not null)
             {
@@ -399,7 +400,20 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
                 }
             }
 
-            if (ctl is Grid ctlGrid && ctlGrid.Children.Count > 0 &&
+            Grid? ctlGrid = null;
+
+            if (initial)
+            {
+                initial = false;
+                ctlGrid = gr;
+                ctlDir = grDir;
+            }
+            else
+            {
+                ctlGrid = ctl as Grid;
+            }
+
+            if (ctlGrid is not null && ctlGrid.Children.Count > 0 &&
                 (ctlGrid.Children.Count > 1 || ctlGrid.Children[0] is Border))
             {
                 var item = new GridSplitterManagerLayoutItem();
@@ -1283,7 +1297,13 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
         }
 
         if (grRoot.Children.FirstOrDefault() is Grid cGr)
+        {
+            if (cGr.Children.Count == 1 && cGr.Children[0] is Grid ccGr)
+            {
+                cGr = ccGr;
+            }
             ScanGrid(cGr);
+        }
     }
 
 }
