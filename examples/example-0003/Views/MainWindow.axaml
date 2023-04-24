@@ -4,6 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+    x:Name="uc"
     x:Class="example.Views.MainWindow"
     Icon="/Assets/avalonia-logo.ico">
 
@@ -11,7 +12,7 @@
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel />
-    </Design.DataContext>    
+    </Design.DataContext>
 
     <Grid RowDefinitions="Auto,*" Margin="10">
         <StackPanel Orientation="Horizontal">
@@ -48,11 +49,61 @@
                         </Image.Source>
                     </Image>
                 </StackPanel>
-            </Button>            
+            </Button>
+
+            <Button ToolTip.Tip="Save layout" Click="SaveLayoutClick" Margin="10,0,0,0" Padding="10">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="SAVE" />
+                    <Image Margin="10,0,0,0" Width="24" Height="24">
+                        <Image.Source>
+                            <DrawingImage Drawing="{StaticResource BoxIcons.RegularSave}" />
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </Button>
+
+            <Button ToolTip.Tip="Save layout" Click="RestoreLayoutClick" Margin="10,0,0,0" Padding="10">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="RESTORE" />
+                    <Image Margin="10,0,0,0" Width="24" Height="24">
+                        <Image.Source>
+                            <DrawingImage Drawing="{StaticResource JamIcons.FolderOpen}" />
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </Button>
+
+            <Button ToolTip.Tip="Clear" Click="ClearLayoutClick" Margin="10,0,0,0" Padding="10">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="CLEAR" />
+                    <Image Margin="10,0,0,0" Width="24" Height="24">
+                        <Image.Source>
+                            <DrawingImage Drawing="{StaticResource FluentIcons.delete_regular}" />
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </Button>
 
         </StackPanel>
 
-        <Grid Grid.Row="1" Name="grSplitContainer" />
+        <Grid Grid.Row="1" Grid.ColumnDefinitions="3*,1*">
+
+            <Grid Grid.Column="0" Name="grSplitContainer" Margin="0,0,10,0" />
+
+            <GridSplitter Grid.Column="0" HorizontalAlignment="Right" Width="10" />
+
+            <Grid Grid.Column="1">
+                <TreeView x:Name="tv"                    
+                    Items="{Binding #uc.tvItems}">
+                    <TreeView.ItemTemplate>
+                        <TreeDataTemplate ItemsSource="{Binding Children}">
+                            <TextBlock Text="{Binding .}" />
+                        </TreeDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </Grid>
+
+        </Grid>
     </Grid>
 
 </Window>

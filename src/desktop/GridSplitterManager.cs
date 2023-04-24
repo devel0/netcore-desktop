@@ -1,5 +1,6 @@
 ﻿using Avalonia.Data;
-using Avalonia.Input;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace SearchAThing.Desktop;
 
@@ -239,7 +240,7 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
 
     public GridSplitterManager()
     {
-
+        this.RowDefinitions.Add(new RowDefinition(1, GridUnitType.Star));
     }
 
     /// <summary>
@@ -303,22 +304,40 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
     {
         T leaf;
         var g = grRoot;
+        Grid? receiver = null;
         while (true)
         {
             if (g.Children.Count == 0) throw new Exception($"can't find a border");
             var q = g.Children.OfType<Border>().FirstOrDefault();
             if (q is not null && q.Child is T t)
             {
+                if (receiver is not null)
+                {
+                    g.Children.Clear();
+                    g = receiver;
+                }
                 g.Children.Clear();
                 g.RowDefinitions.Clear();
                 g.ColumnDefinitions.Clear();
                 g.RowDefinitions.Add(RowStar());
+                SetRow(q, 0);
+                SetColumn(q, 0);
                 g.Children.Add(q);
                 leaf = t;
                 FocusedControl = leaf;
                 break;
             }
-            g = (Grid)g.Children[0];
+            else if (g.Children.Count == 1 && g.Children[0] is Grid)
+            {
+                g = (Grid)g.Children[0];
+                receiver = g;
+                continue;
+            }
+
+            var tmp = (Grid)g.Children[0];
+            g.Children.Clear();
+
+            g = tmp;
         }
     }
 
@@ -330,27 +349,215 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
     public delegate void ConfigControlDelegate(T ctl, int uid);
 
     /// <summary>
+    /// Json settings for <see cref="SaveStructure"/> and <see cref="LoadStructure"/>.
+    /// </summary>    
+    public JsonSerializerSettings JsonSettings => new JsonSerializerSettings
+    {
+        ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+        Formatting = Formatting.Indented,
+        NullValueHandling = NullValueHandling.Ignore,
+        Converters = new[] { new StringEnumConverter() }
+    };
+
+    void Validate()
+    {
+#if !DEBUG
+        return;
+#endif
+        if (grRoot.Children.Count != 1) throw new Exception($"grRoot Children must 1");
+
+        void ValidFn(Control control)
+        {
+            if (control is Grid gr)
+            {
+                var cchildren = gr.Children.Where(r => r is Border || r is Grid);
+                var grChildrenCount = cchildren.Count();
+
+                if (control != grRoot && grChildrenCount == 1 && gr.Children.Count(r => r is Grid) == 1)
+                    throw new Exception($"Non root grid must have more than 1 control");
+
+                if (gr.RowDefinitions.Count != 0 && gr.ColumnDefinitions.Count != 0)
+                    throw new Exception($"Grid must have rows or columns not either");
+
+                var grDir = GridGetSplitDirection(gr);
+
+                switch (grDir)
+                {
+                    case GridSplitDirection.Horizontally:
+                        {
+                            if (gr.ColumnDefinitions.Count != grChildrenCount)
+                                throw new Exception($"Grid has {grChildrenCount} vs {gr.ColumnDefinitions.Count} col defs");
+                        }
+                        break;
+
+                    case GridSplitDirection.Vertically:
+                        {
+                            if (gr.RowDefinitions.Count != grChildrenCount)
+                                throw new Exception($"Grid has {grChildrenCount} vs {gr.RowDefinitions.Count} row defs");
+                        }
+                        break;
+                }
+
+                List<int> indexes = new List<int>();
+
+                foreach (var child in cchildren)
+                {
+                    indexes.Add(GetPos(grDir, child));
+                }
+
+                for (int i = 0; i < indexes.Count; ++i)
+                {
+                    if (!indexes.Contains(i))
+                        throw new Exception($"Grid children must have row or col index covering sequence 0..N-1");
+                }
+
+                if (indexes.Count > grChildrenCount)
+                    throw new Exception($"Grid children must have row or col index covering sequence 0..{grChildrenCount - 1}");
+
+                foreach (var child in cchildren)
+                    ValidFn(child);
+            }
+
+            else if (control is Border brd)
+            {
+                if (brd.Child is not T t)
+                    throw new Exception($"Border without control inside");
+            }
+        }
+
+        ValidFn(grRoot);
+    }
+
+    public GridSplitterManagerLayoutItem ScanGrid(
+        ConfigControlDelegate? emitControl = null,
+        Action<(GridSplitterManagerLayoutItem item, Control control)>? controlVisited = null)
+    {
+        var lvl = 0;
+        int uid = 0;
+
+        GridSplitterManagerLayoutItem? ScanItem(GridSplitterManagerLayoutItem? parent, Control control)
+        {
+            int index = 0;
+
+            if (parent is not null)
+            {
+                switch (parent.SplitDirection)
+                {
+                    case GridSplitDirection.Vertically:
+                        {
+                            index = Grid.GetRow(control);
+                        }
+                        break;
+
+                    case GridSplitDirection.Horizontally:
+                        {
+                            index = Grid.GetColumn(control);
+                        }
+                        break;
+                }
+            }
+
+            if (control is Grid gr)
+            {
+                var grDir = GridGetSplitDirection(gr);
+
+                var sizes = new List<double>();
+
+                switch (grDir)
+                {
+                    case GridSplitDirection.Horizontally:
+                        {
+                            if (gr.ColumnDefinitions.Count == 0)
+                                sizes = new List<double> { 1 };
+                            else
+                                sizes = gr.ColumnDefinitions.Select(w => w.Width.Value).ToList();
+                        }
+                        break;
+
+                    case GridSplitDirection.Vertically:
+                        {
+                            if (gr.RowDefinitions.Count == 0)
+                                sizes = new List<double> { 1 };
+                            else
+                                sizes = gr.RowDefinitions.Select(w => w.Height.Value).ToList();
+                        }
+                        break;
+                }
+
+                var item = new GridSplitterManagerLayoutItem
+                {
+                    Level = lvl,
+                    SplitDirection = grDir,
+                    Sizes = sizes,
+                    Children = new List<GridSplitterManagerLayoutItem>(),
+                    Index = index
+                };
+
+                foreach (var child in gr.Children.OfType<Control>().ToList())
+                {
+                    ++lvl;
+                    var q = ScanItem(item, child);
+                    if (q is not null) item.Children.Add(q);
+                    --lvl;
+                }
+
+                controlVisited?.Invoke((item, control));
+
+                return item;
+            }
+
+            else if (control is Border ctlBorder && ctlBorder.Child is T t)
+            {
+                var item = new GridSplitterManagerLayoutItem
+                {
+                    Level = lvl,
+                    Index = index,
+                    LeafUID = uid,
+                    Debug = t.GetHashCode().ToString()
+                };
+
+                emitControl?.Invoke(t, uid);
+                ++uid;
+
+                controlVisited?.Invoke((item, control));
+
+                return item;
+            }
+
+            return null;
+        }
+
+        var res = ScanItem(null, grRoot.Children.First())!;
+
+        res.SortChildren();
+
+        return res;
+    }
+
+    /// <summary>
+    /// create a serializable object that hold split configuration
+    /// </summary>
+    /// <param name="emitControl">optionally an action to save apart control info</param>    
+    /// <seealso cref="JsonSettings"/>
+    public GridSplitterManagerLayoutItem SaveStructure(ConfigControlDelegate? emitControl = null) =>
+        ScanGrid(emitControl);
+
+    /// <summary>
     /// load split layout from object ( see SaveStructure )
     /// </summary>
     /// <param name="layout">split layout object</param>
     /// <param name="reconfigureControl">optional configure control delegate</param>
+    /// <seealso cref="JsonSettings"/>
     public void LoadStructure(GridSplitterManagerLayoutItem layout, ConfigControlDelegate? reconfigureControl = null)
     {
         Clear();
 
         void LoadLayout(GridSplitterManagerLayoutItem layout)
         {
-            var ctls = Split(layout.SplitDirection, layout.Sizes.ToArray());
+            if (layout.SplitDirection is null || layout.Sizes is null || layout.Children is null) return;
+
+            var ctls = Split(layout.SplitDirection.Value, layout.Sizes.ToArray());
             if (ctls is null) return;
-
-            for (int ci = 0; ci < ctls.Length; ++ci)
-            {
-                FocusedControl = ctls[ci];
-                var uid = layout.LeafUIDs[ci];
-
-                if (uid is not null)
-                    reconfigureControl?.Invoke(FocusedControl, uid.Value);
-            }
 
             for (int ci = 0; ci < layout.Children.Count; ++ci)
             {
@@ -358,178 +565,15 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
 
                 FocusedControl = ctls[child.Index];
 
-                LoadLayout(child);
+                if (child.Children is null && child.LeafUID is not null)
+                    reconfigureControl?.Invoke(FocusedControl, child.LeafUID.Value);
+
+                else
+                    LoadLayout(child);
             }
         }
 
         LoadLayout(layout);
-    }
-
-    /// <summary>
-    /// create a serializable object that hold split configuration
-    /// </summary>
-    /// <param name="emitControl">optionally an action to save apart control info</param>    
-    public GridSplitterManagerLayoutItem SaveStructure(ConfigControlDelegate? emitControl = null)
-    {
-        GridSplitterManagerLayoutItem? res = null;
-        GridSplitterManagerLayoutItem? parent = null;
-        var cur = res;
-
-        int? prevLvl = null;
-
-        int uid = 0;
-
-        CustomScanGrid(x =>
-        {
-            var ctl = x.ctl;
-            var ctlPos = x.ctlPos;
-            var gr = x.gr;
-            var grDir = x.grDir;
-            var lvl = x.lvl;
-            var ctlDir = x.ctlDir;
-
-            var ctlTypeStr = ctl.GetType().Name;
-
-            if (cur is not null)
-            {
-                if (ctl is Border brd && brd.Child is T t)
-                {
-                    emitControl?.Invoke(t, uid);
-                    cur.LeafUIDs[ctlPos] = uid++;
-                }
-            }
-
-            if (ctl is Grid ctlGrid && ctlGrid.Children.Count > 0 &&
-                (ctlGrid.Children.Count > 1 || ctlGrid.Children[0] is Border))
-            {
-                var item = new GridSplitterManagerLayoutItem();
-                item.SplitDirection = ctlDir!.Value;
-
-                if (ctlDir == GridSplitDirection.Horizontally)
-                    item.Sizes = ctlGrid.ColumnDefinitions.Select(w => w.Width.Value).ToList();
-
-                else
-                    item.Sizes = ctlGrid.RowDefinitions.Select(w => w.Height.Value).ToList();
-
-                item.LeafUIDs = new int?[item.Sizes.Count].ToList();
-
-                item.Index = ctlPos;
-
-                if (res is null)
-                {
-                    res = cur = item;
-                    prevLvl = lvl;
-                    parent = res;
-                }
-
-                else if (prevLvl.HasValue)
-                {
-                    if (prevLvl > lvl)
-                    {
-                        while (prevLvl != lvl)
-                        {
-                            parent = parent!.Parent;
-                            --prevLvl;
-                        }
-                        --prevLvl;
-
-                        parent!.Children.Add(item);
-                        cur = item;
-                        parent = cur.Parent;
-
-                    }
-                    else
-                    {
-                        if (prevLvl == lvl)
-                        {
-                            item.Parent = parent;
-                            parent!.Children.Add(item);
-                        }
-                        else
-                        {
-                            item.Parent = cur;
-                            cur!.Children.Add(item);
-                            parent = cur;
-                        }
-
-                        cur = item;
-                        prevLvl = lvl;
-                    }
-                }
-            }
-
-            if (ctl.Parent is Grid ctlParentGrid && ctlPos >= ctlParentGrid.Children.Count)
-                Debugger.Break();
-
-            return true;
-        });
-
-        return res;
-    }
-
-    /// <summary>
-    /// debug print info
-    /// </summary>
-    /// <param name="wr">output (default console.out)</param>
-    /// <param name="highLightControl">show an arrow on control focused</param>
-    /// <param name="breakOnWarn">break debugger if warn encountered</param>
-    public void PrintStructure(TextWriter? wr = null, T? highLightControl = null, bool breakOnWarn = false)
-    {
-        if (wr is null) wr = Console.Out;
-
-        CustomScanGrid((x) =>
-        {
-            var ctl = x.ctl;
-            var ctlPos = x.ctlPos;
-            var gr = x.gr;
-            var grDir = x.grDir;
-            var lvl = x.lvl;
-            var ctlDir = x.ctlDir;
-
-            var ctlTypeStr = ctl.GetType().Name;
-
-            var indentStr = " ".Repeat(lvl);
-            var dirStr = "";
-            var posStr = grDir == GridSplitDirection.Horizontally ? "col:" : "row:";
-            posStr += ctlPos;
-            if (ctl is Grid ctlGrid) dirStr = $"[{ctlDir} cnt:{(ctlGrid).Children.Count(w => !(w is GridSplitter))}] ";
-
-            if (ctl.Parent is Grid ctlParentGrid && ctlPos >= ctlParentGrid.Children.Count)
-                Debugger.Break();
-
-            var highStr = "";
-            {
-                if (highLightControl is not null &&
-                    ctl is Border ctlBorder &&
-                    ctlBorder.Child == highLightControl)
-                    highStr = " <===";
-            }
-
-            var hcStr = ctl.GetHashCode().ToString();
-            {
-                if (ctl is Border ctlBorder)
-                    hcStr += "," + ctlBorder.Child.GetHashCode().ToString();
-            }
-
-            var warnStr = "";
-            if (ctl is Grid g)
-            {
-                var gc = GridGetChildrenCount(g);
-                if (gc.grCnt == 1 && gc.brdCnt == 0 && g.Children.FirstOrDefault() is Grid gg)
-                {
-                    gc = GridGetChildrenCount(gg);
-                    if (gc.grCnt == 1 && gc.brdCnt == 0)
-                    {
-                        warnStr = " ***";
-                        if (breakOnWarn) Debugger.Break();
-                    }
-                }
-            }
-
-            wr.WriteLine($"{indentStr} {ctlTypeStr} {dirStr}({posStr}) <{hcStr}> {highStr}{warnStr}");
-
-            return true;
-        });
     }
 
     /// <summary>
@@ -552,20 +596,7 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
                 ctl?.Focus();
             }
         };
-        // var bind = new MultiBinding()
-        // {
-        //     Converter = focusedControlConverter,
-        //     ConverterParameter = child
-        // };
-        // bind.Bindings.Add(new Binding()
-        // {
-        //     Source = this
-        // });
-        // bind.Bindings.Add(new Binding("FocusedControl")
-        // {
-        //     Source = this
-        // });
-        // brd.Bind(Border.BorderBrushProperty, bind);
+
         brd.Child = child;
 
         return brd;
@@ -660,7 +691,8 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
     {
         if (gr.RowDefinitions.Count > 0) return GridSplitDirection.Vertically;
         if (gr.ColumnDefinitions.Count > 0) return GridSplitDirection.Horizontally;
-        throw new Exception("invalid grid without row or col definitions");
+
+        return GridSplitDirection.Vertically;
     }
 
     /// <summary>
@@ -845,6 +877,35 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
 
         var nBrd = newBorder(nBrdContent);
 
+        if (fGr.Children.Count == 1)
+        {
+            fDir = dir;
+            switch (fDir)
+            {
+                case GridSplitDirection.Horizontally:
+                    {
+                        if (fGr.ColumnDefinitions.Count == 0)
+                        {
+                            fGr.ColumnDefinitions.Add(new ColumnDefinition(1, GridUnitType.Star));
+                            fGr.RowDefinitions.Clear();
+                            Grid.SetColumn(fGr.Children.First(), 0);
+                        }
+                    }
+                    break;
+
+                case GridSplitDirection.Vertically:
+                    {
+                        if (fGr.RowDefinitions.Count == 0)
+                        {
+                            fGr.RowDefinitions.Add(new RowDefinition(1, GridUnitType.Star));
+                            fGr.ColumnDefinitions.Clear();
+                            Grid.SetRow(fGr.Children.First(), 0);
+                        }
+                    }
+                    break;
+            }
+        }
+
         if (fDir == dir) // parallel
         {
             var size = GridGetDefSize(fGr, fDir.Value, fBrdPos) / 2;
@@ -899,6 +960,8 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
 
         FocusedControl = BorderGetChildControl(nBrd);
 
+        Validate();
+
         return FocusedControl;
     }
 
@@ -908,13 +971,6 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
     public void Remove()
     {
         if (FocusedControl is null) return;
-
-        if (DebugWriter is not null)
-        {
-            DebugWriter.WriteLine();
-            DebugWriter.WriteLine($"BEFORE REMOVAL");
-            PrintStructure(DebugWriter, FocusedControl);
-        }
 
         var fCtl = FocusedControl;
         var fDir = ControlGetSplitDirection(fCtl);
@@ -952,7 +1008,7 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
 
             removed = true;
         }
-        else if (visitedControlDict.Count > 1) // remove fGr and integrate to parent
+        else if (visitedControlDict.Count >= 1) // remove fGr and integrate to parent
         {
             if (fGr.Parent is Grid pGr)
             {
@@ -1002,26 +1058,7 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
 
         Adjust();
 
-        var aliveControls = new HashSet<T>();
-        CustomScanGrid((x) =>
-        {
-            if (x.ctl is Border xBrd && xBrd.Child is T brdChild)
-                aliveControls.Add(brdChild);
-            return true;
-        });
-        var removedVisitedCtls = visitedControlDict.Where(r => !aliveControls.Contains(r.Key)).Select(w => w.Key).ToList();
-
-        foreach (var x in removedVisitedCtls)
-        {
-            visitedControlDict.Remove(x);
-        }
-
-        if (DebugWriter is not null)
-        {
-            DebugWriter.WriteLine();
-            DebugWriter.WriteLine($"AFTER REMOVAL");
-            PrintStructure(DebugWriter, null, true);
-        }
+        Validate();
     }
 
     /// <summary>
@@ -1030,13 +1067,6 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
     void Adjust()
     {
         var totBefore = GetTotalControlsCount();
-
-        if (DebugWriter is not null)
-        {
-            DebugWriter.WriteLine();
-            DebugWriter.WriteLine($"BEFORE ADJUST");
-            PrintStructure(DebugWriter);
-        }
 
         // search leaf grids            
 
@@ -1104,8 +1134,7 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
 
                     var rowsDefs = gr.RowDefinitions.ToList();
                     var colsDefs = gr.ColumnDefinitions.ToList();
-                    // if (rowsDefs.Count == 0 && colsDefs.Count == 0)
-                    //     ;
+
                     gr.Children.Clear();
 
                     pGr.Children.Clear();
@@ -1175,6 +1204,77 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
             }
         }
 
+        //---        
+
+        // search grid with only 1 grid
+
+        IEnumerable<Grid> SearchGridWith1Grid(Grid gr)
+        {
+            var q = GridGetChildrenCount(gr);
+            if (q.brdCnt == 0 && q.grCnt == 1)
+                yield return gr;
+
+            foreach (var c in gr.Children.OfType<Grid>())
+            {
+                foreach (var res in SearchGridWith1Grid(c))
+                    yield return res;
+            }
+        }
+
+        while (true)
+        {
+            var q = SearchGridWith1Grid(grRootFirstChildGrid).FirstOrDefault();
+            if (q is null) break;
+
+            if (q.Parent is Grid pGrid)
+            {
+                var pDir = GridGetSplitDirection(pGrid);
+                var qDir = GridGetSplitDirection(q);
+                var qSizes = new List<double>();
+                switch (qDir)
+                {
+                    case GridSplitDirection.Horizontally:
+                        {
+                            foreach (var y in q.ColumnDefinitions)
+                                qSizes.Add(y.Width.Value);
+                        }
+                        break;
+
+                    case GridSplitDirection.Vertically:
+                        {
+                            foreach (var y in q.RowDefinitions)
+                                qSizes.Add(y.Height.Value);
+                        }
+                        break;
+                }
+
+                var qIdx = pDir == GridSplitDirection.Horizontally ?
+                    Grid.GetColumn(q) : Grid.GetRow(q);
+                var qSize = pDir == GridSplitDirection.Horizontally ?
+                    pGrid.ColumnDefinitions[qIdx].Width.Value :
+                    pGrid.RowDefinitions[qIdx].Height.Value;
+                pGrid.Children.Remove(q);
+                var movedChilds = q.Children.OfType<Grid>().ToList();
+                q.Children.Clear();
+
+                if (movedChilds.Count != 1) throw new InternalError("");
+
+                pGrid.Children.Add(movedChilds[0]);
+                switch (pDir)
+                {
+                    case GridSplitDirection.Horizontally:
+                        Grid.SetColumn(movedChilds[0], qIdx);
+                        break;
+
+                    case GridSplitDirection.Vertically:
+                        Grid.SetRow(movedChilds[0], qIdx);
+                        break;
+                }
+            }
+            else if (q != grRoot)
+                break;
+        }
+
         //---
 
         void RebuildSplitterAndSetMargin(Grid gr)
@@ -1220,13 +1320,7 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
 
         if (totAfter != totBefore)
         {
-            if (DebugWriter is not null)
-            {
-                DebugWriter.WriteLine();
-                DebugWriter.WriteLine($"ERROR");
-                PrintStructure(DebugWriter);
-            }
-            throw new Exception($"internal error: adjust removed some controls");
+            throw new InternalError($"internal error: adjust removed some controls");
         }
     }
 
@@ -1234,56 +1328,12 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
     {
         int tot = 0;
 
-        CustomScanGrid((x) =>
+        ScanGrid(controlVisited: (x) =>
         {
-            if (x.ctl is Border) ++tot;
-
-            return true;
+            if (x.control is Border) ++tot;
         });
 
         return tot;
-    }
-
-    /// <summary>
-    /// helper walker
-    /// - grDir : splitting direction of the gr
-    /// - gr : grid that contains ctl
-    /// - ctlPos : pos of the ctl in the gr
-    /// - ctl : control ( it can grid, border, gridsplitter )
-    /// - ctlDir : splitting direction of the ctl ( if its a grid )
-    /// - lvl : nest level
-    /// </summary>          
-    /// <param name="continueScan">function that return true if scan continue or false if some break condition occurs</param>
-    void CustomScanGrid(Func<(
-        GridSplitDirection grDir,
-        Grid gr,
-        int ctlPos,
-        Control ctl,
-        GridSplitDirection? ctlDir,
-        int lvl), bool> continueScan)
-    {
-        var lvl = 0;
-
-        void ScanGrid(Grid gr)
-        {
-            var grDir = GridGetSplitDirection(gr);
-
-            foreach (var x in gr.Children.OfType<Control>().ToList())
-            {
-                var xPos = GetPos(grDir, x);
-
-                var ctlDir = (x is Grid grS) ? GridGetSplitDirection(grS) : new GridSplitDirection?();
-
-                if (!continueScan((grDir, gr, xPos, x, ctlDir, lvl))) break;
-
-                ++lvl;
-                if (x is Grid xGr) ScanGrid(xGr);
-                --lvl;
-            }
-        }
-
-        if (grRoot.Children.FirstOrDefault() is Grid cGr)
-            ScanGrid(cGr);
     }
 
 }

@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageId>netcore-desktop</PackageId>
-    <PackageVersion>2.4.0</PackageVersion>
+    <PackageVersion>3.0.0</PackageVersion>
     <Title>net core desktop</Title>
     <Descriptionnn />
     <Authors>Lorenzo Delana</Authors>
@@ -31,9 +31,9 @@
   <ItemGroup>        
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)" />        
     <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />    
-    <PackageReference Include="netcore-ext" Version="2.0.0" />
+    <PackageReference Include="netcore-ext" Version="2.3.1" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="System.Reactive" Version="6.0.0-preview.1" />    
+    <PackageReference Include="System.Reactive" Version="6.0.0-preview.9" />    
   </ItemGroup>
   <ItemGroup>
     <!-- <ProjectReference Include="..\..\..\netcore-ext\src\ext\netcore-ext.csproj" /> -->
