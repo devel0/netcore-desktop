@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['children_0',['Children',['../class_search_a_thing_1_1_desktop_1_1_grid_splitter_manager.html#af8c74f2cd1ecfa81402dfb3c49ce8288',1,'SearchAThing.Desktop.GridSplitterManager.Children'],['../class_search_a_thing_1_1_desktop_1_1_grid_splitter_manager_layout_item.html#a06adfae2e75540b8546ba6c5978d9904',1,'SearchAThing.Desktop.GridSplitterManagerLayoutItem.Children']]],
+  ['children_0',['Children',['../class_search_a_thing_1_1_desktop_1_1_grid_splitter_manager.html#af8c74f2cd1ecfa81402dfb3c49ce8288',1,'SearchAThing.Desktop.GridSplitterManager.Children'],['../class_search_a_thing_1_1_desktop_1_1_grid_splitter_manager_layout_item.html#ae4213c1539b6c1ddc24eb624be1e9475',1,'SearchAThing.Desktop.GridSplitterManagerLayoutItem.Children']]],
   ['clear_1',['Clear',['../class_search_a_thing_1_1_desktop_1_1_grid_splitter_manager.html#aa71d36872f416feaa853788a7a7a7ef8',1,'SearchAThing::Desktop::GridSplitterManager']]],
   ['configcontroldelegate_2',['ConfigControlDelegate',['../class_search_a_thing_1_1_desktop_1_1_grid_splitter_manager.html#adf8c825a0d5cdfb4da2be63c2083156a',1,'SearchAThing::Desktop::GridSplitterManager']]],
   ['constants_3',['Constants',['../class_search_a_thing_1_1_desktop_1_1_constants.html',1,'SearchAThing::Desktop']]],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vertically_0',['Vertically',['../namespace_search_a_thing_1_1_desktop.html#a77b8fd49cbd69a0485039f4f5366d8bfa2f956b64560e7307c699c3492cb37607',1,'SearchAThing::Desktop']]]
+  ['tostring_0',['ToString',['../class_search_a_thing_1_1_desktop_1_1_grid_splitter_manager_layout_item.html#aa73e7c4dd1df5fd5fbf81c7764ee1533',1,'SearchAThing::Desktop::GridSplitterManagerLayoutItem']]]
 ];
