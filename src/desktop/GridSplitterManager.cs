@@ -339,6 +339,9 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
 
             g = tmp;
         }
+        Children.Clear();
+
+        ((Border)((Grid)grRoot.Children[0]).Children[0]).Margin = new Thickness();
     }
 
     /// <summary>
@@ -820,7 +823,7 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
     /// <param name="sizes">list star size for produced children</param>
     public T[]? Split(GridSplitDirection dir, params double[] sizes)
     {
-        if (FocusedControl is null || CreateControl is null || sizes.Length < 2) return null;
+        if (FocusedControl is null || CreateControl is null) return null;
 
         var fCtl = FocusedControl;
         var fDir = ControlGetSplitDirection(fCtl);
