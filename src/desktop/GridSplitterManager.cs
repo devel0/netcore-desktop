@@ -339,9 +339,13 @@ public class GridSplitterManager<T> : Grid where T : Control, INotifyPropertyCha
 
             g = tmp;
         }
+
         Children.Clear();
 
-        ((Border)((Grid)grRoot.Children[0]).Children[0]).Margin = new Thickness();
+        var brd = ((Border)((Grid)grRoot.Children[0]).Children[0]);
+        brd.Margin = new Thickness();
+        if (brd.Child is T)
+            Children.Add((T)brd.Child);
     }
 
     /// <summary>
