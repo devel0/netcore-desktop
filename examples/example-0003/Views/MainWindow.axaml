@@ -94,7 +94,7 @@
 
             <Grid Grid.Column="1">
                 <TreeView x:Name="tv"                    
-                    Items="{Binding #uc.tvItems}">
+                    ItemsSource="{Binding #uc.tvItems}">
                     <TreeView.ItemTemplate>
                         <TreeDataTemplate ItemsSource="{Binding Children}">
                             <TextBlock Text="{Binding .}" />
