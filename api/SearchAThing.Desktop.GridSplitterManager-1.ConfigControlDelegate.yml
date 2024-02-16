@@ -1,0 +1,91 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Desktop.GridSplitterManager`1.ConfigControlDelegate
+  commentId: T:SearchAThing.Desktop.GridSplitterManager`1.ConfigControlDelegate
+  id: GridSplitterManager`1.ConfigControlDelegate
+  parent: SearchAThing.Desktop
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: GridSplitterManager<T>.ConfigControlDelegate
+  nameWithType: GridSplitterManager<T>.ConfigControlDelegate
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.ConfigControlDelegate
+  type: Delegate
+  source:
+    remote:
+      path: src/desktop/GridSplitterManager.cs
+      branch: docs
+      repo: git@github.com:devel0/netcore-desktop.git
+    id: ConfigControlDelegate
+    path: src/desktop/GridSplitterManager.cs
+    startLine: 355
+  assemblies:
+  - netcore-desktop
+  namespace: SearchAThing.Desktop
+  summary: configure control delegate
+  example: []
+  syntax:
+    content: public delegate void GridSplitterManager<T>.ConfigControlDelegate(T ctl, int uid)
+    parameters:
+    - id: ctl
+      type: '{T}'
+      description: control
+    - id: uid
+      type: System.Int32
+      description: control identifier ( generated in SaveStructure )
+    content.vb: Public Delegate Sub GridSplitterManager(Of T).ConfigControlDelegate(ctl As T, uid As Integer)
+  nameWithType.vb: GridSplitterManager(Of T).ConfigControlDelegate
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).ConfigControlDelegate
+  name.vb: GridSplitterManager(Of T).ConfigControlDelegate
+references:
+- uid: SearchAThing.Desktop
+  commentId: N:SearchAThing.Desktop
+  href: SearchAThing.html
+  name: SearchAThing.Desktop
+  nameWithType: SearchAThing.Desktop
+  fullName: SearchAThing.Desktop
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Desktop
+    name: Desktop
+    href: SearchAThing.Desktop.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Desktop
+    name: Desktop
+    href: SearchAThing.Desktop.html
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

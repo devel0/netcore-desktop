@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Tips &amp; Tricks | netcore-desktop </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Tips &amp; Tricks | netcore-desktop ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="netcore-desktop">
+            netcore-desktop
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="tips--tricks">Tips &amp; Tricks</h1>
+
+<p>[TOC]</p>
+<h2 id="diagrams-with-graphviz-tricks-graphviz">Diagrams with Graphviz {#tricks-graphviz}</h2>
+<p>To get the best looking class diagrams for your documentation, generate them with Graphviz as vector graphics with transparent background:</p>
+<pre><code># Doxyfile
+HAVE_DOT = YES
+DOT_IMAGE_FORMAT = svg
+DOT_TRANSPARENT = YES
+</code></pre>
+<p>In case <code>INTERACTIVE_SVG = YES</code> is set in the Doxyfile, all user-defined dotgraphs must be wrapped with the <code>interactive_dotgraph</code> CSS class in order for them to be rendered correctly:</p>
+<pre><code class="lang-md">&lt;div class=&quot;interactive_dotgraph&quot;&gt;
+
+\dotfile graph.dot
+
+&lt;/div&gt;
+</code></pre>
+<p>@note Both the default overflow scrolling behavior in this theme and the interactive editor enabled by <code>INTERACTIVE_SVG</code> are unsatisfying workarounds IMHO. Consider designing your graphs to be narrow enough to fit the page to avoid scrolling.</p>
+<h2 id="disable-dark-mode-tricks-darkmode">Disable Dark Mode {#tricks-darkmode}</h2>
+<p>If you don't want the theme to automatically switch to dark mode depending on the browser preference,
+you can disable dark mode by adding the <code>light-mode</code> class to the html-tag in the header template:</p>
+<pre><code class="lang-html">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; class=&quot;light-mode&quot;&gt;
+</code></pre>
+<p>The same can be done to always enable dark-mode:</p>
+<pre><code class="lang-html">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; class=&quot;dark-mode&quot;&gt;
+</code></pre>
+<p>@warning This only works if you don't use the dark-mode toggle extension.</p>
+<h2 id="choosing-sidebar-width-tricks-sidebar">Choosing Sidebar Width {#tricks-sidebar}</h2>
+<p>If you have enabled the sidebar-only theme variant, make sure to carefully choose a proper width for your sidebar.
+It should be wide enough to hold the icon, project title and version number. If the content is too wide, it will be
+cut off.</p>
+<pre><code class="lang-css">html {
+    /* Make sure sidebar is wide enough to contain the page title (logo + title + version) */
+    --side-nav-fixed-width: 335px;
+}
+</code></pre>
+<p>The chosen width should also be set in the Doxyfile:</p>
+<pre><code># Doxyfile
+TREEVIEW_WIDTH = 335
+</code></pre>
+<h2 id="formatting-tables-tricks-tables">Formatting Tables {#tricks-tables}</h2>
+<p>By default tables in this theme are left-aligned and as wide as required to fit their content.
+Those properties can be changed for individual tables.</p>
+<h3 id="centering">Centering</h3>
+<p>Tables can be centered by wrapping them in the <code>&lt;center&gt;</code> HTML-tag.</p>
+<div class="tabbed">
+<ul>
+<li><span class="tab-title">Code</span>
+<pre><code class="lang-md">&lt;center&gt;
+    | This table | is centered          |
+    |------------|----------------------|
+    | test 1     | test 2               |
+&lt;/center&gt;
+</code></pre>
+</li>
+<li><span class="tab-title">Result</span>  <center>
+      | This table | is centered |
+      |------------|----------------------|
+      | test 1     | test 2               |
+  </center>
+</li>
+</ul>
+</div>
+<h3 id="full-width">Full Width</h3>
+<p>To make tables span the full width of the page, no matter how wide the content is, wrap the table in the <code>full_width_table</code> CSS class.</p>
+<p>@warning Apply with caution! This breaks the overflow scrolling of the table. Content might be cut of on small screens!</p>
+<div class="tabbed">
+<ul>
+<li><span class="tab-title">Code</span>
+<pre><code class="lang-md">&lt;div class=&quot;full_width_table&quot;&gt;
+    | This table | spans the full width |
+    |------------|----------------------|
+    | test 1     | test 2               |
+&lt;/div&gt;
+</code></pre>
+</li>
+<li><span class="tab-title">Result</span>  <div class="full_width_table">
+      | This table | spans the full width |
+      |------------|----------------------|
+      | test 1     | test 2               |
+  </div>
+</li>
+</ul>
+</div>
+<span class="next_section_button">
+<p>Read Next: <a href="https://jothepro.github.io/doxygen-awesome-css/class_my_library_1_1_example.html">Example</a>
+</p></span>
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

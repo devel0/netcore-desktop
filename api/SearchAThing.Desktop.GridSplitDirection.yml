@@ -1,0 +1,118 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Desktop.GridSplitDirection
+  commentId: T:SearchAThing.Desktop.GridSplitDirection
+  id: GridSplitDirection
+  parent: SearchAThing.Desktop
+  children:
+  - SearchAThing.Desktop.GridSplitDirection.Horizontally
+  - SearchAThing.Desktop.GridSplitDirection.Vertically
+  langs:
+  - csharp
+  - vb
+  name: GridSplitDirection
+  nameWithType: GridSplitDirection
+  fullName: SearchAThing.Desktop.GridSplitDirection
+  type: Enum
+  source:
+    remote:
+      path: src/desktop/GridSplitterManager.cs
+      branch: docs
+      repo: git@github.com:devel0/netcore-desktop.git
+    id: GridSplitDirection
+    path: src/desktop/GridSplitterManager.cs
+    startLine: 9
+  assemblies:
+  - netcore-desktop
+  namespace: SearchAThing.Desktop
+  summary: splitting direction
+  example: []
+  syntax:
+    content: public enum GridSplitDirection
+    content.vb: Public Enum GridSplitDirection
+- uid: SearchAThing.Desktop.GridSplitDirection.Horizontally
+  commentId: F:SearchAThing.Desktop.GridSplitDirection.Horizontally
+  id: Horizontally
+  parent: SearchAThing.Desktop.GridSplitDirection
+  langs:
+  - csharp
+  - vb
+  name: Horizontally
+  nameWithType: GridSplitDirection.Horizontally
+  fullName: SearchAThing.Desktop.GridSplitDirection.Horizontally
+  type: Field
+  source:
+    remote:
+      path: src/desktop/GridSplitterManager.cs
+      branch: docs
+      repo: git@github.com:devel0/netcore-desktop.git
+    id: Horizontally
+    path: src/desktop/GridSplitterManager.cs
+    startLine: 14
+  assemblies:
+  - netcore-desktop
+  namespace: SearchAThing.Desktop
+  summary: horizontally splitting works on Columns
+  example: []
+  syntax:
+    content: Horizontally = 0
+    return:
+      type: SearchAThing.Desktop.GridSplitDirection
+- uid: SearchAThing.Desktop.GridSplitDirection.Vertically
+  commentId: F:SearchAThing.Desktop.GridSplitDirection.Vertically
+  id: Vertically
+  parent: SearchAThing.Desktop.GridSplitDirection
+  langs:
+  - csharp
+  - vb
+  name: Vertically
+  nameWithType: GridSplitDirection.Vertically
+  fullName: SearchAThing.Desktop.GridSplitDirection.Vertically
+  type: Field
+  source:
+    remote:
+      path: src/desktop/GridSplitterManager.cs
+      branch: docs
+      repo: git@github.com:devel0/netcore-desktop.git
+    id: Vertically
+    path: src/desktop/GridSplitterManager.cs
+    startLine: 19
+  assemblies:
+  - netcore-desktop
+  namespace: SearchAThing.Desktop
+  summary: vertically splitting works on Rows
+  example: []
+  syntax:
+    content: Vertically = 1
+    return:
+      type: SearchAThing.Desktop.GridSplitDirection
+references:
+- uid: SearchAThing.Desktop
+  commentId: N:SearchAThing.Desktop
+  href: SearchAThing.html
+  name: SearchAThing.Desktop
+  nameWithType: SearchAThing.Desktop
+  fullName: SearchAThing.Desktop
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Desktop
+    name: Desktop
+    href: SearchAThing.Desktop.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Desktop
+    name: Desktop
+    href: SearchAThing.Desktop.html
+- uid: SearchAThing.Desktop.GridSplitDirection
+  commentId: T:SearchAThing.Desktop.GridSplitDirection
+  parent: SearchAThing.Desktop
+  href: SearchAThing.Desktop.GridSplitDirection.html
+  name: GridSplitDirection
+  nameWithType: GridSplitDirection
+  fullName: SearchAThing.Desktop.GridSplitDirection

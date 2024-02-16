@@ -1,0 +1,24 @@
+### YamlMime:TableOfContent
+items:
+- uid: SearchAThing.Desktop
+  name: SearchAThing.Desktop
+  items:
+  - uid: SearchAThing.Desktop.Constants
+    name: Constants
+  - uid: SearchAThing.Desktop.Ext
+    name: Ext
+  - uid: SearchAThing.Desktop.GridAutoRow
+    name: GridAutoRow
+  - uid: SearchAThing.Desktop.GridSplitDirection
+    name: GridSplitDirection
+  - uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem
+    name: GridSplitterManagerLayoutItem
+  - uid: SearchAThing.Desktop.GridSplitterManager`1
+    name: GridSplitterManager<T>
+  - uid: SearchAThing.Desktop.GridSplitterManager`1.ConfigControlDelegate
+    name: GridSplitterManager<T>.ConfigControlDelegate
+  - uid: SearchAThing.Desktop.GridSplitterManager`1.ControlEventDelegate
+    name: GridSplitterManager<T>.ControlEventDelegate
+  - uid: SearchAThing.Desktop.SmartConverter
+    name: SmartConverter
+memberLayout: SamePage

@@ -1,0 +1,225 @@
+{
+  "source_base_path": "/home/devel0/Documents/opensource/netcore-desktop",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Desktop.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Desktop.Constants.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Desktop.Ext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Desktop.Ext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Desktop.GridAutoRow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Desktop.GridAutoRow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Desktop.GridSplitDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Desktop.GridSplitDirection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Desktop.GridSplitterManager-1.ConfigControlDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Desktop.GridSplitterManager-1.ConfigControlDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Desktop.GridSplitterManager-1.ControlEventDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Desktop.GridSplitterManager-1.ControlEventDelegate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Desktop.GridSplitterManager-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Desktop.GridSplitterManager-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Desktop.SmartConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Desktop.SmartConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SearchAThing.Desktop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SearchAThing.Desktop.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "data/doxygen-awesome-css/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "data/doxygen-awesome-css/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "data/doxygen-awesome-css/docs/customization.md",
+      "output": {
+        ".html": {
+          "relative_path": "data/doxygen-awesome-css/docs/customization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "data/doxygen-awesome-css/docs/extensions.md",
+      "output": {
+        ".html": {
+          "relative_path": "data/doxygen-awesome-css/docs/extensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "data/doxygen-awesome-css/docs/tricks.md",
+      "output": {
+        ".html": {
+          "relative_path": "data/doxygen-awesome-css/docs/tricks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "data/pages/examples/examples.md",
+      "output": {
+        ".html": {
+          "relative_path": "data/pages/examples/examples.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "data/pages/main.md",
+      "output": {
+        ".html": {
+          "relative_path": "data/pages/main.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

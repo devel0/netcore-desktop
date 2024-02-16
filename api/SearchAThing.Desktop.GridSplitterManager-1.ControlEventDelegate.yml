@@ -1,0 +1,67 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Desktop.GridSplitterManager`1.ControlEventDelegate
+  commentId: T:SearchAThing.Desktop.GridSplitterManager`1.ControlEventDelegate
+  id: GridSplitterManager`1.ControlEventDelegate
+  parent: SearchAThing.Desktop
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: GridSplitterManager<T>.ControlEventDelegate
+  nameWithType: GridSplitterManager<T>.ControlEventDelegate
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.ControlEventDelegate
+  type: Delegate
+  source:
+    remote:
+      path: src/desktop/GridSplitterManager.cs
+      branch: docs
+      repo: git@github.com:devel0/netcore-desktop.git
+    id: ControlEventDelegate
+    path: src/desktop/GridSplitterManager.cs
+    startLine: 228
+  assemblies:
+  - netcore-desktop
+  namespace: SearchAThing.Desktop
+  syntax:
+    content: public delegate void GridSplitterManager<T>.ControlEventDelegate(T control)
+    parameters:
+    - id: control
+      type: '{T}'
+    content.vb: Public Delegate Sub GridSplitterManager(Of T).ControlEventDelegate(control As T)
+  nameWithType.vb: GridSplitterManager(Of T).ControlEventDelegate
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).ControlEventDelegate
+  name.vb: GridSplitterManager(Of T).ControlEventDelegate
+references:
+- uid: SearchAThing.Desktop
+  commentId: N:SearchAThing.Desktop
+  href: SearchAThing.html
+  name: SearchAThing.Desktop
+  nameWithType: SearchAThing.Desktop
+  fullName: SearchAThing.Desktop
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Desktop
+    name: Desktop
+    href: SearchAThing.Desktop.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Desktop
+    name: Desktop
+    href: SearchAThing.Desktop.html
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T

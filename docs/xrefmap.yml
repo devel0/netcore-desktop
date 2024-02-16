@@ -1,0 +1,776 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: SearchAThing.Desktop
+  name: SearchAThing.Desktop
+  href: api/SearchAThing.Desktop.html
+  commentId: N:SearchAThing.Desktop
+  fullName: SearchAThing.Desktop
+  nameWithType: SearchAThing.Desktop
+- uid: SearchAThing.Desktop.Constants
+  name: Constants
+  href: api/SearchAThing.Desktop.Constants.html
+  commentId: T:SearchAThing.Desktop.Constants
+  fullName: SearchAThing.Desktop.Constants
+  nameWithType: Constants
+- uid: SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_DistributeSplitSize
+  name: DEFAULT_GridSplitterManager_DistributeSplitSize
+  href: api/SearchAThing.Desktop.Constants.html#SearchAThing_Desktop_Constants_DEFAULT_GridSplitterManager_DistributeSplitSize
+  commentId: F:SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_DistributeSplitSize
+  fullName: SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_DistributeSplitSize
+  nameWithType: Constants.DEFAULT_GridSplitterManager_DistributeSplitSize
+- uid: SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_FocusedControlBorderBrush
+  name: DEFAULT_GridSplitterManager_FocusedControlBorderBrush
+  href: api/SearchAThing.Desktop.Constants.html#SearchAThing_Desktop_Constants_DEFAULT_GridSplitterManager_FocusedControlBorderBrush
+  commentId: F:SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_FocusedControlBorderBrush
+  fullName: SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_FocusedControlBorderBrush
+  nameWithType: Constants.DEFAULT_GridSplitterManager_FocusedControlBorderBrush
+- uid: SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_FocusedControlBorderThickness
+  name: DEFAULT_GridSplitterManager_FocusedControlBorderThickness
+  href: api/SearchAThing.Desktop.Constants.html#SearchAThing_Desktop_Constants_DEFAULT_GridSplitterManager_FocusedControlBorderThickness
+  commentId: F:SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_FocusedControlBorderThickness
+  fullName: SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_FocusedControlBorderThickness
+  nameWithType: Constants.DEFAULT_GridSplitterManager_FocusedControlBorderThickness
+- uid: SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_SplitterBrush
+  name: DEFAULT_GridSplitterManager_SplitterBrush
+  href: api/SearchAThing.Desktop.Constants.html#SearchAThing_Desktop_Constants_DEFAULT_GridSplitterManager_SplitterBrush
+  commentId: F:SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_SplitterBrush
+  fullName: SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_SplitterBrush
+  nameWithType: Constants.DEFAULT_GridSplitterManager_SplitterBrush
+- uid: SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_SplitterThickness
+  name: DEFAULT_GridSplitterManager_SplitterThickness
+  href: api/SearchAThing.Desktop.Constants.html#SearchAThing_Desktop_Constants_DEFAULT_GridSplitterManager_SplitterThickness
+  commentId: F:SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_SplitterThickness
+  fullName: SearchAThing.Desktop.Constants.DEFAULT_GridSplitterManager_SplitterThickness
+  nameWithType: Constants.DEFAULT_GridSplitterManager_SplitterThickness
+- uid: SearchAThing.Desktop.Constants.DEFAULT_ScrollableSlider_Color
+  name: DEFAULT_ScrollableSlider_Color
+  href: api/SearchAThing.Desktop.Constants.html#SearchAThing_Desktop_Constants_DEFAULT_ScrollableSlider_Color
+  commentId: F:SearchAThing.Desktop.Constants.DEFAULT_ScrollableSlider_Color
+  fullName: SearchAThing.Desktop.Constants.DEFAULT_ScrollableSlider_Color
+  nameWithType: Constants.DEFAULT_ScrollableSlider_Color
+- uid: SearchAThing.Desktop.Constants.DEFAULT_ScrollableSlider_ResizeHandleWidth
+  name: DEFAULT_ScrollableSlider_ResizeHandleWidth
+  href: api/SearchAThing.Desktop.Constants.html#SearchAThing_Desktop_Constants_DEFAULT_ScrollableSlider_ResizeHandleWidth
+  commentId: F:SearchAThing.Desktop.Constants.DEFAULT_ScrollableSlider_ResizeHandleWidth
+  fullName: SearchAThing.Desktop.Constants.DEFAULT_ScrollableSlider_ResizeHandleWidth
+  nameWithType: Constants.DEFAULT_ScrollableSlider_ResizeHandleWidth
+- uid: SearchAThing.Desktop.Constants.DEFAULT_ScrollableSlider_TextAlignment
+  name: DEFAULT_ScrollableSlider_TextAlignment
+  href: api/SearchAThing.Desktop.Constants.html#SearchAThing_Desktop_Constants_DEFAULT_ScrollableSlider_TextAlignment
+  commentId: F:SearchAThing.Desktop.Constants.DEFAULT_ScrollableSlider_TextAlignment
+  fullName: SearchAThing.Desktop.Constants.DEFAULT_ScrollableSlider_TextAlignment
+  nameWithType: Constants.DEFAULT_ScrollableSlider_TextAlignment
+- uid: SearchAThing.Desktop.Ext
+  name: Ext
+  href: api/SearchAThing.Desktop.Ext.html
+  commentId: T:SearchAThing.Desktop.Ext
+  fullName: SearchAThing.Desktop.Ext
+  nameWithType: Ext
+- uid: SearchAThing.Desktop.Ext.SearchParent*
+  name: SearchParent
+  href: api/SearchAThing.Desktop.Ext.html#SearchAThing_Desktop_Ext_SearchParent_
+  commentId: Overload:SearchAThing.Desktop.Ext.SearchParent
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.Ext.SearchParent
+  nameWithType: Ext.SearchParent
+- uid: SearchAThing.Desktop.Ext.SearchParent``1(Avalonia.StyledElement,System.Nullable{System.Int32})
+  name: SearchParent<T>(StyledElement, int?)
+  href: api/SearchAThing.Desktop.Ext.html#SearchAThing_Desktop_Ext_SearchParent__1_Avalonia_StyledElement_System_Nullable_System_Int32__
+  commentId: M:SearchAThing.Desktop.Ext.SearchParent``1(Avalonia.StyledElement,System.Nullable{System.Int32})
+  name.vb: SearchParent(Of T)(StyledElement, Integer?)
+  fullName: SearchAThing.Desktop.Ext.SearchParent<T>(Avalonia.StyledElement, int?)
+  fullName.vb: SearchAThing.Desktop.Ext.SearchParent(Of T)(Avalonia.StyledElement, Integer?)
+  nameWithType: Ext.SearchParent<T>(StyledElement, int?)
+  nameWithType.vb: Ext.SearchParent(Of T)(StyledElement, Integer?)
+- uid: SearchAThing.Desktop.GridAutoRow
+  name: GridAutoRow
+  href: api/SearchAThing.Desktop.GridAutoRow.html
+  commentId: T:SearchAThing.Desktop.GridAutoRow
+  fullName: SearchAThing.Desktop.GridAutoRow
+  nameWithType: GridAutoRow
+- uid: SearchAThing.Desktop.GridAutoRow.AutoRowDefinitionsProperty
+  name: AutoRowDefinitionsProperty
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_AutoRowDefinitionsProperty
+  commentId: F:SearchAThing.Desktop.GridAutoRow.AutoRowDefinitionsProperty
+  fullName: SearchAThing.Desktop.GridAutoRow.AutoRowDefinitionsProperty
+  nameWithType: GridAutoRow.AutoRowDefinitionsProperty
+- uid: SearchAThing.Desktop.GridAutoRow.GetAutoRowDefinitions(Avalonia.AvaloniaObject)
+  name: GetAutoRowDefinitions(AvaloniaObject)
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_GetAutoRowDefinitions_Avalonia_AvaloniaObject_
+  commentId: M:SearchAThing.Desktop.GridAutoRow.GetAutoRowDefinitions(Avalonia.AvaloniaObject)
+  fullName: SearchAThing.Desktop.GridAutoRow.GetAutoRowDefinitions(Avalonia.AvaloniaObject)
+  nameWithType: GridAutoRow.GetAutoRowDefinitions(AvaloniaObject)
+- uid: SearchAThing.Desktop.GridAutoRow.GetAutoRowDefinitions*
+  name: GetAutoRowDefinitions
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_GetAutoRowDefinitions_
+  commentId: Overload:SearchAThing.Desktop.GridAutoRow.GetAutoRowDefinitions
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridAutoRow.GetAutoRowDefinitions
+  nameWithType: GridAutoRow.GetAutoRowDefinitions
+- uid: SearchAThing.Desktop.GridAutoRow.GetRef(Avalonia.AvaloniaObject)
+  name: GetRef(AvaloniaObject)
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_GetRef_Avalonia_AvaloniaObject_
+  commentId: M:SearchAThing.Desktop.GridAutoRow.GetRef(Avalonia.AvaloniaObject)
+  fullName: SearchAThing.Desktop.GridAutoRow.GetRef(Avalonia.AvaloniaObject)
+  nameWithType: GridAutoRow.GetRef(AvaloniaObject)
+- uid: SearchAThing.Desktop.GridAutoRow.GetRef*
+  name: GetRef
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_GetRef_
+  commentId: Overload:SearchAThing.Desktop.GridAutoRow.GetRef
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridAutoRow.GetRef
+  nameWithType: GridAutoRow.GetRef
+- uid: SearchAThing.Desktop.GridAutoRow.GetSetupDone(Avalonia.AvaloniaObject)
+  name: GetSetupDone(AvaloniaObject)
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_GetSetupDone_Avalonia_AvaloniaObject_
+  commentId: M:SearchAThing.Desktop.GridAutoRow.GetSetupDone(Avalonia.AvaloniaObject)
+  fullName: SearchAThing.Desktop.GridAutoRow.GetSetupDone(Avalonia.AvaloniaObject)
+  nameWithType: GridAutoRow.GetSetupDone(AvaloniaObject)
+- uid: SearchAThing.Desktop.GridAutoRow.GetSetupDone*
+  name: GetSetupDone
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_GetSetupDone_
+  commentId: Overload:SearchAThing.Desktop.GridAutoRow.GetSetupDone
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridAutoRow.GetSetupDone
+  nameWithType: GridAutoRow.GetSetupDone
+- uid: SearchAThing.Desktop.GridAutoRow.RefProperty
+  name: RefProperty
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_RefProperty
+  commentId: F:SearchAThing.Desktop.GridAutoRow.RefProperty
+  fullName: SearchAThing.Desktop.GridAutoRow.RefProperty
+  nameWithType: GridAutoRow.RefProperty
+- uid: SearchAThing.Desktop.GridAutoRow.SetAutoRowDefinitions(Avalonia.AvaloniaObject,System.Boolean)
+  name: SetAutoRowDefinitions(AvaloniaObject, bool)
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_SetAutoRowDefinitions_Avalonia_AvaloniaObject_System_Boolean_
+  commentId: M:SearchAThing.Desktop.GridAutoRow.SetAutoRowDefinitions(Avalonia.AvaloniaObject,System.Boolean)
+  name.vb: SetAutoRowDefinitions(AvaloniaObject, Boolean)
+  fullName: SearchAThing.Desktop.GridAutoRow.SetAutoRowDefinitions(Avalonia.AvaloniaObject, bool)
+  fullName.vb: SearchAThing.Desktop.GridAutoRow.SetAutoRowDefinitions(Avalonia.AvaloniaObject, Boolean)
+  nameWithType: GridAutoRow.SetAutoRowDefinitions(AvaloniaObject, bool)
+  nameWithType.vb: GridAutoRow.SetAutoRowDefinitions(AvaloniaObject, Boolean)
+- uid: SearchAThing.Desktop.GridAutoRow.SetAutoRowDefinitions*
+  name: SetAutoRowDefinitions
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_SetAutoRowDefinitions_
+  commentId: Overload:SearchAThing.Desktop.GridAutoRow.SetAutoRowDefinitions
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridAutoRow.SetAutoRowDefinitions
+  nameWithType: GridAutoRow.SetAutoRowDefinitions
+- uid: SearchAThing.Desktop.GridAutoRow.SetRef(Avalonia.AvaloniaObject,System.String)
+  name: SetRef(AvaloniaObject, string?)
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_SetRef_Avalonia_AvaloniaObject_System_String_
+  commentId: M:SearchAThing.Desktop.GridAutoRow.SetRef(Avalonia.AvaloniaObject,System.String)
+  name.vb: SetRef(AvaloniaObject, String)
+  fullName: SearchAThing.Desktop.GridAutoRow.SetRef(Avalonia.AvaloniaObject, string?)
+  fullName.vb: SearchAThing.Desktop.GridAutoRow.SetRef(Avalonia.AvaloniaObject, String)
+  nameWithType: GridAutoRow.SetRef(AvaloniaObject, string?)
+  nameWithType.vb: GridAutoRow.SetRef(AvaloniaObject, String)
+- uid: SearchAThing.Desktop.GridAutoRow.SetRef*
+  name: SetRef
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_SetRef_
+  commentId: Overload:SearchAThing.Desktop.GridAutoRow.SetRef
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridAutoRow.SetRef
+  nameWithType: GridAutoRow.SetRef
+- uid: SearchAThing.Desktop.GridAutoRow.SetSetupDone(Avalonia.AvaloniaObject,System.Boolean)
+  name: SetSetupDone(AvaloniaObject, bool)
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_SetSetupDone_Avalonia_AvaloniaObject_System_Boolean_
+  commentId: M:SearchAThing.Desktop.GridAutoRow.SetSetupDone(Avalonia.AvaloniaObject,System.Boolean)
+  name.vb: SetSetupDone(AvaloniaObject, Boolean)
+  fullName: SearchAThing.Desktop.GridAutoRow.SetSetupDone(Avalonia.AvaloniaObject, bool)
+  fullName.vb: SearchAThing.Desktop.GridAutoRow.SetSetupDone(Avalonia.AvaloniaObject, Boolean)
+  nameWithType: GridAutoRow.SetSetupDone(AvaloniaObject, bool)
+  nameWithType.vb: GridAutoRow.SetSetupDone(AvaloniaObject, Boolean)
+- uid: SearchAThing.Desktop.GridAutoRow.SetSetupDone*
+  name: SetSetupDone
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_SetSetupDone_
+  commentId: Overload:SearchAThing.Desktop.GridAutoRow.SetSetupDone
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridAutoRow.SetSetupDone
+  nameWithType: GridAutoRow.SetSetupDone
+- uid: SearchAThing.Desktop.GridAutoRow.SetupDoneProperty
+  name: SetupDoneProperty
+  href: api/SearchAThing.Desktop.GridAutoRow.html#SearchAThing_Desktop_GridAutoRow_SetupDoneProperty
+  commentId: F:SearchAThing.Desktop.GridAutoRow.SetupDoneProperty
+  fullName: SearchAThing.Desktop.GridAutoRow.SetupDoneProperty
+  nameWithType: GridAutoRow.SetupDoneProperty
+- uid: SearchAThing.Desktop.GridSplitDirection
+  name: GridSplitDirection
+  href: api/SearchAThing.Desktop.GridSplitDirection.html
+  commentId: T:SearchAThing.Desktop.GridSplitDirection
+  fullName: SearchAThing.Desktop.GridSplitDirection
+  nameWithType: GridSplitDirection
+- uid: SearchAThing.Desktop.GridSplitDirection.Horizontally
+  name: Horizontally
+  href: api/SearchAThing.Desktop.GridSplitDirection.html#SearchAThing_Desktop_GridSplitDirection_Horizontally
+  commentId: F:SearchAThing.Desktop.GridSplitDirection.Horizontally
+  fullName: SearchAThing.Desktop.GridSplitDirection.Horizontally
+  nameWithType: GridSplitDirection.Horizontally
+- uid: SearchAThing.Desktop.GridSplitDirection.Vertically
+  name: Vertically
+  href: api/SearchAThing.Desktop.GridSplitDirection.html#SearchAThing_Desktop_GridSplitDirection_Vertically
+  commentId: F:SearchAThing.Desktop.GridSplitDirection.Vertically
+  fullName: SearchAThing.Desktop.GridSplitDirection.Vertically
+  nameWithType: GridSplitDirection.Vertically
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem
+  name: GridSplitterManagerLayoutItem
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html
+  commentId: T:SearchAThing.Desktop.GridSplitterManagerLayoutItem
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem
+  nameWithType: GridSplitterManagerLayoutItem
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Children
+  name: Children
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_Children
+  commentId: P:SearchAThing.Desktop.GridSplitterManagerLayoutItem.Children
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Children
+  nameWithType: GridSplitterManagerLayoutItem.Children
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Children*
+  name: Children
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_Children_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManagerLayoutItem.Children
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Children
+  nameWithType: GridSplitterManagerLayoutItem.Children
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Debug
+  name: Debug
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_Debug
+  commentId: P:SearchAThing.Desktop.GridSplitterManagerLayoutItem.Debug
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Debug
+  nameWithType: GridSplitterManagerLayoutItem.Debug
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Debug*
+  name: Debug
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_Debug_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManagerLayoutItem.Debug
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Debug
+  nameWithType: GridSplitterManagerLayoutItem.Debug
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Index
+  name: Index
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_Index
+  commentId: P:SearchAThing.Desktop.GridSplitterManagerLayoutItem.Index
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Index
+  nameWithType: GridSplitterManagerLayoutItem.Index
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Index*
+  name: Index
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_Index_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManagerLayoutItem.Index
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Index
+  nameWithType: GridSplitterManagerLayoutItem.Index
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.LeafUID
+  name: LeafUID
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_LeafUID
+  commentId: P:SearchAThing.Desktop.GridSplitterManagerLayoutItem.LeafUID
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.LeafUID
+  nameWithType: GridSplitterManagerLayoutItem.LeafUID
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.LeafUID*
+  name: LeafUID
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_LeafUID_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManagerLayoutItem.LeafUID
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.LeafUID
+  nameWithType: GridSplitterManagerLayoutItem.LeafUID
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Level
+  name: Level
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_Level
+  commentId: P:SearchAThing.Desktop.GridSplitterManagerLayoutItem.Level
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Level
+  nameWithType: GridSplitterManagerLayoutItem.Level
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Level*
+  name: Level
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_Level_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManagerLayoutItem.Level
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Level
+  nameWithType: GridSplitterManagerLayoutItem.Level
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Sizes
+  name: Sizes
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_Sizes
+  commentId: P:SearchAThing.Desktop.GridSplitterManagerLayoutItem.Sizes
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Sizes
+  nameWithType: GridSplitterManagerLayoutItem.Sizes
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Sizes*
+  name: Sizes
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_Sizes_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManagerLayoutItem.Sizes
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.Sizes
+  nameWithType: GridSplitterManagerLayoutItem.Sizes
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.SortChildren
+  name: SortChildren()
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_SortChildren
+  commentId: M:SearchAThing.Desktop.GridSplitterManagerLayoutItem.SortChildren
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.SortChildren()
+  nameWithType: GridSplitterManagerLayoutItem.SortChildren()
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.SortChildren*
+  name: SortChildren
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_SortChildren_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManagerLayoutItem.SortChildren
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.SortChildren
+  nameWithType: GridSplitterManagerLayoutItem.SortChildren
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.SplitDirection
+  name: SplitDirection
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_SplitDirection
+  commentId: P:SearchAThing.Desktop.GridSplitterManagerLayoutItem.SplitDirection
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.SplitDirection
+  nameWithType: GridSplitterManagerLayoutItem.SplitDirection
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.SplitDirection*
+  name: SplitDirection
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_SplitDirection_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManagerLayoutItem.SplitDirection
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.SplitDirection
+  nameWithType: GridSplitterManagerLayoutItem.SplitDirection
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.ToString
+  name: ToString()
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_ToString
+  commentId: M:SearchAThing.Desktop.GridSplitterManagerLayoutItem.ToString
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.ToString()
+  nameWithType: GridSplitterManagerLayoutItem.ToString()
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem.ToString*
+  name: ToString
+  href: api/SearchAThing.Desktop.GridSplitterManagerLayoutItem.html#SearchAThing_Desktop_GridSplitterManagerLayoutItem_ToString_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManagerLayoutItem.ToString
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem.ToString
+  nameWithType: GridSplitterManagerLayoutItem.ToString
+- uid: SearchAThing.Desktop.GridSplitterManager`1
+  name: GridSplitterManager<T>
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html
+  commentId: T:SearchAThing.Desktop.GridSplitterManager`1
+  name.vb: GridSplitterManager(Of T)
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T)
+  nameWithType: GridSplitterManager<T>
+  nameWithType.vb: GridSplitterManager(Of T)
+- uid: SearchAThing.Desktop.GridSplitterManager`1.#ctor
+  name: GridSplitterManager()
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1__ctor
+  commentId: M:SearchAThing.Desktop.GridSplitterManager`1.#ctor
+  name.vb: New()
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.GridSplitterManager()
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).New()
+  nameWithType: GridSplitterManager<T>.GridSplitterManager()
+  nameWithType.vb: GridSplitterManager(Of T).New()
+- uid: SearchAThing.Desktop.GridSplitterManager`1.#ctor*
+  name: GridSplitterManager
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1__ctor_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.GridSplitterManager
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).New
+  nameWithType: GridSplitterManager<T>.GridSplitterManager
+  nameWithType.vb: GridSplitterManager(Of T).New
+- uid: SearchAThing.Desktop.GridSplitterManager`1.Children
+  name: Children
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_Children
+  commentId: P:SearchAThing.Desktop.GridSplitterManager`1.Children
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.Children
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).Children
+  nameWithType: GridSplitterManager<T>.Children
+  nameWithType.vb: GridSplitterManager(Of T).Children
+- uid: SearchAThing.Desktop.GridSplitterManager`1.Children*
+  name: Children
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_Children_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.Children
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.Children
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).Children
+  nameWithType: GridSplitterManager<T>.Children
+  nameWithType.vb: GridSplitterManager(Of T).Children
+- uid: SearchAThing.Desktop.GridSplitterManager`1.Clear
+  name: Clear()
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_Clear
+  commentId: M:SearchAThing.Desktop.GridSplitterManager`1.Clear
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.Clear()
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).Clear()
+  nameWithType: GridSplitterManager<T>.Clear()
+  nameWithType.vb: GridSplitterManager(Of T).Clear()
+- uid: SearchAThing.Desktop.GridSplitterManager`1.Clear*
+  name: Clear
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_Clear_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.Clear
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.Clear
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).Clear
+  nameWithType: GridSplitterManager<T>.Clear
+  nameWithType.vb: GridSplitterManager(Of T).Clear
+- uid: SearchAThing.Desktop.GridSplitterManager`1.ConfigControlDelegate
+  name: GridSplitterManager<T>.ConfigControlDelegate
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.ConfigControlDelegate.html
+  commentId: T:SearchAThing.Desktop.GridSplitterManager`1.ConfigControlDelegate
+  name.vb: GridSplitterManager(Of T).ConfigControlDelegate
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.ConfigControlDelegate
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).ConfigControlDelegate
+  nameWithType: GridSplitterManager<T>.ConfigControlDelegate
+  nameWithType.vb: GridSplitterManager(Of T).ConfigControlDelegate
+- uid: SearchAThing.Desktop.GridSplitterManager`1.ControlCreated
+  name: ControlCreated
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_ControlCreated
+  commentId: E:SearchAThing.Desktop.GridSplitterManager`1.ControlCreated
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.ControlCreated
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).ControlCreated
+  nameWithType: GridSplitterManager<T>.ControlCreated
+  nameWithType.vb: GridSplitterManager(Of T).ControlCreated
+- uid: SearchAThing.Desktop.GridSplitterManager`1.ControlEventDelegate
+  name: GridSplitterManager<T>.ControlEventDelegate
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.ControlEventDelegate.html
+  commentId: T:SearchAThing.Desktop.GridSplitterManager`1.ControlEventDelegate
+  name.vb: GridSplitterManager(Of T).ControlEventDelegate
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.ControlEventDelegate
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).ControlEventDelegate
+  nameWithType: GridSplitterManager<T>.ControlEventDelegate
+  nameWithType.vb: GridSplitterManager(Of T).ControlEventDelegate
+- uid: SearchAThing.Desktop.GridSplitterManager`1.ControlRemoved
+  name: ControlRemoved
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_ControlRemoved
+  commentId: E:SearchAThing.Desktop.GridSplitterManager`1.ControlRemoved
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.ControlRemoved
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).ControlRemoved
+  nameWithType: GridSplitterManager<T>.ControlRemoved
+  nameWithType.vb: GridSplitterManager(Of T).ControlRemoved
+- uid: SearchAThing.Desktop.GridSplitterManager`1.CreateControl
+  name: CreateControl
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_CreateControl
+  commentId: P:SearchAThing.Desktop.GridSplitterManager`1.CreateControl
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.CreateControl
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).CreateControl
+  nameWithType: GridSplitterManager<T>.CreateControl
+  nameWithType.vb: GridSplitterManager(Of T).CreateControl
+- uid: SearchAThing.Desktop.GridSplitterManager`1.CreateControl*
+  name: CreateControl
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_CreateControl_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.CreateControl
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.CreateControl
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).CreateControl
+  nameWithType: GridSplitterManager<T>.CreateControl
+  nameWithType.vb: GridSplitterManager(Of T).CreateControl
+- uid: SearchAThing.Desktop.GridSplitterManager`1.DebugWriter
+  name: DebugWriter
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_DebugWriter
+  commentId: P:SearchAThing.Desktop.GridSplitterManager`1.DebugWriter
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.DebugWriter
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).DebugWriter
+  nameWithType: GridSplitterManager<T>.DebugWriter
+  nameWithType.vb: GridSplitterManager(Of T).DebugWriter
+- uid: SearchAThing.Desktop.GridSplitterManager`1.DebugWriter*
+  name: DebugWriter
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_DebugWriter_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.DebugWriter
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.DebugWriter
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).DebugWriter
+  nameWithType: GridSplitterManager<T>.DebugWriter
+  nameWithType.vb: GridSplitterManager(Of T).DebugWriter
+- uid: SearchAThing.Desktop.GridSplitterManager`1.DistributeSplitSize
+  name: DistributeSplitSize
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_DistributeSplitSize
+  commentId: P:SearchAThing.Desktop.GridSplitterManager`1.DistributeSplitSize
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.DistributeSplitSize
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).DistributeSplitSize
+  nameWithType: GridSplitterManager<T>.DistributeSplitSize
+  nameWithType.vb: GridSplitterManager(Of T).DistributeSplitSize
+- uid: SearchAThing.Desktop.GridSplitterManager`1.DistributeSplitSize*
+  name: DistributeSplitSize
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_DistributeSplitSize_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.DistributeSplitSize
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.DistributeSplitSize
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).DistributeSplitSize
+  nameWithType: GridSplitterManager<T>.DistributeSplitSize
+  nameWithType.vb: GridSplitterManager(Of T).DistributeSplitSize
+- uid: SearchAThing.Desktop.GridSplitterManager`1.FocusedControl
+  name: FocusedControl
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_FocusedControl
+  commentId: P:SearchAThing.Desktop.GridSplitterManager`1.FocusedControl
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.FocusedControl
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).FocusedControl
+  nameWithType: GridSplitterManager<T>.FocusedControl
+  nameWithType.vb: GridSplitterManager(Of T).FocusedControl
+- uid: SearchAThing.Desktop.GridSplitterManager`1.FocusedControl*
+  name: FocusedControl
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_FocusedControl_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.FocusedControl
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.FocusedControl
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).FocusedControl
+  nameWithType: GridSplitterManager<T>.FocusedControl
+  nameWithType.vb: GridSplitterManager(Of T).FocusedControl
+- uid: SearchAThing.Desktop.GridSplitterManager`1.FocusedControlBorderBrush
+  name: FocusedControlBorderBrush
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_FocusedControlBorderBrush
+  commentId: P:SearchAThing.Desktop.GridSplitterManager`1.FocusedControlBorderBrush
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.FocusedControlBorderBrush
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).FocusedControlBorderBrush
+  nameWithType: GridSplitterManager<T>.FocusedControlBorderBrush
+  nameWithType.vb: GridSplitterManager(Of T).FocusedControlBorderBrush
+- uid: SearchAThing.Desktop.GridSplitterManager`1.FocusedControlBorderBrush*
+  name: FocusedControlBorderBrush
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_FocusedControlBorderBrush_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.FocusedControlBorderBrush
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.FocusedControlBorderBrush
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).FocusedControlBorderBrush
+  nameWithType: GridSplitterManager<T>.FocusedControlBorderBrush
+  nameWithType.vb: GridSplitterManager(Of T).FocusedControlBorderBrush
+- uid: SearchAThing.Desktop.GridSplitterManager`1.FocusedControlBorderThickness
+  name: FocusedControlBorderThickness
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_FocusedControlBorderThickness
+  commentId: P:SearchAThing.Desktop.GridSplitterManager`1.FocusedControlBorderThickness
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.FocusedControlBorderThickness
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).FocusedControlBorderThickness
+  nameWithType: GridSplitterManager<T>.FocusedControlBorderThickness
+  nameWithType.vb: GridSplitterManager(Of T).FocusedControlBorderThickness
+- uid: SearchAThing.Desktop.GridSplitterManager`1.FocusedControlBorderThickness*
+  name: FocusedControlBorderThickness
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_FocusedControlBorderThickness_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.FocusedControlBorderThickness
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.FocusedControlBorderThickness
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).FocusedControlBorderThickness
+  nameWithType: GridSplitterManager<T>.FocusedControlBorderThickness
+  nameWithType.vb: GridSplitterManager(Of T).FocusedControlBorderThickness
+- uid: SearchAThing.Desktop.GridSplitterManager`1.JsonSettings
+  name: JsonSettings
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_JsonSettings
+  commentId: P:SearchAThing.Desktop.GridSplitterManager`1.JsonSettings
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.JsonSettings
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).JsonSettings
+  nameWithType: GridSplitterManager<T>.JsonSettings
+  nameWithType.vb: GridSplitterManager(Of T).JsonSettings
+- uid: SearchAThing.Desktop.GridSplitterManager`1.JsonSettings*
+  name: JsonSettings
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_JsonSettings_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.JsonSettings
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.JsonSettings
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).JsonSettings
+  nameWithType: GridSplitterManager<T>.JsonSettings
+  nameWithType.vb: GridSplitterManager(Of T).JsonSettings
+- uid: SearchAThing.Desktop.GridSplitterManager`1.LoadStructure(SearchAThing.Desktop.GridSplitterManagerLayoutItem,SearchAThing.Desktop.GridSplitterManager{`0}.ConfigControlDelegate)
+  name: LoadStructure(GridSplitterManagerLayoutItem, ConfigControlDelegate?)
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_LoadStructure_SearchAThing_Desktop_GridSplitterManagerLayoutItem_SearchAThing_Desktop_GridSplitterManager__0__ConfigControlDelegate_
+  commentId: M:SearchAThing.Desktop.GridSplitterManager`1.LoadStructure(SearchAThing.Desktop.GridSplitterManagerLayoutItem,SearchAThing.Desktop.GridSplitterManager{`0}.ConfigControlDelegate)
+  name.vb: LoadStructure(GridSplitterManagerLayoutItem, ConfigControlDelegate)
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.LoadStructure(SearchAThing.Desktop.GridSplitterManagerLayoutItem, SearchAThing.Desktop.GridSplitterManager<T>.ConfigControlDelegate?)
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).LoadStructure(SearchAThing.Desktop.GridSplitterManagerLayoutItem, SearchAThing.Desktop.GridSplitterManager(Of T).ConfigControlDelegate)
+  nameWithType: GridSplitterManager<T>.LoadStructure(GridSplitterManagerLayoutItem, GridSplitterManager<T>.ConfigControlDelegate?)
+  nameWithType.vb: GridSplitterManager(Of T).LoadStructure(GridSplitterManagerLayoutItem, GridSplitterManager(Of T).ConfigControlDelegate)
+- uid: SearchAThing.Desktop.GridSplitterManager`1.LoadStructure*
+  name: LoadStructure
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_LoadStructure_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.LoadStructure
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.LoadStructure
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).LoadStructure
+  nameWithType: GridSplitterManager<T>.LoadStructure
+  nameWithType.vb: GridSplitterManager(Of T).LoadStructure
+- uid: SearchAThing.Desktop.GridSplitterManager`1.OnPropertyChanged(System.String)
+  name: OnPropertyChanged(string?)
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_OnPropertyChanged_System_String_
+  commentId: M:SearchAThing.Desktop.GridSplitterManager`1.OnPropertyChanged(System.String)
+  name.vb: OnPropertyChanged(String)
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.OnPropertyChanged(string?)
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).OnPropertyChanged(String)
+  nameWithType: GridSplitterManager<T>.OnPropertyChanged(string?)
+  nameWithType.vb: GridSplitterManager(Of T).OnPropertyChanged(String)
+- uid: SearchAThing.Desktop.GridSplitterManager`1.OnPropertyChanged*
+  name: OnPropertyChanged
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_OnPropertyChanged_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.OnPropertyChanged
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.OnPropertyChanged
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).OnPropertyChanged
+  nameWithType: GridSplitterManager<T>.OnPropertyChanged
+  nameWithType.vb: GridSplitterManager(Of T).OnPropertyChanged
+- uid: SearchAThing.Desktop.GridSplitterManager`1.PropertyChanged
+  name: PropertyChanged
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_PropertyChanged
+  commentId: E:SearchAThing.Desktop.GridSplitterManager`1.PropertyChanged
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.PropertyChanged
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).PropertyChanged
+  nameWithType: GridSplitterManager<T>.PropertyChanged
+  nameWithType.vb: GridSplitterManager(Of T).PropertyChanged
+- uid: SearchAThing.Desktop.GridSplitterManager`1.Remove
+  name: Remove()
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_Remove
+  commentId: M:SearchAThing.Desktop.GridSplitterManager`1.Remove
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.Remove()
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).Remove()
+  nameWithType: GridSplitterManager<T>.Remove()
+  nameWithType.vb: GridSplitterManager(Of T).Remove()
+- uid: SearchAThing.Desktop.GridSplitterManager`1.Remove*
+  name: Remove
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_Remove_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.Remove
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.Remove
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).Remove
+  nameWithType: GridSplitterManager<T>.Remove
+  nameWithType.vb: GridSplitterManager(Of T).Remove
+- uid: SearchAThing.Desktop.GridSplitterManager`1.SaveStructure(SearchAThing.Desktop.GridSplitterManager{`0}.ConfigControlDelegate)
+  name: SaveStructure(ConfigControlDelegate?)
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_SaveStructure_SearchAThing_Desktop_GridSplitterManager__0__ConfigControlDelegate_
+  commentId: M:SearchAThing.Desktop.GridSplitterManager`1.SaveStructure(SearchAThing.Desktop.GridSplitterManager{`0}.ConfigControlDelegate)
+  name.vb: SaveStructure(ConfigControlDelegate)
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.SaveStructure(SearchAThing.Desktop.GridSplitterManager<T>.ConfigControlDelegate?)
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).SaveStructure(SearchAThing.Desktop.GridSplitterManager(Of T).ConfigControlDelegate)
+  nameWithType: GridSplitterManager<T>.SaveStructure(GridSplitterManager<T>.ConfigControlDelegate?)
+  nameWithType.vb: GridSplitterManager(Of T).SaveStructure(GridSplitterManager(Of T).ConfigControlDelegate)
+- uid: SearchAThing.Desktop.GridSplitterManager`1.SaveStructure*
+  name: SaveStructure
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_SaveStructure_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.SaveStructure
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.SaveStructure
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).SaveStructure
+  nameWithType: GridSplitterManager<T>.SaveStructure
+  nameWithType.vb: GridSplitterManager(Of T).SaveStructure
+- uid: SearchAThing.Desktop.GridSplitterManager`1.ScanGrid(SearchAThing.Desktop.GridSplitterManager{`0}.ConfigControlDelegate,System.Action{System.ValueTuple{SearchAThing.Desktop.GridSplitterManagerLayoutItem,Avalonia.Controls.Control}})
+  name: ScanGrid(ConfigControlDelegate?, Action<(GridSplitterManagerLayoutItem item, Control control)>?)
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_ScanGrid_SearchAThing_Desktop_GridSplitterManager__0__ConfigControlDelegate_System_Action_System_ValueTuple_SearchAThing_Desktop_GridSplitterManagerLayoutItem_Avalonia_Controls_Control___
+  commentId: M:SearchAThing.Desktop.GridSplitterManager`1.ScanGrid(SearchAThing.Desktop.GridSplitterManager{`0}.ConfigControlDelegate,System.Action{System.ValueTuple{SearchAThing.Desktop.GridSplitterManagerLayoutItem,Avalonia.Controls.Control}})
+  name.vb: ScanGrid(ConfigControlDelegate, Action(Of (item As GridSplitterManagerLayoutItem, control As Control)))
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.ScanGrid(SearchAThing.Desktop.GridSplitterManager<T>.ConfigControlDelegate?, System.Action<(SearchAThing.Desktop.GridSplitterManagerLayoutItem item, Avalonia.Controls.Control control)>?)
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).ScanGrid(SearchAThing.Desktop.GridSplitterManager(Of T).ConfigControlDelegate, System.Action(Of (item As SearchAThing.Desktop.GridSplitterManagerLayoutItem, control As Avalonia.Controls.Control)))
+  nameWithType: GridSplitterManager<T>.ScanGrid(GridSplitterManager<T>.ConfigControlDelegate?, Action<(GridSplitterManagerLayoutItem item, Control control)>?)
+  nameWithType.vb: GridSplitterManager(Of T).ScanGrid(GridSplitterManager(Of T).ConfigControlDelegate, Action(Of (item As GridSplitterManagerLayoutItem, control As Control)))
+- uid: SearchAThing.Desktop.GridSplitterManager`1.ScanGrid*
+  name: ScanGrid
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_ScanGrid_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.ScanGrid
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.ScanGrid
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).ScanGrid
+  nameWithType: GridSplitterManager<T>.ScanGrid
+  nameWithType.vb: GridSplitterManager(Of T).ScanGrid
+- uid: SearchAThing.Desktop.GridSplitterManager`1.Split(SearchAThing.Desktop.GridSplitDirection)
+  name: Split(GridSplitDirection)
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_Split_SearchAThing_Desktop_GridSplitDirection_
+  commentId: M:SearchAThing.Desktop.GridSplitterManager`1.Split(SearchAThing.Desktop.GridSplitDirection)
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.Split(SearchAThing.Desktop.GridSplitDirection)
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).Split(SearchAThing.Desktop.GridSplitDirection)
+  nameWithType: GridSplitterManager<T>.Split(GridSplitDirection)
+  nameWithType.vb: GridSplitterManager(Of T).Split(GridSplitDirection)
+- uid: SearchAThing.Desktop.GridSplitterManager`1.Split(SearchAThing.Desktop.GridSplitDirection,System.Double[])
+  name: Split(GridSplitDirection, params double[])
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_Split_SearchAThing_Desktop_GridSplitDirection_System_Double___
+  commentId: M:SearchAThing.Desktop.GridSplitterManager`1.Split(SearchAThing.Desktop.GridSplitDirection,System.Double[])
+  name.vb: Split(GridSplitDirection, ParamArray Double())
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.Split(SearchAThing.Desktop.GridSplitDirection, params double[])
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).Split(SearchAThing.Desktop.GridSplitDirection, ParamArray Double())
+  nameWithType: GridSplitterManager<T>.Split(GridSplitDirection, params double[])
+  nameWithType.vb: GridSplitterManager(Of T).Split(GridSplitDirection, ParamArray Double())
+- uid: SearchAThing.Desktop.GridSplitterManager`1.Split*
+  name: Split
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_Split_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.Split
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.Split
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).Split
+  nameWithType: GridSplitterManager<T>.Split
+  nameWithType.vb: GridSplitterManager(Of T).Split
+- uid: SearchAThing.Desktop.GridSplitterManager`1.SplitterBrush
+  name: SplitterBrush
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_SplitterBrush
+  commentId: P:SearchAThing.Desktop.GridSplitterManager`1.SplitterBrush
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.SplitterBrush
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).SplitterBrush
+  nameWithType: GridSplitterManager<T>.SplitterBrush
+  nameWithType.vb: GridSplitterManager(Of T).SplitterBrush
+- uid: SearchAThing.Desktop.GridSplitterManager`1.SplitterBrush*
+  name: SplitterBrush
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_SplitterBrush_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.SplitterBrush
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.SplitterBrush
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).SplitterBrush
+  nameWithType: GridSplitterManager<T>.SplitterBrush
+  nameWithType.vb: GridSplitterManager(Of T).SplitterBrush
+- uid: SearchAThing.Desktop.GridSplitterManager`1.SplitterThickness
+  name: SplitterThickness
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_SplitterThickness
+  commentId: P:SearchAThing.Desktop.GridSplitterManager`1.SplitterThickness
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.SplitterThickness
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).SplitterThickness
+  nameWithType: GridSplitterManager<T>.SplitterThickness
+  nameWithType.vb: GridSplitterManager(Of T).SplitterThickness
+- uid: SearchAThing.Desktop.GridSplitterManager`1.SplitterThickness*
+  name: SplitterThickness
+  href: api/SearchAThing.Desktop.GridSplitterManager-1.html#SearchAThing_Desktop_GridSplitterManager_1_SplitterThickness_
+  commentId: Overload:SearchAThing.Desktop.GridSplitterManager`1.SplitterThickness
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.SplitterThickness
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).SplitterThickness
+  nameWithType: GridSplitterManager<T>.SplitterThickness
+  nameWithType.vb: GridSplitterManager(Of T).SplitterThickness
+- uid: SearchAThing.Desktop.SmartConverter
+  name: SmartConverter
+  href: api/SearchAThing.Desktop.SmartConverter.html
+  commentId: T:SearchAThing.Desktop.SmartConverter
+  fullName: SearchAThing.Desktop.SmartConverter
+  nameWithType: SmartConverter
+- uid: SearchAThing.Desktop.SmartConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  name: Convert(object?, Type, object, CultureInfo)
+  href: api/SearchAThing.Desktop.SmartConverter.html#SearchAThing_Desktop_SmartConverter_Convert_System_Object_System_Type_System_Object_System_Globalization_CultureInfo_
+  commentId: M:SearchAThing.Desktop.SmartConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  name.vb: Convert(Object, Type, Object, CultureInfo)
+  fullName: SearchAThing.Desktop.SmartConverter.Convert(object?, System.Type, object, System.Globalization.CultureInfo)
+  fullName.vb: SearchAThing.Desktop.SmartConverter.Convert(Object, System.Type, Object, System.Globalization.CultureInfo)
+  nameWithType: SmartConverter.Convert(object?, Type, object, CultureInfo)
+  nameWithType.vb: SmartConverter.Convert(Object, Type, Object, CultureInfo)
+- uid: SearchAThing.Desktop.SmartConverter.Convert*
+  name: Convert
+  href: api/SearchAThing.Desktop.SmartConverter.html#SearchAThing_Desktop_SmartConverter_Convert_
+  commentId: Overload:SearchAThing.Desktop.SmartConverter.Convert
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.SmartConverter.Convert
+  nameWithType: SmartConverter.Convert
+- uid: SearchAThing.Desktop.SmartConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  name: ConvertBack(object, Type, object, CultureInfo)
+  href: api/SearchAThing.Desktop.SmartConverter.html#SearchAThing_Desktop_SmartConverter_ConvertBack_System_Object_System_Type_System_Object_System_Globalization_CultureInfo_
+  commentId: M:SearchAThing.Desktop.SmartConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  name.vb: ConvertBack(Object, Type, Object, CultureInfo)
+  fullName: SearchAThing.Desktop.SmartConverter.ConvertBack(object, System.Type, object, System.Globalization.CultureInfo)
+  fullName.vb: SearchAThing.Desktop.SmartConverter.ConvertBack(Object, System.Type, Object, System.Globalization.CultureInfo)
+  nameWithType: SmartConverter.ConvertBack(object, Type, object, CultureInfo)
+  nameWithType.vb: SmartConverter.ConvertBack(Object, Type, Object, CultureInfo)
+- uid: SearchAThing.Desktop.SmartConverter.ConvertBack*
+  name: ConvertBack
+  href: api/SearchAThing.Desktop.SmartConverter.html#SearchAThing_Desktop_SmartConverter_ConvertBack_
+  commentId: Overload:SearchAThing.Desktop.SmartConverter.ConvertBack
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.SmartConverter.ConvertBack
+  nameWithType: SmartConverter.ConvertBack
+- uid: SearchAThing.Desktop.SmartConverter.Instance
+  name: Instance
+  href: api/SearchAThing.Desktop.SmartConverter.html#SearchAThing_Desktop_SmartConverter_Instance
+  commentId: P:SearchAThing.Desktop.SmartConverter.Instance
+  fullName: SearchAThing.Desktop.SmartConverter.Instance
+  nameWithType: SmartConverter.Instance
+- uid: SearchAThing.Desktop.SmartConverter.Instance*
+  name: Instance
+  href: api/SearchAThing.Desktop.SmartConverter.html#SearchAThing_Desktop_SmartConverter_Instance_
+  commentId: Overload:SearchAThing.Desktop.SmartConverter.Instance
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.SmartConverter.Instance
+  nameWithType: SmartConverter.Instance
+- uid: SearchAThing.Desktop.SmartConverter.operand(System.Object,System.Type,System.Object,System.Globalization.CultureInfo,System.Boolean)
+  name: operand(object?, Type, object, CultureInfo, bool)
+  href: api/SearchAThing.Desktop.SmartConverter.html#SearchAThing_Desktop_SmartConverter_operand_System_Object_System_Type_System_Object_System_Globalization_CultureInfo_System_Boolean_
+  commentId: M:SearchAThing.Desktop.SmartConverter.operand(System.Object,System.Type,System.Object,System.Globalization.CultureInfo,System.Boolean)
+  name.vb: operand(Object, Type, Object, CultureInfo, Boolean)
+  fullName: SearchAThing.Desktop.SmartConverter.operand(object?, System.Type, object, System.Globalization.CultureInfo, bool)
+  fullName.vb: SearchAThing.Desktop.SmartConverter.operand(Object, System.Type, Object, System.Globalization.CultureInfo, Boolean)
+  nameWithType: SmartConverter.operand(object?, Type, object, CultureInfo, bool)
+  nameWithType.vb: SmartConverter.operand(Object, Type, Object, CultureInfo, Boolean)
+- uid: SearchAThing.Desktop.SmartConverter.operand*
+  name: operand
+  href: api/SearchAThing.Desktop.SmartConverter.html#SearchAThing_Desktop_SmartConverter_operand_
+  commentId: Overload:SearchAThing.Desktop.SmartConverter.operand
+  isSpec: "True"
+  fullName: SearchAThing.Desktop.SmartConverter.operand
+  nameWithType: SmartConverter.operand

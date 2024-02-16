@@ -1,0 +1,180 @@
+### YamlMime:ManagedReference
+items:
+- uid: SearchAThing.Desktop
+  commentId: N:SearchAThing.Desktop
+  id: SearchAThing.Desktop
+  children:
+  - SearchAThing.Desktop.Constants
+  - SearchAThing.Desktop.Ext
+  - SearchAThing.Desktop.GridAutoRow
+  - SearchAThing.Desktop.GridSplitDirection
+  - SearchAThing.Desktop.GridSplitterManagerLayoutItem
+  - SearchAThing.Desktop.GridSplitterManager`1
+  - SearchAThing.Desktop.GridSplitterManager`1.ConfigControlDelegate
+  - SearchAThing.Desktop.GridSplitterManager`1.ControlEventDelegate
+  - SearchAThing.Desktop.SmartConverter
+  langs:
+  - csharp
+  - vb
+  name: SearchAThing.Desktop
+  nameWithType: SearchAThing.Desktop
+  fullName: SearchAThing.Desktop
+  type: Namespace
+  assemblies:
+  - netcore-desktop
+references:
+- uid: SearchAThing.Desktop.Constants
+  commentId: T:SearchAThing.Desktop.Constants
+  href: SearchAThing.Desktop.Constants.html
+  name: Constants
+  nameWithType: Constants
+  fullName: SearchAThing.Desktop.Constants
+- uid: SearchAThing.Desktop.Ext
+  commentId: T:SearchAThing.Desktop.Ext
+  parent: SearchAThing.Desktop
+  href: SearchAThing.Desktop.Ext.html
+  name: Ext
+  nameWithType: Ext
+  fullName: SearchAThing.Desktop.Ext
+- uid: SearchAThing.Desktop.GridAutoRow
+  commentId: T:SearchAThing.Desktop.GridAutoRow
+  href: SearchAThing.Desktop.GridAutoRow.html
+  name: GridAutoRow
+  nameWithType: GridAutoRow
+  fullName: SearchAThing.Desktop.GridAutoRow
+- uid: SearchAThing.Desktop.GridSplitDirection
+  commentId: T:SearchAThing.Desktop.GridSplitDirection
+  parent: SearchAThing.Desktop
+  href: SearchAThing.Desktop.GridSplitDirection.html
+  name: GridSplitDirection
+  nameWithType: GridSplitDirection
+  fullName: SearchAThing.Desktop.GridSplitDirection
+- uid: SearchAThing.Desktop.GridSplitterManager`1
+  commentId: T:SearchAThing.Desktop.GridSplitterManager`1
+  href: SearchAThing.Desktop.GridSplitterManager-1.html
+  name: GridSplitterManager<T>
+  nameWithType: GridSplitterManager<T>
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>
+  nameWithType.vb: GridSplitterManager(Of T)
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T)
+  name.vb: GridSplitterManager(Of T)
+  spec.csharp:
+  - uid: SearchAThing.Desktop.GridSplitterManager`1
+    name: GridSplitterManager
+    href: SearchAThing.Desktop.GridSplitterManager-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: SearchAThing.Desktop.GridSplitterManager`1
+    name: GridSplitterManager
+    href: SearchAThing.Desktop.GridSplitterManager-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: SearchAThing.Desktop.GridSplitterManager`1.ControlEventDelegate
+  commentId: T:SearchAThing.Desktop.GridSplitterManager`1.ControlEventDelegate
+  parent: SearchAThing.Desktop
+  href: SearchAThing.Desktop.GridSplitterManager-1.html
+  name: GridSplitterManager<T>.ControlEventDelegate
+  nameWithType: GridSplitterManager<T>.ControlEventDelegate
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.ControlEventDelegate
+  nameWithType.vb: GridSplitterManager(Of T).ControlEventDelegate
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).ControlEventDelegate
+  name.vb: GridSplitterManager(Of T).ControlEventDelegate
+  spec.csharp:
+  - uid: SearchAThing.Desktop.GridSplitterManager`1
+    name: GridSplitterManager
+    href: SearchAThing.Desktop.GridSplitterManager-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: SearchAThing.Desktop.GridSplitterManager`1.ControlEventDelegate
+    name: ControlEventDelegate
+    href: SearchAThing.Desktop.GridSplitterManager-1.ControlEventDelegate.html
+  spec.vb:
+  - uid: SearchAThing.Desktop.GridSplitterManager`1
+    name: GridSplitterManager
+    href: SearchAThing.Desktop.GridSplitterManager-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: SearchAThing.Desktop.GridSplitterManager`1.ControlEventDelegate
+    name: ControlEventDelegate
+    href: SearchAThing.Desktop.GridSplitterManager-1.ControlEventDelegate.html
+- uid: SearchAThing.Desktop.GridSplitterManager`1.ConfigControlDelegate
+  commentId: T:SearchAThing.Desktop.GridSplitterManager`1.ConfigControlDelegate
+  parent: SearchAThing.Desktop
+  href: SearchAThing.Desktop.GridSplitterManager-1.html
+  name: GridSplitterManager<T>.ConfigControlDelegate
+  nameWithType: GridSplitterManager<T>.ConfigControlDelegate
+  fullName: SearchAThing.Desktop.GridSplitterManager<T>.ConfigControlDelegate
+  nameWithType.vb: GridSplitterManager(Of T).ConfigControlDelegate
+  fullName.vb: SearchAThing.Desktop.GridSplitterManager(Of T).ConfigControlDelegate
+  name.vb: GridSplitterManager(Of T).ConfigControlDelegate
+  spec.csharp:
+  - uid: SearchAThing.Desktop.GridSplitterManager`1
+    name: GridSplitterManager
+    href: SearchAThing.Desktop.GridSplitterManager-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: .
+  - uid: SearchAThing.Desktop.GridSplitterManager`1.ConfigControlDelegate
+    name: ConfigControlDelegate
+    href: SearchAThing.Desktop.GridSplitterManager-1.ConfigControlDelegate.html
+  spec.vb:
+  - uid: SearchAThing.Desktop.GridSplitterManager`1
+    name: GridSplitterManager
+    href: SearchAThing.Desktop.GridSplitterManager-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: .
+  - uid: SearchAThing.Desktop.GridSplitterManager`1.ConfigControlDelegate
+    name: ConfigControlDelegate
+    href: SearchAThing.Desktop.GridSplitterManager-1.ConfigControlDelegate.html
+- uid: SearchAThing.Desktop.GridSplitterManagerLayoutItem
+  commentId: T:SearchAThing.Desktop.GridSplitterManagerLayoutItem
+  parent: SearchAThing.Desktop
+  href: SearchAThing.Desktop.GridSplitterManagerLayoutItem.html
+  name: GridSplitterManagerLayoutItem
+  nameWithType: GridSplitterManagerLayoutItem
+  fullName: SearchAThing.Desktop.GridSplitterManagerLayoutItem
+- uid: SearchAThing.Desktop.SmartConverter
+  commentId: T:SearchAThing.Desktop.SmartConverter
+  parent: SearchAThing.Desktop
+  href: SearchAThing.Desktop.SmartConverter.html
+  name: SmartConverter
+  nameWithType: SmartConverter
+  fullName: SearchAThing.Desktop.SmartConverter
+- uid: SearchAThing.Desktop
+  commentId: N:SearchAThing.Desktop
+  href: SearchAThing.html
+  name: SearchAThing.Desktop
+  nameWithType: SearchAThing.Desktop
+  fullName: SearchAThing.Desktop
+  spec.csharp:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Desktop
+    name: Desktop
+    href: SearchAThing.Desktop.html
+  spec.vb:
+  - uid: SearchAThing
+    name: SearchAThing
+    href: SearchAThing.html
+  - name: .
+  - uid: SearchAThing.Desktop
+    name: Desktop
+    href: SearchAThing.Desktop.html
