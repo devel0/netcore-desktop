@@ -2,7 +2,7 @@
   "README.html": {
     "href": "README.html",
     "title": "netcore-desktop | netcore-desktop",
-    "keywords": "netcore-desktop .NET core desktop API Documentation Changelog Examples 0003 ( GridSplitterManager ) How this project was built Documentation (github pages) Build and view locally Build and commit into docs branch Examples List of examples. 0003 ( GridSplitterManager ) How this project was built mkdir netcore-desktop cd netcore-desktop dotnet new sln mkdir src examples cd src dotnet new classlib -n netcore-desktop mv netcore-desktop desktop cd desktop dotnet add package netcore-ext dotnet add package Avalonia.Desktop cd ../.. cd examples dotnet new avalonia.mvvm -n example mv example/example.csproj example/example-0001.csproj mv example example-0001 cd .. dotnet sln add src/desktop examples/example-0001 dotnet build # documentation css mkdir data git submodule add https://github.com/jothepro/doxygen-awesome-css.git data/doxygen-awesome-css cd data/doxygen-awesome-css # doxygen 1.9.7 git checkout 245c7c94c20eac22730ef89035967f78b77bf405 cd ../.. Documentation (github pages) Configured through Settings/Pages on Branch docs ( path /docs ). while master branch exclude \"docs\" with .gitignore the docs branch doesn't Build and view locally ./doc build ./doc serve ./doc view Build and commit into docs branch ./doc commit"
+    "keywords": "netcore-desktop .NET core desktop API Documentation Changelog Examples 0003 ( GridSplitterManager ) How this project was built Documentation (github pages) Build and view locally Build and commit into docs branch Examples List of examples. 0003 ( GridSplitterManager ) How this project was built mkdir netcore-desktop cd netcore-desktop dotnet new sln mkdir src examples cd src dotnet new classlib -n netcore-desktop mv netcore-desktop desktop cd desktop dotnet add package netcore-ext dotnet add package Avalonia.Desktop cd ../.. cd examples dotnet new avalonia.mvvm -n example mv example/example.csproj example/example-0001.csproj mv example example-0001 cd .. dotnet sln add src/desktop examples/example-0001 dotnet build # documentation css mkdir data git submodule add https://github.com/jothepro/doxygen-awesome-css.git data/doxygen-awesome-css cd data/doxygen-awesome-css # doxygen 1.9.7 git checkout 245c7c94c20eac22730ef89035967f78b77bf405 cd ../.. Documentation (github pages) Configured through Settings/Pages on Branch docs ( path /docs ). while master branch exclude \"docs\" with .gitignore the docs branch doesn't Build and view locally ./doc serve Build and commit into docs branch ./doc commit"
   },
   "api/SearchAThing.Desktop.Constants.html": {
     "href": "api/SearchAThing.Desktop.Constants.html",
@@ -87,6 +87,6 @@
   "index.html": {
     "href": "index.html",
     "title": "netcore-desktop | netcore-desktop",
-    "keywords": "netcore-desktop api"
+    "keywords": "netcore-desktop api sources"
   }
 }
