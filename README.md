@@ -9,14 +9,12 @@
 
 <hr/>
 
-<!-- TOC -->
-* [Examples](#examples)
-  + [0003 ( GridSplitterManager )](#0003--gridsplittermanager-)
-* [How this project was built](#how-this-project-was-built)
-* [Documentation (github pages)](#documentation-github-pages)
-  + [Build and view locally](#build-and-view-locally)
-  + [Build and commit into docs branch](#build-and-commit-into-docs-branch)
-<!-- TOCEND -->
+- [Examples](#examples)
+  - [0003 ( GridSplitterManager )](#0003--gridsplittermanager-)
+- [How this project was built](#how-this-project-was-built)
+- [Documentation (github pages)](#documentation-github-pages)
+  - [Build and view locally](#build-and-view-locally)
+  - [Build and commit into docs branch](#build-and-commit-into-docs-branch)
 
 <hr/>
 
@@ -77,9 +75,7 @@ Configured through Settings/Pages on Branch docs ( path /docs ).
 ### Build and view locally
 
 ```sh
-./doc build
 ./doc serve
-./doc view
 ```
 
 ### Build and commit into docs branch
