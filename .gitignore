@@ -288,5 +288,6 @@ __pycache__/
 *.xsd.cs
 
 mono_crash*
-docs
-api
+
+/docs
+/api
