@@ -13,6 +13,9 @@ public partial class MainWindow : Window
 
         Title = AppDomain.CurrentDomain.FriendlyName + " ( GridSplitterManager ) ";
 
+        Width = 1024;
+        Height = 768;
+
         gridSplitterManager = new GridSplitterManager<SampleControl>()
         {
             FocusedControlBorderThickness = 0,
